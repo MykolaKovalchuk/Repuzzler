@@ -1,0 +1,45 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{BE658BCD-A85B-4910-A4C3-DA1A73F73576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descreener", "Tools\Descreener\Descreener.csproj", "{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ravlyk", "Ravlyk", "{57D21150-CC56-48B0-9943-118C04434E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravlyk.Common", "Ravlyk\Ravlyk.Common\Ravlyk.Common.csproj", "{5C554A7E-24F7-46DA-B65D-4FC4CB132547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravlyk.Drawing", "Ravlyk\Ravlyk.Drawing\Ravlyk.Drawing.csproj", "{846AA919-E96F-46F3-973B-60F5ADBF8F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravlyk.Drawing.ImageProcessor", "Ravlyk\Ravlyk.Drawing.ImageProcessor\Ravlyk.Drawing.ImageProcessor.csproj", "{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}.Debug|x86.ActiveCfg = Debug|x86
+		{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}.Debug|x86.Build.0 = Debug|x86
+		{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}.Release|x86.ActiveCfg = Release|x86
+		{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}.Release|x86.Build.0 = Release|x86
+		{5C554A7E-24F7-46DA-B65D-4FC4CB132547}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C554A7E-24F7-46DA-B65D-4FC4CB132547}.Debug|x86.Build.0 = Debug|Any CPU
+		{5C554A7E-24F7-46DA-B65D-4FC4CB132547}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C554A7E-24F7-46DA-B65D-4FC4CB132547}.Release|x86.Build.0 = Release|Any CPU
+		{846AA919-E96F-46F3-973B-60F5ADBF8F42}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{846AA919-E96F-46F3-973B-60F5ADBF8F42}.Debug|x86.Build.0 = Debug|Any CPU
+		{846AA919-E96F-46F3-973B-60F5ADBF8F42}.Release|x86.ActiveCfg = Release|Any CPU
+		{846AA919-E96F-46F3-973B-60F5ADBF8F42}.Release|x86.Build.0 = Release|Any CPU
+		{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3} = {BE658BCD-A85B-4910-A4C3-DA1A73F73576}
+		{5C554A7E-24F7-46DA-B65D-4FC4CB132547} = {57D21150-CC56-48B0-9943-118C04434E61}
+		{846AA919-E96F-46F3-973B-60F5ADBF8F42} = {57D21150-CC56-48B0-9943-118C04434E61}
+		{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5} = {57D21150-CC56-48B0-9943-118C04434E61}
+	EndGlobalSection
+EndGlobal
