@@ -2,15 +2,15 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{63A6B0FE-BA74-4129-94BA-54AF4F47D1D3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Ravlyk.Descreener</RootNamespace>
-    <AssemblyName>Descreener</AssemblyName>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05F1E9DB-84F9-4F6C-806C-DCCDB3C5C918}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Ravlyk.Drawing.SD</RootNamespace>
+    <AssemblyName>Ravlyk.Drawing.SD</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <Description>Remove green/blue screen background from photos.</Description>
+    <Description>System.Drawing extension to convert Bitmap to/from IndexedImage.</Description>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -18,39 +18,33 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ExternalConsole>true</ExternalConsole>
-    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ExternalConsole>true</ExternalConsole>
-    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IndexedImageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Ravlyk\Ravlyk.Drawing.SD\Ravlyk.Drawing.SD.csproj">
-      <Project>{05F1E9DB-84F9-4F6C-806C-DCCDB3C5C918}</Project>
-      <Name>Ravlyk.Drawing.SD</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Ravlyk\Ravlyk.Drawing.ImageProcessor\Ravlyk.Drawing.ImageProcessor.csproj">
-      <Project>{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}</Project>
-      <Name>Ravlyk.Drawing.ImageProcessor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Ravlyk\Ravlyk.Drawing\Ravlyk.Drawing.csproj">
+    <ProjectReference Include="..\Ravlyk.Drawing\Ravlyk.Drawing.csproj">
       <Project>{846AA919-E96F-46F3-973B-60F5ADBF8F42}</Project>
       <Name>Ravlyk.Drawing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Ravlyk\Ravlyk.Common\Ravlyk.Common.csproj">
+    <ProjectReference Include="..\Ravlyk.Drawing.ImageProcessor\Ravlyk.Drawing.ImageProcessor.csproj">
+      <Project>{5887536A-1AF1-4D42-ACF9-1E41EEC1C9B5}</Project>
+      <Name>Ravlyk.Drawing.ImageProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ravlyk.Common\Ravlyk.Common.csproj">
       <Project>{5C554A7E-24F7-46DA-B65D-4FC4CB132547}</Project>
       <Name>Ravlyk.Common</Name>
     </ProjectReference>

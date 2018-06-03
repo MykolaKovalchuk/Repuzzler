@@ -66,11 +66,11 @@ namespace Ravlyk.Drawing.ImageProcessor.Utilities
 
 			if (CoeffHue != 0 || CoeffSaturation != 0 || CoeffBrightness != 0)
 			{
-				int dH = c1.Hue - c2.Hue;
-				int dS = c1.Saturation - c2.Saturation;
-				int dB = c1.Brightness - c2.Brightness;
+				int dH = (int)((c1.Hue - c2.Hue) * 255);
+				int dS = (int)((c1.Saturation - c2.Saturation) * 255);
+				int dV = (int)((c1.Value - c2.Value) * 255);
 
-				distance += CoeffHue * dH * dH + CoeffSaturation * dS * dS + CoeffBrightness * dB * dB;
+				distance += CoeffHue * dH * dH + CoeffSaturation * dS * dS + CoeffBrightness * dV * dV;
 			}
 
 			return distance;

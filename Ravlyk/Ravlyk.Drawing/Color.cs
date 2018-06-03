@@ -118,64 +118,145 @@ namespace Ravlyk.Drawing
 
 		#endregion
 
-		#region HSB
+		#region HSV
 
 		/// <summary>
 		/// Returns Hue value for color in HSV space.
 		/// </summary>
 		/// <value>0..255</value>
-		public int Hue
+		public double Hue
 		{
 			get
 			{
-				if (hue < 0)
+				if (!hsvCalculated)
 				{
-					CalculateHSB();
+					CalculateHSV();
 				}
 				return hue;
 			}
 		}
-		int hue = -1;
+		double hue;
 
 		/// <summary>
 		/// Returns Saturation value for color in HSV space.
 		/// </summary>
 		/// <value>0..255</value>
-		public int Saturation
+		public double Saturation
 		{
 			get
 			{
-				if (saturation < 0)
+				if (!hsvCalculated)
 				{
-					CalculateHSB();
+					CalculateHSV();
 				}
 				return saturation;
 			}
 		}
-		int saturation = -1;
+		double saturation;
 
 		/// <summary>
 		/// Returns Brightness value for color in HSV space.
 		/// </summary>
 		/// <value>0..255</value>
-		public int Brightness
+		public double Value
 		{
 			get
 			{
-				if (brightness < 0)
+				if (!hsvCalculated)
 				{
-					CalculateHSB();
+					CalculateHSV();
 				}
-				return brightness;
+				return value;
 			}
 		}
-		int brightness = -1;
+		double value;
 
-		void CalculateHSB()
+		/// <summary>
+		/// R, G, and B must range from 0 to 255
+		/// Ouput value ranges:
+		/// Hue - 0.0 to 1.0
+		/// Saturation - 0.0 to 1.0
+		/// Value - 0.0 to 1.0
+		/// </summary>
+		void CalculateHSV()
 		{
-			// TODO: Implement HSB calculation.
-			throw new NotImplementedException();
+			hsvCalculated = true;
+
+			const double H_UNDEFINED = 0.0; // Arbitrarily set undefined hue to 0
+			const double recip6 = 1.0 / 6.0;
+
+			double dR = (double)R / 255.0;
+			double dG = (double)G / 255.0;
+			double dB = (double)B / 255.0;
+			int maxRGB = Max3(R, G, B);
+			double dmaxRGB = (double)maxRGB / 255.0;
+			int minRGB = Min3(R, G, B);
+			double dminRGB = (double)minRGB / 255.0;
+			double delta = dmaxRGB - dminRGB;
+
+			// Set value
+			value = dmaxRGB;
+
+			// Handle special case of V = 0 (black)
+			if (maxRGB == 0)
+			{
+				hue = H_UNDEFINED;
+				saturation = 0.0;
+				return;
+			}
+
+			// Handle special case of S = 0 (gray)
+			saturation = delta / dmaxRGB;
+			if (maxRGB == minRGB)
+			{
+				hue = H_UNDEFINED;
+				return;
+			}
+
+			// Finally, compute hue
+			if (R == maxRGB)
+			{
+				hue = (dG - dB) / delta;
+			}
+			else if (G == maxRGB)
+			{
+				hue = 2.0 + (dB - dR) / delta;
+			}
+			else //if (B == maxRGB)
+			{
+				hue = 4.0 + (dR - dG) / delta;
+			}
+
+			hue *= recip6;
+			hue = HueConstrain(hue);
 		}
+
+		static int Max3(int x, int y, int z)
+		{
+			return (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+		}
+
+		static int Min3(int x, int y, int z)
+		{
+			return (x < y) ? ((x < z) ? x : z) : ((y < z) ? y : z);
+		}
+
+		static double HueConstrain(double myHue)
+		{
+			// Makes sure that 0.0 <= MyAngle < 1.0
+			// Wraps around the value if its outside this range
+			while (myHue >= 1.0)
+			{
+				myHue -= 1.0;
+			}
+			while (myHue < 0.0)
+			{
+				myHue += 1.0;
+			}
+			return myHue;
+		}
+
+		bool hsvCalculated;
 
 		#endregion
 
