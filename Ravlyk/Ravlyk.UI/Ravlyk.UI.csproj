@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02214E01-03F0-4F6D-84B0-21382F06036D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ravlyk.UI</RootNamespace>
+    <AssemblyName>Ravlyk.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IImageProvider.cs" />
+    <Compile Include="ImageProcessor\Controllers\ImageController.cs" />
+    <Compile Include="ImageProcessor\Controllers\ImageCropController.cs" />
+    <Compile Include="ImageProcessor\Manipulators\ImageCropManipulator.cs" />
+    <Compile Include="ImageProcessor\Manipulators\ImageManipulator.cs" />
+    <Compile Include="ImageProcessor\VisualControllers\VisualBoxedController.cs" />
+    <Compile Include="ImageProcessor\VisualControllers\VisualController.cs" />
+    <Compile Include="ImageProcessor\VisualControllers\VisualZoomController.cs" />
+    <Compile Include="ImageProcessor\VisualControllers\VisualZoomCropController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ravlyk.Common\Ravlyk.Common.csproj">
+      <Project>{5c554a7e-24f7-46da-b65d-4fc4cb132547}</Project>
+      <Name>Ravlyk.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ravlyk.Drawing.ImageProcessor\Ravlyk.Drawing.ImageProcessor.csproj">
+      <Project>{5887536a-1af1-4d42-acf9-1e41eec1c9b5}</Project>
+      <Name>Ravlyk.Drawing.ImageProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ravlyk.Drawing\Ravlyk.Drawing.csproj">
+      <Project>{846aa919-e96f-46f3-973b-60f5adbf8f42}</Project>
+      <Name>Ravlyk.Drawing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
