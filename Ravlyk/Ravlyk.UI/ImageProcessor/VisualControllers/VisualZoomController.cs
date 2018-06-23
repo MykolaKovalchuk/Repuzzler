@@ -81,6 +81,26 @@ namespace Ravlyk.UI.ImageProcessor
 			return value;
 		}
 
+		protected Point ZoomedPoint(Point p)
+		{
+			return ZoomPercent != 100 ? new Point(p.X * ZoomPercent / 100, p.Y * ZoomPercent / 100) : p;
+		}
+
+		protected Point UnZoomedPoint(Point p)
+		{
+			return ZoomPercent != 100 ? new Point(p.X * 100 / ZoomPercent, p.Y * 100 / ZoomPercent) : p;
+		}
+
+		protected Point ZoomedShiftedPoint(Point p)
+		{
+			return new Point(p.X * ZoomPercent / 100 - VisualImageFrame.Left, p.Y * ZoomPercent / 100 - VisualImageFrame.Top);
+		}
+
+		protected Point UnZoomedUnShiftedPoint(Point p)
+		{
+			return new Point(p.X + VisualImageFrame.Left, p.Y + VisualImageFrame.Top);
+		}
+
 		#endregion
 
 		#region Visual image frame
@@ -184,6 +204,31 @@ namespace Ravlyk.UI.ImageProcessor
 				base.OnShiftCore(imagePoint, shiftSize);
 			}
 		}
+
+		protected override void OnMouseWheelCore(int delta)
+		{
+			base.OnMouseWheelCore(delta);
+
+			if (!IsTouching && AutoZoom)
+			{
+				if (delta > 0)
+				{
+					if (ZoomPercent < ScaleUp)
+					{
+						ZoomPercent++;
+					}
+					ZoomPercent = ZoomPercent * ScaleUp / ScaleDown;
+				}
+				else if (delta < 0)
+				{
+					ZoomPercent = ZoomPercent * ScaleDown / ScaleUp;
+				}
+			}
+		}
+
+		public bool AutoZoom { get; set; } = true;
+		public int ScaleUp { get; set; } = 8;
+		public int ScaleDown { get; set; } = 7;
 
 		#endregion
 	}

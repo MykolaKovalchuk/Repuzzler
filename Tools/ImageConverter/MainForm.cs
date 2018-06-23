@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using Ravlyk.Drawing.ImageProcessor;
+using Ravlyk.Common;
 using Ravlyk.Drawing.SD;
+using Ravlyk.UI;
 using Ravlyk.UI.ImageProcessor;
 
 namespace ImageConverter
@@ -23,9 +24,36 @@ namespace ImageConverter
 				if (openDialog.ShowDialog(this) == DialogResult.OK)
 				{
 					var image = IndexedImageExtensions.FromBitmapFile(openDialog.FileName);
-					var zoomCropController = new VisualZoomCropController(new ImageCropController(new ImageCropManipulator(image)) { CropKind = ImageCropper.CropKind.Rectangle });
-					zoomCropController.ZoomPercent = 100;
-					visualControl.Controller = zoomCropController;
+
+					if (!(visualControl.Controller is VisualAnchorsController anchorsController))
+					{
+						anchorsController = new VisualAnchorsController(new ImageProvider(image), new Size(visualControl.Width, visualControl.Height));
+						anchorsController.ZoomPercent = 100;
+
+						anchorsController.AddAnchor(new Point(100, 100));
+						anchorsController.AddAnchor(new Point(100, 150));
+						anchorsController.AddAnchor(new Point(60, 125));
+						anchorsController.AddAnchor(new Point(60, 75));
+						anchorsController.AddAnchor(new Point(100, 50));
+						anchorsController.AddAnchor(new Point(140, 75));
+						anchorsController.AddAnchor(new Point(140, 125));
+
+						anchorsController.AddEdge(0, 1);
+						anchorsController.AddEdge(0, 3);
+						anchorsController.AddEdge(0, 5);
+						anchorsController.AddEdge(1, 2);
+						anchorsController.AddEdge(2, 3);
+						anchorsController.AddEdge(3, 4);
+						anchorsController.AddEdge(4, 5);
+						anchorsController.AddEdge(5, 6);
+						anchorsController.AddEdge(6, 1);
+
+						visualControl.Controller = anchorsController;
+					}
+					else
+					{
+						((ImageProvider)anchorsController.ImageProvider).SetImage(image);
+					}
 				}
 			}
 		}
@@ -94,7 +122,7 @@ namespace ImageConverter
 			this.buttonLoad.UseVisualStyleBackColor = true;
 			this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
 			// 
-			// pictureBox1
+			// visualControl
 			// 
 			this.visualControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.visualControl.Location = new System.Drawing.Point(0, 46);

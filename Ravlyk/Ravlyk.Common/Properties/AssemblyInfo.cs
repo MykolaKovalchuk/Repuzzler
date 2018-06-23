@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ravlyk.net")]
 [assembly: AssemblyProduct("Ravlyk.Common")]
-[assembly: AssemblyCopyright("Mykola Kovalchuk © 2005-2016")]
+[assembly: AssemblyCopyright("Mykola Kovalchuk © 2005-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

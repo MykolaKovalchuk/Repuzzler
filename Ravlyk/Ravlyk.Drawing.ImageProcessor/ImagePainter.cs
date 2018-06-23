@@ -144,6 +144,101 @@ namespace Ravlyk.Drawing.ImageProcessor
 			}
 		}
 
+		#region DrawAnyLine
+
+		public static void DrawAnyLine(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
+		{
+			if (Math.Abs(b.Y - a.Y) < Math.Abs(b.X - a.X))
+			{
+				DrawLineLow(image, a, b, colorGetter);
+			}
+			else
+			{
+				DrawLineHigh(image, a, b, colorGetter);
+			}
+		}
+
+		static void DrawLineLow(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
+		{
+			if (a.X > b.X)
+			{
+				var c = a;
+				a = b;
+				b = c;
+			}
+
+			var dx = b.X - a.X;
+			var dy = b.Y - a.Y;
+			var yi = 1;
+			if (dy < 0)
+			{
+				yi = -1;
+				dy = -dy;
+			}
+			var dx2 = dx * 2;
+			var dy2 = dy * 2;
+			var d = dy2 - dx;
+
+			var y = a.Y;
+			for (int x = a.X; x <= b.X; x++)
+			{
+				DrawPoint(image, x, y, colorGetter);
+
+				if (d > 0)
+				{
+					y += yi;
+					d -= dx2;
+				}
+				d += dy2;
+			}
+		}
+
+		static void DrawLineHigh(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
+		{
+			if (a.Y > b.Y)
+			{
+				var c = a;
+				a = b;
+				b = c;
+			}
+
+			var dx = b.X - a.X;
+			var dy = b.Y - a.Y;
+			var xi = 1;
+			if (dx < 0)
+			{
+				xi = -1;
+				dx = -dx;
+			}
+			var dx2 = dx * 2;
+			var dy2 = dy * 2;
+			var d = dx2 - dy;
+
+			var x = a.X;
+			for (int y = a.Y; y <= b.Y; y++)
+			{
+				DrawPoint(image, x, y, colorGetter);
+
+				if (d > 0)
+				{
+					x += xi;
+					d -= dy2;
+				}
+				d += dx2;
+			}
+		}
+
+		static void DrawPoint(IndexedImage image, int x, int y, Func<int, int> colorGetter)
+		{
+			if (x >= 0 && y >= 0 && x < image.Size.Width && y < image.Size.Height)
+			{
+				var pixelIndex = y * image.Size.Width + x;
+				image.Pixels[pixelIndex] = colorGetter(pixelIndex);
+			}
+		}
+
+		#endregion
+
 		public static void ShadeImage(IndexedImage image, int argb, IndexedImage maskImage = null)
 		{
 			Debug.Assert(maskImage == null || maskImage.Size.Equals(image.Size), "maskImage should have same size as image");

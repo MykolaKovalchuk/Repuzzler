@@ -39,14 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IImageProvider.cs" />
-    <Compile Include="ImageProcessor\Controllers\ImageController.cs" />
-    <Compile Include="ImageProcessor\Controllers\ImageCropController.cs" />
-    <Compile Include="ImageProcessor\Manipulators\ImageCropManipulator.cs" />
-    <Compile Include="ImageProcessor\Manipulators\ImageManipulator.cs" />
+    <Compile Include="ImageProcessor\VisualControllers\VisualAnchorsController.cs" />
     <Compile Include="ImageProcessor\VisualControllers\VisualBoxedController.cs" />
     <Compile Include="ImageProcessor\VisualControllers\VisualController.cs" />
     <Compile Include="ImageProcessor\VisualControllers\VisualZoomController.cs" />
-    <Compile Include="ImageProcessor\VisualControllers\VisualZoomCropController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
