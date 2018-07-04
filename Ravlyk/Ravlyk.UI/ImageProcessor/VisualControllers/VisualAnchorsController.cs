@@ -67,7 +67,7 @@ namespace Ravlyk.UI.ImageProcessor
 		bool quickUpdate;
 		int[] originalVisualImagePixels;
 
-		const int AnchorRadius = 3;
+		const int AnchorRadius = 8;
 		readonly int anchorColor = ColorBytes.ToArgb(255, 255, 127, 0);
 		readonly int edgeColor = ColorBytes.ToArgb(255, 255, 0, 0);
 
@@ -109,28 +109,26 @@ namespace Ravlyk.UI.ImageProcessor
 
 		void DrawAnchor(Point anchor, bool clear)
 		{
-			using (VisualImage.LockPixels(out var visualPixels))
-			{
-				for (int y = anchor.Y - AnchorRadius; y < anchor.Y + AnchorRadius + 1; y++)
-				{
-					if (y >= 0 && y < VisualImageFrame.Height)
-					{
-						for (int x = anchor.X - AnchorRadius, pixelIndex = y * VisualImageFrame.Width + x; x < anchor.X + AnchorRadius + 1; x++, pixelIndex++)
-						{
-							if (x >= 0 && x < VisualImageFrame.Width)
-							{
-								visualPixels[pixelIndex] = clear ? originalVisualImagePixels[pixelIndex] : anchorColor;
-							}
-						}
-					}
-				}
-			}
+			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => edgeColor;
+
+			ImagePainter.DrawAnyLineFat(VisualImage,
+				new Point(anchor.X - AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y - AnchorRadius),
+				colorDecider);
+			ImagePainter.DrawAnyLineFat(VisualImage,
+				new Point(anchor.X - AnchorRadius, anchor.Y + AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y + AnchorRadius),
+				colorDecider);
+			ImagePainter.DrawAnyLineFat(VisualImage,
+				new Point(anchor.X - AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X - AnchorRadius, anchor.Y + AnchorRadius),
+				colorDecider);
+			ImagePainter.DrawAnyLineFat(VisualImage,
+				new Point(anchor.X + AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y + AnchorRadius),
+				colorDecider);
 		}
 
 		void DrawEdge((int a, int b) edge, bool clear)
 		{
 			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => edgeColor;
-			ImagePainter.DrawAnyLine(VisualImage, ZoomedShiftedPoint(anchors[edge.a]), ZoomedShiftedPoint(anchors[edge.b]), colorDecider);
+			ImagePainter.DrawAnyLineFat(VisualImage, ZoomedShiftedPoint(anchors[edge.a]), ZoomedShiftedPoint(anchors[edge.b]), colorDecider);
 		}
 
 		#endregion
@@ -148,7 +146,7 @@ namespace Ravlyk.UI.ImageProcessor
 			{
 				if (IsOverAnchor(imagePoint, ZoomedPoint(anchor)))
 				{
-					return TouchPointerStyle.ResizeAll;
+					return TouchPointerStyle.Cross;
 				}
 			}
 
@@ -207,7 +205,7 @@ namespace Ravlyk.UI.ImageProcessor
 			return IsInsideRadius(imagePoint.X, anchorPoint.X) && IsInsideRadius(imagePoint.Y, anchorPoint.Y);
 		}
 
-		internal static bool IsInsideRadius(int x1, int x2, int radius = AnchorRadius)
+		static bool IsInsideRadius(int x1, int x2, int radius = AnchorRadius)
 		{
 			return Math.Abs(x1 - x2) <= radius;
 		}

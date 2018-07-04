@@ -146,6 +146,13 @@ namespace Ravlyk.Drawing.ImageProcessor
 
 		#region DrawAnyLine
 
+		public static void DrawAnyLineFat(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
+		{
+			DrawAnyLine(image, new Point(a.X, a.Y), new Point(b.X, b.Y), colorGetter);
+			DrawAnyLine(image, new Point(a.X + 1, a.Y), new Point(b.X + 1, b.Y), colorGetter);
+			DrawAnyLine(image, new Point(a.X, a.Y + 1), new Point(b.X, b.Y + 1), colorGetter);
+		}
+		
 		public static void DrawAnyLine(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
 		{
 			if (Math.Abs(b.Y - a.Y) < Math.Abs(b.X - a.X))
