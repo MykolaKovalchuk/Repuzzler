@@ -1,11 +1,5 @@
-﻿using System;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using ImageConverter.Pages;
-using Ravlyk.Common;
-using Ravlyk.Drawing.SD;
-using Ravlyk.UI;
-using Ravlyk.UI.ImageProcessor;
 
 namespace ImageConverter
 {
@@ -30,14 +24,21 @@ namespace ImageConverter
 			{
 				Dock = DockStyle.Fill
 			};
+			tabControl.SuspendLayout();
 			Controls.Add(tabControl);
 			
-			var tabBounds = new TabPage();
+			var tabBounds = new TabPage
+			{
+				Text = "Bounds"
+			};
+			tabBounds.SuspendLayout();
 			tabControl.TabPages.Add(tabBounds);
 
 			var boundsPage = new BoundsPage();
 			tabBounds.Controls.Add(boundsPage);
-			
+
+			tabBounds.ResumeLayout();
+			tabControl.ResumeLayout();
 			ResumeLayout();
 		}
 
