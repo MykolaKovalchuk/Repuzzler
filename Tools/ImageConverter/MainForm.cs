@@ -17,7 +17,7 @@ namespace ImageConverter
 			SuspendLayout();
 			
 			AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			AutoScaleMode = AutoScaleMode.Font;
 			WindowState = FormWindowState.Maximized;
 
 			var tabControl = new TabControl

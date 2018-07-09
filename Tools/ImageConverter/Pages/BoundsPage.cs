@@ -22,6 +22,7 @@ namespace ImageConverter.Pages
 
 		public string ImagesFolder { get; set; }
 		public string BoundsFolder { get; set; }
+		public string ProcessedFolder { get; set; }
 		
 		#region Design
 		
@@ -69,6 +70,16 @@ namespace ImageConverter.Pages
 				Location = new Point(buttonSource.Right + 16, 4)
 			};
 			panelButtons.Controls.Add(labelImages);
+
+			var buttonCopy = new Button
+			{
+				Text = "Copy Processed",
+				Width = 100,
+				Anchor = AnchorStyles.Right | AnchorStyles.Top,
+				Location = new Point(panelButtons.Width - 100 - 8)
+			};
+			buttonCopy.Click += ButtonCopyOnClick;
+			panelButtons.Controls.Add(buttonCopy);
 			
 			ResumeLayout();
 		}
@@ -95,8 +106,9 @@ namespace ImageConverter.Pages
 				{
 					ImagesFolder = foldersDialog.SelectedPath;
 					BoundsFolder = Path.Combine(ImagesFolder, "Bounds");
+					ProcessedFolder = Path.Combine(ImagesFolder, "Processed");
 					
-					labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}";
+					labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}{Environment.NewLine}Processed: {ProcessedFolder}";
 
 					files = new DirectoryInfo(ImagesFolder)
 						.GetFiles("*.png")
@@ -192,7 +204,29 @@ namespace ImageConverter.Pages
 		{
 			return Path.Combine(BoundsFolder, Path.ChangeExtension(Path.GetFileName(imageFileName), "bounds"));
 		}
+
+		string GetProcessedFileName(string imageFileName)
+		{
+			return Path.Combine(ProcessedFolder, Path.GetFileName(imageFileName));
+		}
 		
+		void ButtonCopyOnClick(object sender, EventArgs e)
+		{
+			var processedFiles = new DirectoryInfo(ImagesFolder)
+				.GetFiles("*.png")
+				.Select(fi => fi.FullName)
+				.Where(fileName => File.Exists(GetBoundsFileName(fileName)));
+
+			foreach (var sourceFileName in processedFiles)
+			{
+				var targetFileName = GetProcessedFileName(sourceFileName);
+				if (!File.Exists(targetFileName))
+				{
+					File.Copy(sourceFileName, targetFileName);
+				}
+			}
+		}
+
 		#endregion
 	}
 }

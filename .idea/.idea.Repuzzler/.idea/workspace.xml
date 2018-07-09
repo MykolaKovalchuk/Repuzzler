@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/riderModule.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/Common/DataLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/Testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
+    </list>
+    <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
+    <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
+    <ignored path=".idea/.idea.Repuzzler/.idea/indexLayout.xml" />
+    <ignored path=".idea/.idea.Repuzzler/.idea/modules.xml" />
+    <ignored path=".idea/.idea.Repuzzler/riderModule.iml" />
+    <ignored path=".idea/.idea.Repuzzler/.idea/vcs.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Repuzzler" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="MainForm.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding>
+                <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+                <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+                <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+                <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+                <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+                <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+                <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+                <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoundsPage.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2154">
+              <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+              <folding>
+                <marker date="1531101298905" expanded="false" signature="6:274" ph="..." />
+                <marker date="1531101298905" expanded="true" signature="306:5733" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="347:5731" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="372:407" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="546:1859" ph="Design" />
+                <marker date="1531101298905" expanded="true" signature="593:1792" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="692:724" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="794:842" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="913:995" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="1118:1220" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="1346:1441" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="1521:1680" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="1863:5728" ph="Operations" />
+                <marker date="1531101298905" expanded="true" signature="2080:2793" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="2170:2789" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="2230:2784" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="2847:3319" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="2894:2916" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="2958:2996" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="3004:3032" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="3136:3158" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="3350:4467" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="3589:3617" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="4488:4956" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="4538:4560" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="4604:4659" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="4757:4836" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="5006:5117" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="5170:5252" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="5308:5714" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="5539:5710" ph="{...}" />
+                <marker date="1531101298905" expanded="true" signature="5645:5705" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualBoxedController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Common/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/App.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/IImageProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/IndexedImageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/Descreener/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImageCropper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/Resources.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/Settings.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Class1.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/IImageProvider.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageManipulator.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageCropManipulator.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageCropController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualBoxedController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Class1.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Form1.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/MainForm.Designer.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Form1.Designer.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Common/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1287" />
+    <option name="y" value="591" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (8 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (8 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (8 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ImageConverter" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (8 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ImageConverter" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Pages" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Tools\ImageConverter">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+    </configuration>
+    <configuration name="Tools\Descreener" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Tools/Descreener/bin/Debug/Descreener.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tools/Descreener/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/Descreener/Descreener.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.1" />
+    </configuration>
+    <configuration name="Tools\ImageConverter" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Tools/ImageConverter/bin/Debug/ImageConverter.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tools/ImageConverter/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.1" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Project.Default" />
+      <item itemvalue=".NET Project.Tools\Descreener" />
+      <item itemvalue=".NET Project.Tools\ImageConverter" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Project.Tools\ImageConverter" />
+        <item itemvalue=".NET Project.Tools\Descreener" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="" />
+      <created>1528549242219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528549242219</updated>
+      <workItem from="1528549244221" duration="49000" />
+      <workItem from="1528551500338" duration="1499000" />
+      <workItem from="1529218026413" duration="4272000" />
+      <workItem from="1529222543772" duration="861000" />
+      <workItem from="1529223422014" duration="1623000" />
+      <workItem from="1529225057810" duration="352000" />
+      <workItem from="1529225502007" duration="437000" />
+      <workItem from="1529754251877" duration="4403000" />
+      <workItem from="1529758665692" duration="1293000" />
+      <workItem from="1530662450513" duration="39000" />
+      <workItem from="1530662506930" duration="7635000" />
+      <workItem from="1530687425399" duration="1012000" />
+      <workItem from="1530752212914" duration="122000" />
+      <workItem from="1530767806043" duration="607000" />
+      <workItem from="1531094252026" duration="36000" />
+      <workItem from="1531095522121" duration="419000" />
+      <workItem from="1531100663681" duration="1301000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial image ui controller set up">
+      <created>1529225216505</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529225216505</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Anchors controller.&#10;Removed not required image manipulators and controllers.&#10;Changed assebly infos.">
+      <created>1529759777880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529759777880</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Bounding Rubik images">
+      <created>1530678758733</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530678758733</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Tab caption">
+      <created>1530691308757</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530691308757</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="25960000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
+      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32901135" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32990807" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32990807" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32990807" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57111955" visible="true" weight="0.20895523" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
+      <window_info id="Structure" order="1" sideWeight="0.42888048" side_tool="true" visible="true" weight="0.20895523" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3996755" />
+      <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initial image ui controller set up" />
+    <MESSAGE value="CR LF" />
+    <MESSAGE value="Anchors controller.&#10;Removed not required image manipulators and controllers.&#10;Changed assebly infos." />
+    <MESSAGE value="Bounding Rubik images" />
+    <MESSAGE value="Tab caption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tab caption" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5626">
+          <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+          <folding>
+            <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+            <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+            <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageCropManipulator.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5626">
+          <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <folding>
+            <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+            <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+            <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageCropManipulator.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2697">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+            <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+            <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Form1.Designer.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageCropManipulator.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2697">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/IndexedImageExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1363">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+            <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+            <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/Descreener/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/mono/msbuild/15.0/bin/Microsoft.CSharp.CurrentVersion.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Class1.cs" />
+    <entry file="file://$PROJECT_DIR$/Tools/Descreener/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageManipulator.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Manipulators/ImageCropManipulator.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualBoxedController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Class1.cs" />
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1141" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/IndexedImageExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImageCropper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/Controllers/ImageCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2152">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Form1.resx" />
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Form1.Designer.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Common/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="12" column="57" lean-forward="true" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1052">
+          <caret line="216" column="24" selection-start-line="216" selection-start-column="24" selection-end-line="216" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="12" column="57" lean-forward="true" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2262">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/IImageProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="135" column="8" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <marker date="1531094281194" expanded="false" signature="6:55" ph="..." />
+            <marker date="1531094281194" expanded="true" signature="81:837" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="113:835" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="136:170" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="174:832" ph="Design" />
+            <marker date="1531094281194" expanded="true" signature="218:818" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="429:461" ph="{...}" />
+            <marker date="1531094281194" expanded="true" signature="561:587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2154">
+          <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+          <folding>
+            <marker date="1531101298905" expanded="false" signature="6:274" ph="..." />
+            <marker date="1531101298905" expanded="true" signature="306:5733" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="347:5731" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="372:407" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="546:1859" ph="Design" />
+            <marker date="1531101298905" expanded="true" signature="593:1792" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="692:724" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="794:842" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="913:995" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="1118:1220" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="1346:1441" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="1521:1680" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="1863:5728" ph="Operations" />
+            <marker date="1531101298905" expanded="true" signature="2080:2793" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="2170:2789" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="2230:2784" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="2847:3319" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="2894:2916" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="2958:2996" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="3004:3032" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="3136:3158" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="3350:4467" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="3589:3617" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="4488:4956" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="4538:4560" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="4604:4659" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="4757:4836" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="5006:5117" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="5170:5252" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="5308:5714" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="5539:5710" ph="{...}" />
+            <marker date="1531101298905" expanded="true" signature="5645:5705" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
