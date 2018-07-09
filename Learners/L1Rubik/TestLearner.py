@@ -1,20 +1,18 @@
 from keras import applications
-from keras.preprocessing.image import ImageDataGenerator
 from keras import optimizers
 from keras.models import Model
 from keras.layers import Dropout, Flatten, Dense
 from keras import backend as K
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler, TensorBoard, EarlyStopping
-import numpy as np
-import cv2
 
-from Shared.DataLoader import Loader
+from Shared.DataGenerator import DataGenerator
 
 img_width, img_height = 256, 256
 train_data_dir = "/mnt/DA92812D92810F67/Rubik/Only Rubik/Processed"
 train_labels_dir = "/mnt/DA92812D92810F67/Rubik/Only Rubik/Bounds"
 nb_labels = 14
 batch_size = 16
+steps_per_epoch = 7
 epochs = 20
 
 model = applications.VGG19(weights="imagenet", include_top=False, input_shape=(img_width, img_height, 3))
@@ -43,17 +41,8 @@ def euclidean_distance_loss(y_true, y_pred):
 model_final.compile(loss=euclidean_distance_loss, optimizer=optimizers.Adam(), metrics=["accuracy"])
 
 # data
-data_loader = Loader(train_data_dir, train_labels_dir)
-image_files = data_loader.get_image_file_names()
-nb_train_samples = len(image_files)
+data_generator = DataGenerator(train_data_dir, train_labels_dir,
+                               batch_size=batch_size,
+                               target_width=img_width, target_height=img_height)
 
-train_features = np.zeros(shape=(nb_train_samples, img_height, img_width, 3))
-train_labels = np.zeros(shape=(nb_train_samples, nb_labels))
-
-for index_file in range(nb_train_samples):
-    image_file = image_files[index_file]
-    image, labels = data_loader.load_image_and_labels(image_file)
-    train_features[index_file] = cv2.resize(image, (img_width, img_height))
-    train_labels[index_file] = labels
-
-model_final.fit(train_features, train_labels, batch_size=batch_size, epochs=epochs)
+model_final.fit_generator(data_generator, steps_per_epoch=steps_per_epoch, epochs=epochs)

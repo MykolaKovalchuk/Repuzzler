@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learners/Common/DataLoader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/Testing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
     <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
@@ -75,8 +58,8 @@
       <file leaf-file-name="BoundsPage.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2154">
-              <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+            <state relative-caret-position="501">
+              <caret line="163" column="75" lean-forward="true" selection-start-line="163" selection-start-column="75" selection-end-line="163" selection-end-column="75" />
               <folding>
                 <marker date="1531101298905" expanded="false" signature="6:274" ph="..." />
                 <marker date="1531101298905" expanded="true" signature="306:5733" ph="{...}" />
@@ -322,7 +305,7 @@
       <workItem from="1530767806043" duration="607000" />
       <workItem from="1531094252026" duration="36000" />
       <workItem from="1531095522121" duration="419000" />
-      <workItem from="1531100663681" duration="1301000" />
+      <workItem from="1531100663681" duration="1326000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -356,7 +339,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25960000" />
+    <option name="totallyTimeSpent" value="25985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,11 +356,11 @@
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32901135" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002764" side_tool="true" weight="0.32990807" />
       <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32990807" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32990807" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997236" weight="0.32990807" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57111955" visible="true" weight="0.20895523" />
@@ -720,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2154">
-          <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+        <state relative-caret-position="501">
+          <caret line="163" column="75" lean-forward="true" selection-start-line="163" selection-start-column="75" selection-end-line="163" selection-end-column="75" />
           <folding>
             <marker date="1531101298905" expanded="false" signature="6:274" ph="..." />
             <marker date="1531101298905" expanded="true" signature="306:5733" ph="{...}" />
