@@ -8,7 +8,7 @@ class DataGenerator(Sequence):
     def __init__(self, images_folder, labels_folder,
                  batch_size=16,
                  images_extension=".png", labels_extension=".bounds",
-                 target_width=256, target_height=256):
+                 target_width=299, target_height=299):
         self.batchSize = batch_size
         self.targetWidth = target_width
         self.targetHeight = target_height

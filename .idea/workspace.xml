@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/mykola.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vagrant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/DataLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataLoader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,23 +37,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="TestLearner.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestLearner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-43">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="986">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataGenerator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ModelCreator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1700">
+              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -60,7 +73,7 @@
       <file leaf-file-name="DataLoader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/DataLoader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
+            <state relative-caret-position="1088">
               <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -88,9 +101,10 @@
         <option value="$PROJECT_DIR$/Learners/L1Rubik/Testing.py" />
         <option value="$PROJECT_DIR$/Learners/Common/DataLoader.py" />
         <option value="$PROJECT_DIR$/Learners/TestLearner.py" />
-        <option value="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/DataLoader.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" />
+        <option value="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" />
       </list>
     </option>
   </component>
@@ -117,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,13 +160,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Repuzzler" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Repuzzler" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -261,24 +283,32 @@
       <option name="project" value="LOCAL" />
       <updated>1531120514322</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Data Generator">
+      <created>1531137726957</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531137726957</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002764" side_tool="true" weight="0.32936722" />
-      <window_info anchor="right" x="0" y="0" width="876" height="1925" id="Documentation" order="5" sideWeight="0.50121063" side_tool="true" weight="0.3297402" />
+      <window_info anchor="right" x="0" y="0" width="876" height="1925" id="Documentation" order="5" sideWeight="0.5024338" side_tool="true" weight="0.3297402" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4997236" visible="true" weight="0.32936722" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4997236" weight="0.32936722" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32990807" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32990807" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21779989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22028746" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" show_stripe_button="false" weight="0.3297402" />
-      <window_info anchor="right" id="SciView" order="4" sideWeight="0.49878934" weight="0.3297402" />
+      <window_info anchor="right" id="SciView" order="4" sideWeight="0.49756625" weight="0.3297402" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3996755" />
@@ -299,8 +329,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Python learners (base)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Python learners (base)" />
+    <MESSAGE value="Data Generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -315,6 +348,33 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/Shared/DataLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -420,13 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/keras/utils/data_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -436,7 +489,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/DataLoader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
+        <state relative-caret-position="1088">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -446,13 +499,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
