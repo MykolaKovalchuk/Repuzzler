@@ -27,7 +27,7 @@ class ModelCreator(object):
         x = base_model.output
         x = Flatten()(x)
         x = Dense(1024, activation="relu")(x)
-        x = Dropout(0.5)(x)
+        #x = Dropout(0.5)(x)
         x = Dense(1024, activation="relu")(x)
         predictions = Dense(self.nb_labels, activation="linear")(x)
 
@@ -35,7 +35,7 @@ class ModelCreator(object):
         final_model = Model(inputs=base_model.input, outputs=predictions)
 
         # compile the model
-        final_model.compile(loss=euclidean_distance_loss, optimizer=optimizers.RMSprop(), metrics=["accuracy"])
+        final_model.compile(loss=euclidean_distance_loss, optimizer=optimizers.RMSprop(), metrics=['mae'])
 
         return final_model
 
@@ -47,5 +47,4 @@ class ModelCreator(object):
             layer.trainable = True
 
         # recompile the model
-        model.compile(loss=euclidean_distance_loss, optimizer=optimizers.SGD(lr=0.0001, momentum=0.9),
-                      metrics=["accuracy"])
+        model.compile(loss=euclidean_distance_loss, optimizer=optimizers.SGD(lr=0.0001, momentum=0.9), metrics=['mae'])

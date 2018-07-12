@@ -29,10 +29,9 @@ class DataLoader(object):
         for line in label_lines:
             if line.strip():
                 parts = line.split(",")
-                x = int(parts[0])
-                y = int(parts[1])
-                labels.append(x)
-                labels.append(y)
+                x = float(parts[0])
+                y = float(parts[1])
+                labels.append((x, y))
 
         return labels
 

@@ -22,7 +22,6 @@ namespace ImageConverter.Pages
 
 		public string ImagesFolder { get; set; }
 		public string BoundsFolder { get; set; }
-		public string ProcessedFolder { get; set; }
 		
 		#region Design
 		
@@ -71,15 +70,15 @@ namespace ImageConverter.Pages
 			};
 			panelButtons.Controls.Add(labelImages);
 
-			var buttonCopy = new Button
+			var buttonSkip = new Button
 			{
-				Text = "Copy Processed",
-				Width = 100,
+				Text = "Skip",
+				Width = 80,
 				Anchor = AnchorStyles.Right | AnchorStyles.Top,
-				Location = new Point(panelButtons.Width - 100 - 8)
+				Location = new Point(panelButtons.Width - 80 - 8, 8)
 			};
-			buttonCopy.Click += ButtonCopyOnClick;
-			panelButtons.Controls.Add(buttonCopy);
+			buttonSkip.Click += ButtonSkipOnClick;
+			panelButtons.Controls.Add(buttonSkip);
 			
 			ResumeLayout();
 		}
@@ -106,9 +105,8 @@ namespace ImageConverter.Pages
 				{
 					ImagesFolder = foldersDialog.SelectedPath;
 					BoundsFolder = Path.Combine(ImagesFolder, "Bounds");
-					ProcessedFolder = Path.Combine(ImagesFolder, "Processed");
 					
-					labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}{Environment.NewLine}Processed: {ProcessedFolder}";
+					labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}";
 
 					files = new DirectoryInfo(ImagesFolder)
 						.GetFiles("*.png")
@@ -123,6 +121,16 @@ namespace ImageConverter.Pages
 
 		void ButtonNextOnClick(object sender, EventArgs e)
 		{
+			Next(true);
+		}
+		
+		void ButtonSkipOnClick(object sender, EventArgs e)
+		{
+			Next(false);
+		}
+
+		void Next(bool save)
+		{
 			if (string.IsNullOrEmpty(ImagesFolder))
 			{
 				return;
@@ -134,7 +142,10 @@ namespace ImageConverter.Pages
 			}
 			else
 			{
-				SaveBounds();
+				if (save)
+				{
+					SaveBounds();
+				}
 			}
 
 			var nextIndex = files.Count > 1 ? random.Next(files.Count) : files.Count - 1;
@@ -203,28 +214,6 @@ namespace ImageConverter.Pages
 		string GetBoundsFileName(string imageFileName)
 		{
 			return Path.Combine(BoundsFolder, Path.ChangeExtension(Path.GetFileName(imageFileName), "bounds"));
-		}
-
-		string GetProcessedFileName(string imageFileName)
-		{
-			return Path.Combine(ProcessedFolder, Path.GetFileName(imageFileName));
-		}
-		
-		void ButtonCopyOnClick(object sender, EventArgs e)
-		{
-			var processedFiles = new DirectoryInfo(ImagesFolder)
-				.GetFiles("*.png")
-				.Select(fi => fi.FullName)
-				.Where(fileName => File.Exists(GetBoundsFileName(fileName)));
-
-			foreach (var sourceFileName in processedFiles)
-			{
-				var targetFileName = GetProcessedFileName(sourceFileName);
-				if (!File.Exists(targetFileName))
-				{
-					File.Copy(sourceFileName, targetFileName);
-				}
-			}
 		}
 
 		#endregion
