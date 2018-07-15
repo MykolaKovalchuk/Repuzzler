@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Learners/Shared" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Learners/L1Rubik" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Learners" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Learners/L1Rubik/Logs" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (Repuzzler)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

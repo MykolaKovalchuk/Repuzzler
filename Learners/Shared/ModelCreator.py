@@ -1,5 +1,7 @@
 from keras import applications
 from keras import optimizers
+from keras import activations
+from keras import metrics
 from keras.models import Model
 from keras.layers import Dropout, Flatten, Dense
 from keras import backend as K
@@ -14,10 +16,12 @@ class ModelCreator(object):
         self.imageWidth = image_width
         self.imageHeight = image_height
         self.nb_labels = nb_labels
+        self.base_model_name = ""
 
-    def get_model(self):
-        base_model = applications.Xception(weights="imagenet", include_top=False,
-                                           input_shape=(self.imageWidth, self.imageHeight, 3))
+    def get_model(self, loss_function=euclidean_distance_loss):
+        base_model = applications.InceptionV3(weights="imagenet", include_top=False,
+                                              input_shape=(self.imageWidth, self.imageHeight, 3))
+        self.base_model_name = "InceptionV3"
 
         # Freeze base layers
         for layer in base_model.layers:
@@ -26,16 +30,17 @@ class ModelCreator(object):
         # Adding custom Layers
         x = base_model.output
         x = Flatten()(x)
-        x = Dense(1024, activation="relu")(x)
-        #x = Dropout(0.5)(x)
-        x = Dense(1024, activation="relu")(x)
-        predictions = Dense(self.nb_labels, activation="linear")(x)
+        x = Dense(1024, activation=activations.relu)(x)
+        # x = Dropout(0.5)(x)
+        x = Dense(1024, activation=activations.relu)(x)
+        predictions = Dense(self.nb_labels, activation=activations.linear)(x)
 
         # creating the final model
         final_model = Model(inputs=base_model.input, outputs=predictions)
 
         # compile the model
-        final_model.compile(loss=euclidean_distance_loss, optimizer=optimizers.RMSprop(), metrics=['mae'])
+        final_model.compile(loss=loss_function, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
+                            metrics=[metrics.mean_absolute_error])
 
         return final_model
 
@@ -47,4 +52,5 @@ class ModelCreator(object):
             layer.trainable = True
 
         # recompile the model
-        model.compile(loss=euclidean_distance_loss, optimizer=optimizers.SGD(lr=0.0001, momentum=0.9), metrics=['mae'])
+        model.compile(loss=euclidean_distance_loss, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
+                      metrics=[metrics.mean_absolute_error])

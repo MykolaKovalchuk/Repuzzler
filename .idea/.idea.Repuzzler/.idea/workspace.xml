@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/Shared/Globals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/Shared/Visualizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Repuzzler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
     <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
@@ -68,7 +73,7 @@
                 <marker date="1531356500331" expanded="true" signature="306:5122" ph="{...}" />
                 <marker date="1531356500331" expanded="true" signature="347:5120" ph="{...}" />
                 <marker date="1531356500331" expanded="true" signature="372:407" ph="{...}" />
-                <marker date="1531356500331" expanded="true" signature="500:1804" ph="Design" />
+                <marker date="1531356500331" expanded="false" signature="500:1804" ph="Design" />
                 <marker date="1531356500331" expanded="true" signature="547:1737" ph="{...}" />
                 <marker date="1531356500331" expanded="true" signature="646:678" ph="{...}" />
                 <marker date="1531356500331" expanded="true" signature="748:796" ph="{...}" />
@@ -109,7 +114,7 @@
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualBoxedController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,7 +123,7 @@
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/App.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/IImageProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/IndexedImageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -311,6 +316,9 @@
       <workItem from="1531184586218" duration="25000" />
       <workItem from="1531184627858" duration="678000" />
       <workItem from="1531356167677" duration="939000" />
+      <workItem from="1531464559632" duration="614000" />
+      <workItem from="1531551823982" duration="609000" />
+      <workItem from="1531618859327" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -344,7 +352,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27627000" />
+    <option name="totallyTimeSpent" value="29455000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,21 +365,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002764" side_tool="true" weight="0.3295516" />
       <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32498667" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32449973" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997236" weight="0.32990807" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56949705" visible="true" weight="0.21641791" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56787455" visible="true" weight="0.2238806" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
-      <window_info id="Structure" order="1" sideWeight="0.43050298" side_tool="true" visible="true" weight="0.21641791" />
+      <window_info id="Structure" order="1" sideWeight="0.43212548" side_tool="true" visible="true" weight="0.2238806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996755" />
       <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -715,7 +722,7 @@
             <marker date="1531356500331" expanded="true" signature="306:5122" ph="{...}" />
             <marker date="1531356500331" expanded="true" signature="347:5120" ph="{...}" />
             <marker date="1531356500331" expanded="true" signature="372:407" ph="{...}" />
-            <marker date="1531356500331" expanded="true" signature="500:1804" ph="Design" />
+            <marker date="1531356500331" expanded="false" signature="500:1804" ph="Design" />
             <marker date="1531356500331" expanded="true" signature="547:1737" ph="{...}" />
             <marker date="1531356500331" expanded="true" signature="646:678" ph="{...}" />
             <marker date="1531356500331" expanded="true" signature="748:796" ph="{...}" />
