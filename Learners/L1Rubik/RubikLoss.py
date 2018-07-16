@@ -57,3 +57,28 @@ def cube_loss(y_true, y_pred):
     l = K.reshape(l, (-1, 1))
 
     return l
+
+
+def correct_label_orientation(label):
+    # Rubik 7 points:
+    #     4
+    #  3     5
+    #  |  0  |
+    #  2  |  6
+    #     1
+    # Edges: 0-1, 0-3, 0-5, 1-2, 2-3, 3-4, 4-5, 5-6
+    if label[3][1] > label[1][1] or label[5][1] > label[1][1]:
+        if label[5][1] > label[3][1]:
+            label = rotate_label(label, [(1, 5, 3), (2, 6, 4)])
+        else:
+            label = rotate_label(label, [(1, 3, 5), (2, 4, 6)])
+    return label
+
+
+def rotate_label(label, groups):
+    for group in groups:
+        ta, tb = label[group[0]]  # use elements to prevent reference-copy arrays
+        for i in range(len(group) - 1):
+            label[group[i]] = label[group[i + 1]]
+        label[group[-1]] = (ta, tb)
+    return label

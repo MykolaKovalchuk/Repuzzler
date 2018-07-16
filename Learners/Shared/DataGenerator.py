@@ -1,17 +1,19 @@
 from DataLoader import DataLoader
 from keras.utils import Sequence
 import cv2
+import gc
 import math
-import random
 import numpy as np
-# import Visualizer
+import random
+#import Visualizer
 
 
 class DataGenerator(Sequence):
     def __init__(self, images_folder, labels_folder,
                  batch_size=16,
                  images_extension=".png", labels_extension=".bounds",
-                 target_width=299, target_height=299):
+                 target_width=299, target_height=299,
+                 label_flip_pairs=[], label_extra_normalization=None):
         self.batchSize = batch_size
         self.targetWidth = target_width
         self.targetHeight = target_height
@@ -21,12 +23,11 @@ class DataGenerator(Sequence):
         self.image_files = self.loader.get_image_file_names()
         self.images_count = len(self.image_files)
 
-        self.flip_label_pairs = []
+        self.label_flip_pairs = label_flip_pairs
+        self.label_extra_normalization = label_extra_normalization
 
         random.seed()
         random.shuffle(self.image_files)
-
-        self.big_image = None
 
     def __len__(self):
         return int(np.ceil(self.images_count / float(self.batchSize)))
@@ -35,6 +36,8 @@ class DataGenerator(Sequence):
         random.shuffle(self.image_files)
 
     def __getitem__(self, idx):
+        gc.collect()
+
         start_index = idx * self.batchSize % self.images_count
         last_index = min(start_index + self.batchSize, self.images_count)
 
@@ -46,7 +49,8 @@ class DataGenerator(Sequence):
             image, label = self.augment_item(image, label)
 
             label = self.normalize_label(label)
-            # Visualizer.show_image(image, label, title=self.image_files[index])
+
+            #Visualizer.show_image(image, label, title=self.image_files[index])  # check augmentation result
             image = image / 255.0
 
             batch_images.append(image)
@@ -54,10 +58,10 @@ class DataGenerator(Sequence):
 
         return np.array(batch_images), np.array(batch_labels)
 
-    '''
-    Returns images with unscaled pixels (0..255)
-    '''
     def get_validation_item(self, nb):
+        """
+        Returns images with unscaled pixels (0..255)
+        """
         batch_images = []
         batch_labels = []
         for index in range(nb):
@@ -67,7 +71,7 @@ class DataGenerator(Sequence):
             image_width = image.shape[1]
             dx = max(0, int((image_width - image_height / self.targetHeight * self.targetWidth) / 2 + 0.5))
             dy = max(0, int((image_height - image_width / self.targetWidth * self.targetHeight) / 2 + 0.5))
-            image = image[dy:image_height-dy, dx:image_width-dx, :]
+            image = image[dy:image_height - dy, dx:image_width - dx, :]
             for li in range(len(label)):
                 x, y = label[li]
                 x -= dx
@@ -85,31 +89,10 @@ class DataGenerator(Sequence):
     # region normalize_label
 
     def normalize_label(self, label):
-        label = self.correct_label_orientation(label)
+        if self.label_extra_normalization is not None:
+            label = self.label_extra_normalization(label)
         label = self.scale_label(label)
         label = self.flatten_label(label)
-        return label
-
-    def correct_label_orientation(self, label):
-        # hardcoded for Rubik 7 points:
-        #     4
-        #  3     5
-        #     0
-        #  2     6
-        #     1
-        if label[3][1] > label[1][1] or label[5][1] > label[1][1]:
-            if label[5][1] > label[3][1]:
-                label = self.rotate_label(label, [(1, 5, 3), (2, 6, 4)])
-            else:
-                label = self.rotate_label(label, [(1, 3, 5), (2, 4, 6)])
-        return label
-
-    def rotate_label(self, label, groups):
-        for group in groups:
-            ta, tb = label[group[0]]  # use elements to prevent reference-copy arrays
-            for i in range(len(group) - 1):
-                label[group[i]] = label[group[i + 1]]
-            label[group[-1]] = (ta, tb)
         return label
 
     def scale_label(self, label):
@@ -120,7 +103,8 @@ class DataGenerator(Sequence):
             label[li] = (x, y)
         return label
 
-    def flatten_label(self, label):
+    @staticmethod
+    def flatten_label(label):
         fl = []
         for x, y in label:
             fl.append(x)
@@ -144,6 +128,8 @@ class DataGenerator(Sequence):
 
         return image, label
 
+    # region flip_image
+
     def flip_image_lr(self, image, label):
         image = cv2.flip(image, 1)
 
@@ -152,48 +138,78 @@ class DataGenerator(Sequence):
             x, y = label[li]
             label[li] = image_width - x, y
 
-        for a, b in self.flip_label_pairs:
+        for a, b in self.label_flip_pairs:
             t = label[a]
             label[a] = label[b]
             label[b] = t
 
         return image, label
 
+    # endregion
+
+    # region random_rotate
+
     def random_rotate(self, image, label):
         image_height = image.shape[0]
         image_width = image.shape[1]
 
-        for lx, ly in label:
-            if lx < 0 or lx > image_width or ly < 0 or ly > image_height:
-                return image, label
-
-        angle = random.uniform(-60.0, 60.0)
-        if angle == 1.0:
+        min_x, min_y, max_x, max_y = DataGenerator.get_label_bounds(label, image_height, image_width)
+        if min_x < 0 or min_y < 0 or max_x >= image_width or max_y >= image_height:
             return image, label
 
-        new_size = int(math.sqrt(image_height ** 2 + image_width ** 2))
-        dy = int((new_size - image_height) / 2)
-        dx = int((new_size - image_width) / 2)
+        angle = random.uniform(-60.0, 60.0)
+        if abs(angle) < .1:
+            return image, label
 
-        new_image = self.big_image
-        if new_image is None or new_image.shape[0] != new_size:
-            new_image = np.zeros((new_size, new_size, image.shape[2]), dtype=np.uint8)
-            self.big_image = new_image
-        new_image[:, :, :] = image[0, 0, :]
-        new_image[dy:dy+image_height, dx:dx+image_width, :] = image
+        xc = image_width / 2
+        yc = image_height / 2
+        max_distance = max([DataGenerator.get_distance(min_x, min_y, xc, yc),
+                            DataGenerator.get_distance(min_x, max_y, xc, yc),
+                            DataGenerator.get_distance(max_x, min_y, xc, yc),
+                            DataGenerator.get_distance(max_x, max_y, xc, yc)])
 
-        for li in range(len(label)):
-            x, y = label[li]
-            x += dx
-            y += dy
-            label[li] = (x, y)
+        max_dy = max_distance * abs(math.sin(math.radians(angle)))
+        max_dx = max_distance * abs(math.cos(math.radians(angle)))
+        if max_dy < 2 or max_dx < 2:  # no visible rotation
+            return image, label
 
-        matrix = cv2.getRotationMatrix2D((new_size / 2, new_size / 2), angle, 1)
+        increase_height = int(max([0, 0 - (min_y - max_dy), max_y + max_dy - image_height]))
+        increase_width = int(max([0, 0 - (min_x - max_dx), max_x + max_dx - image_width]))
+        if increase_height > 0 or increase_width > 0:
+            new_height = image_height + 2 * increase_height
+            new_width = image_width + 2 * increase_width
+            dy = increase_height
+            dx = increase_width
 
-        new_image = cv2.warpAffine(new_image, matrix, (new_size, new_size), flags=cv2.INTER_LINEAR)
+            new_image = np.zeros((new_height, new_width, image.shape[2]), dtype=np.uint8)
+            new_image[:, :, :] = image[0, 0, :]
+            new_image[dy:dy + image_height, dx:dx + image_width, :] = image
+
+            for li in range(len(label)):
+                x, y = label[li]
+                x += dx
+                y += dy
+                label[li] = (x, y)
+        else:
+            new_image = image
+            new_height = image_height
+            new_width = image_width
+
+        matrix = cv2.getRotationMatrix2D((new_width / 2, new_height / 2), angle, 1)
+        new_image = cv2.warpAffine(new_image, matrix, (new_width, new_height), flags=cv2.INTER_LINEAR)
         new_label = cv2.transform(np.array([label]), matrix)[0]
 
         return new_image, new_label
+
+    @staticmethod
+    def get_distance(x0, y0, x1, y1):
+        dx = x0 - x1
+        dy = y0 - y1
+        return math.sqrt(dx ** 2 + dy ** 2)
+
+    # endregion
+
+    # region random_scale
 
     def random_scale(self, image, label, original_height, original_width):
         image_height = image.shape[0]
@@ -214,6 +230,8 @@ class DataGenerator(Sequence):
 
         return image, label
 
+    # endregion
+
     # region random_crop
 
     def random_crop(self, image, label):
@@ -222,19 +240,7 @@ class DataGenerator(Sequence):
         if image_height == self.targetHeight and image_width == self.targetWidth:
             return image, label
 
-        min_x = image_width
-        min_y = image_height
-        max_x = 0
-        max_y = 0
-        for x, y in label:
-            if x < min_x:
-                min_x = x
-            if y < min_y:
-                min_y = y
-            if x > max_x:
-                max_x = x
-            if y > max_y:
-                max_y = y
+        min_x, min_y, max_x, max_y = DataGenerator.get_label_bounds(label, image_height, image_width)
 
         min_dx, max_dx = self.get_shift_limits(min_x, max_x, image_width, self.targetWidth)
         min_dy, max_dy = self.get_shift_limits(min_y, max_y, image_height, self.targetHeight)
@@ -263,7 +269,25 @@ class DataGenerator(Sequence):
 
         return result, label
 
-    def get_shift_limits(self, min_label, max_label, size, target_size):
+    @staticmethod
+    def get_label_bounds(label, image_height, image_width):
+        min_x = image_width
+        min_y = image_height
+        max_x = 0
+        max_y = 0
+        for x, y in label:
+            if x < min_x:
+                min_x = x
+            if y < min_y:
+                min_y = y
+            if x > max_x:
+                max_x = x
+            if y > max_y:
+                max_y = y
+        return min_x, min_y, max_x, max_y
+
+    @staticmethod
+    def get_shift_limits(min_label, max_label, size, target_size):
         label_size = max_label - min_label
         if label_size < target_size:
             min_shift = max_label - target_size

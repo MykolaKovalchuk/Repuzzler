@@ -17,13 +17,23 @@ class ModelCreator(object):
         self.imageHeight = image_height
         self.nb_labels = nb_labels
         self.base_model_name = ""
+        self.layers_to_unfreeze = 0
+        self.loss_function = euclidean_distance_loss
 
-    def get_model(self, loss_function=euclidean_distance_loss):
-        base_model = applications.InceptionV3(weights="imagenet", include_top=False,
-                                              input_shape=(self.imageWidth, self.imageHeight, 3))
-        self.base_model_name = "InceptionV3"
+    VGG16 = ("VGG16", applications.VGG16, 11)
+    VGG19 = ("VGG19", applications.VGG19, 12)
+    ResNet50 = ("ResNet50", applications.ResNet50, 154)
+    InceptionV3 = ("InceptionV3", applications.InceptionV3, 249)
+    Xception = ("Xception", applications.Xception, 106)
 
-        # Freeze base layers
+    def get_model(self, architecture, loss_function=euclidean_distance_loss):
+        self.base_model_name, base_model_creator, self.layers_to_unfreeze = architecture
+        self.loss_function = loss_function
+
+        base_model = base_model_creator(weights="imagenet", include_top=False,
+                                        input_shape=(self.imageWidth, self.imageHeight, 3))
+
+        # Freeze all base layers
         for layer in base_model.layers:
             layer.trainable = False
 
@@ -39,18 +49,20 @@ class ModelCreator(object):
         final_model = Model(inputs=base_model.input, outputs=predictions)
 
         # compile the model
-        final_model.compile(loss=loss_function, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
+        final_model.compile(loss=self.loss_function, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
                             metrics=[metrics.mean_absolute_error])
 
         return final_model
 
-    @staticmethod
-    def unfreeze_top(model: Model, from_level=105):
+    def unfreeze_top(self, model: Model, from_level=-1):
+        if from_level < 0:
+            from_level = self.layers_to_unfreeze
+
         for layer in model.layers[:from_level]:
             layer.trainable = False
         for layer in model.layers[from_level:]:
             layer.trainable = True
 
         # recompile the model
-        model.compile(loss=euclidean_distance_loss, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
+        model.compile(loss=self.loss_function, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
                       metrics=[metrics.mean_absolute_error])
