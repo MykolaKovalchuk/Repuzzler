@@ -59,6 +59,36 @@ def cube_loss(y_true, y_pred):
     return l
 
 
+def cube_loss2(y_true, y_pred):
+    cube_true = CubePoints(y_true)
+    cube_pred = CubePoints(y_pred)
+
+    l1 = (K.abs(cube_true.x0 - cube_pred.x0) + K.abs(cube_true.y0 - cube_pred.y0)) * 3 / (cube_true.w0 + cube_true.w1 + cube_true.w2) + \
+         (K.abs(cube_true.x1 - cube_pred.x1) + K.abs(cube_true.y1 - cube_pred.y1)) * 3 / (cube_true.w0 + cube_true.w3 + cube_true.w8) + \
+         (K.abs(cube_true.x2 - cube_pred.x2) + K.abs(cube_true.y2 - cube_pred.y2)) * 2 / (cube_true.w3 + cube_true.w4) + \
+         (K.abs(cube_true.x3 - cube_pred.x3) + K.abs(cube_true.y3 - cube_pred.y3)) * 3 / (cube_true.w1 + cube_true.w4 + cube_true.w5) + \
+         (K.abs(cube_true.x4 - cube_pred.x4) + K.abs(cube_true.y4 - cube_pred.y4)) * 2 / (cube_true.w5 + cube_true.w6) + \
+         (K.abs(cube_true.x5 - cube_pred.x5) + K.abs(cube_true.y5 - cube_pred.y5)) * 3 / (cube_true.w2 + cube_true.w6 + cube_true.w7) + \
+         (K.abs(cube_true.x6 - cube_pred.x6) + K.abs(cube_true.y6 - cube_pred.y6)) * 2 / (cube_true.w7 + cube_true.w8)
+    # l1 = K.sqrt(l1)
+
+    l2 = K.abs(cube_true.w0 - cube_pred.w0) / cube_true.w0 + \
+         K.abs(cube_true.w1 - cube_pred.w1) / cube_true.w1 + \
+         K.abs(cube_true.w2 - cube_pred.w2) / cube_true.w2 + \
+         K.abs(cube_true.w3 - cube_pred.w3) / cube_true.w3 + \
+         K.abs(cube_true.w4 - cube_pred.w4) / cube_true.w4 + \
+         K.abs(cube_true.w5 - cube_pred.w5) / cube_true.w5 + \
+         K.abs(cube_true.w6 - cube_pred.w6) / cube_true.w6 + \
+         K.abs(cube_true.w7 - cube_pred.w7) / cube_true.w7 + \
+         K.abs(cube_true.w8 - cube_pred.w8) / cube_true.w8
+    # l2 = K.sqrt(l2)
+
+    l = l1 + l2
+    l = K.reshape(l, (-1, 1))
+
+    return l
+
+
 def correct_label_orientation(label):
     # Rubik 7 points:
     #     4

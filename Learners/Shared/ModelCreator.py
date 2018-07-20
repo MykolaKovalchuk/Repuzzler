@@ -54,7 +54,7 @@ class ModelCreator(object):
 
         return final_model
 
-    def unfreeze_top(self, model: Model, from_level=-1):
+    def unfreeze_top(self, model: Model, from_level=-1, new_lr=0.001):
         if from_level < 0:
             from_level = self.layers_to_unfreeze
 
@@ -64,5 +64,5 @@ class ModelCreator(object):
             layer.trainable = True
 
         # recompile the model
-        model.compile(loss=self.loss_function, optimizer=optimizers.SGD(lr=0.001, momentum=0.9),
+        model.compile(loss=self.loss_function, optimizer=optimizers.SGD(lr=new_lr, momentum=0.9),
                       metrics=[metrics.mean_absolute_error])

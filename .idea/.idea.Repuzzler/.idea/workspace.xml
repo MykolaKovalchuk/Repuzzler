@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learners/Shared/Globals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learners/Shared/Visualizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Repuzzler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
@@ -319,6 +315,8 @@
       <workItem from="1531464559632" duration="614000" />
       <workItem from="1531551823982" duration="609000" />
       <workItem from="1531618859327" duration="605000" />
+      <workItem from="1531718874160" duration="1550000" />
+      <workItem from="1532071064669" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -352,7 +350,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29455000" />
+    <option name="totallyTimeSpent" value="31613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,6 +363,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
@@ -375,10 +374,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997236" weight="0.32990807" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56787455" visible="true" weight="0.2238806" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56679285" visible="true" weight="0.22885571" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
-      <window_info id="Structure" order="1" sideWeight="0.43212548" side_tool="true" visible="true" weight="0.2238806" />
+      <window_info id="Structure" order="1" sideWeight="0.43320712" side_tool="true" visible="true" weight="0.22885571" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996755" />
       <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />

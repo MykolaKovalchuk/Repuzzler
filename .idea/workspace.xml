@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Repuzzler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" afterDir="false" />
     </list>
     <ignored path="Learners/L1Rubik/Logs/" />
@@ -38,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="TestLearner.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestLearner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="476">
+              <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -50,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RubikLoss.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RubikLoss.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+            <state relative-caret-position="640">
+              <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -62,7 +61,8 @@
       <file leaf-file-name="ModelCreator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="1487">
+              <caret line="66" column="81" selection-start-line="66" selection-start-column="81" selection-end-line="66" selection-end-column="81" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -73,14 +73,10 @@
       <file leaf-file-name="DataGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="2924">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <element signature="e#2846#2870#0" />
-                <element signature="e#4747#4766#0" />
-                <element signature="e#6409#6430#0" />
-                <element signature="e#7196#7216#0" />
               </folding>
             </state>
           </provider>
@@ -110,9 +106,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>random</find>
-      <find />
+      <find>/ 255</find>
       <find>255</find>
       <find>#</find>
+      <find>abs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,10 +125,10 @@
         <option value="$PROJECT_DIR$/Learners/Shared/DataLoader.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/Globals.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/Visualizer.py" />
-        <option value="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" />
         <option value="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" />
+        <option value="$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py" />
       </list>
     </option>
   </component>
@@ -158,7 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,12 +184,20 @@
               <item name="Repuzzler" type="b2602c69:ProjectViewProjectNode" />
               <item name="Repuzzler" type="462c0819:PsiDirectoryNode" />
               <item name="Learners" type="462c0819:PsiDirectoryNode" />
+              <item name="L1Rubik" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Repuzzler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Repuzzler" type="462c0819:PsiDirectoryNode" />
+              <item name="Learners" type="462c0819:PsiDirectoryNode" />
               <item name="Shared" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -345,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531649990119</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Optimized rotation augmentation, and some code cleaning">
+      <created>1531708676160</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1531708676160</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -361,18 +372,17 @@
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005528" side_tool="true" weight="0.32936722" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005528" side_tool="true" weight="0.4094105" />
       <window_info anchor="right" x="0" y="0" width="876" height="1925" id="Documentation" order="5" sideWeight="0.5024338" side_tool="true" weight="0.3297402" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4994472" weight="0.32936722" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32990807" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.4094105" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23327805" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4994472" visible="true" weight="0.4094105" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32990807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23604201" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" show_stripe_button="false" weight="0.3297402" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32990807" />
-      <window_info anchor="right" id="SciView" order="4" sideWeight="0.49756625" weight="0.2819237" />
+      <window_info active="true" anchor="right" id="SciView" order="4" sideWeight="0.49756625" visible="true" weight="0.18988392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3996755" />
@@ -382,7 +392,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32990807" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32990807" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32990807" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +411,8 @@
     <MESSAGE value="Use Xception as regression model" />
     <MESSAGE value="Augmentation 1" />
     <MESSAGE value="Augmentation 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Augmentation 2" />
+    <MESSAGE value="Optimized rotation augmentation, and some code cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized rotation augmentation, and some code cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -411,7 +423,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="62" />
+      <option name="time" value="65" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -480,10 +492,6 @@
           <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#2846#2870#0" />
-            <element signature="e#4747#4766#0" />
-            <element signature="e#6409#6430#0" />
-            <element signature="e#7196#7216#0" />
           </folding>
         </state>
       </provider>
@@ -509,9 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -531,10 +536,6 @@
           <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#2846#2870#0" />
-            <element signature="e#4747#4766#0" />
-            <element signature="e#6409#6430#0" />
-            <element signature="e#7196#7216#0" />
           </folding>
         </state>
       </provider>
@@ -553,9 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -570,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,10 +577,6 @@
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#2846#2870#0" />
-            <element signature="e#4747#4766#0" />
-            <element signature="e#6409#6430#0" />
-            <element signature="e#7196#7216#0" />
           </folding>
         </state>
       </provider>
@@ -604,9 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="37" column="84" selection-start-line="37" selection-start-column="84" selection-end-line="37" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -614,9 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,9 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -658,9 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,9 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,9 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,41 +816,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="2924">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#2846#2870#0" />
-            <element signature="e#4747#4766#0" />
-            <element signature="e#6409#6430#0" />
-            <element signature="e#7196#7216#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1487">
+          <caret line="66" column="81" selection-start-line="66" selection-start-column="81" selection-end-line="66" selection-end-column="81" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state relative-caret-position="476">
+          <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/RubikLoss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
         </state>
       </provider>
     </entry>

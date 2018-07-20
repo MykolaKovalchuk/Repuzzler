@@ -13,7 +13,7 @@ train_labels_dir = Globals.get_subdir("Rubik/Only Rubik/Bounds")
 img_width, img_height = 299, 299
 nb_labels = 14
 batch_size = 16
-epochs = 100
+epochs = 500
 
 data_generator = DataGenerator(train_data_dir, train_labels_dir,
                                batch_size=batch_size,
@@ -24,11 +24,13 @@ data_generator = DataGenerator(train_data_dir, train_labels_dir,
 steps_per_epoch = len(data_generator) * 4
 
 model_creator = ModelCreator(image_width=img_width, image_height=img_height, nb_labels=nb_labels)
-model = model_creator.get_model(ModelCreator.VGG16, loss_function=RubikLoss.cube_loss)
+model = model_creator.get_model(ModelCreator.VGG16, loss_function=RubikLoss.cube_loss2)
 """
 for li in range(len(model.layers)):
     print(str(li) + " : " + model.layers[li].name)
 # """
+
+model.load_weights("./Models/1807191926-VGG16-SGD.h5")
 
 time_stamp = time.strftime("%y%m%d%H%M") + \
              "-" + model_creator.base_model_name + \
@@ -37,7 +39,7 @@ time_stamp = time.strftime("%y%m%d%H%M") + \
 
 def fit_model(override_epochs=-1):
     tensor_board = keras.callbacks.TensorBoard(log_dir="./Logs/" + time_stamp, histogram_freq=0, write_graph=False)
-    reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor="loss", factor=0.2, patience=5, cooldown=0, verbose=1)
+    reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor="loss", factor=0.5, patience=10, cooldown=0, verbose=1)
     callbacks = [tensor_board, reduce_lr]
 
     history = model.fit_generator(data_generator,
@@ -47,9 +49,9 @@ def fit_model(override_epochs=-1):
     # Visualizer.show_history(history, time_stamp)
 
 
-fit_model(override_epochs=10)
+#fit_model(override_epochs=10)
 
-model_creator.unfreeze_top(model)
+model_creator.unfreeze_top(model, from_level=0, new_lr=0.0001)
 fit_model()
 
 model.save("./Models/" + time_stamp + ".h5")
