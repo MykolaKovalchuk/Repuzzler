@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ImageConverter.Utils;
+using Ravlyk.Common;
 using Ravlyk.Drawing;
 using Ravlyk.Drawing.SD;
 using Ravlyk.UI;
 using Ravlyk.UI.ImageProcessor;
 using Ravlyk.UI.WinForms;
+using Point = System.Drawing.Point;
 
 namespace ImageConverter.Pages
 {
@@ -90,6 +92,8 @@ namespace ImageConverter.Pages
 
 		#region Operations
 
+		ModelInferrence model;
+		
 		List<string> files;
 		Random random;
 		string currentFileName;
@@ -115,6 +119,8 @@ namespace ImageConverter.Pages
 						.ToList();
 					
 					random = new Random();
+					
+					model = new ModelInferrence("/home/mykola/RiderProjects/Repuzzler/Learners/L1Rubik/Models/1807201713-VGG16-SGD.h5.pb", new Size(299, 299));
 				}
 			}
 		}
@@ -156,8 +162,10 @@ namespace ImageConverter.Pages
 
 			currentFileName = files[nextIndex];
 			files.RemoveAt(nextIndex);
-			
-			imageProvider.SetImage(IndexedImageExtensions.FromBitmapFile(currentFileName));
+
+			var image = IndexedImageExtensions.FromBitmapFile(currentFileName);
+			PredictBoundsFromImage(image);
+			imageProvider.SetImage(image);
 		}
 
 		void InitializeController()
@@ -202,7 +210,7 @@ namespace ImageConverter.Pages
 			}
 			
 			var data = new StringBuilder();
-			foreach (var anchor in anchorsController.GetAllAnchors)
+			foreach (var anchor in anchorsController.AllAnchors)
 			{
 				data.Append(anchor.X).Append(',').Append(anchor.Y).AppendLine();
 			}
@@ -216,6 +224,18 @@ namespace ImageConverter.Pages
 			return Path.Combine(BoundsFolder, Path.ChangeExtension(Path.GetFileName(imageFileName), "bounds"));
 		}
 
+		void PredictBoundsFromImage(IndexedImage image)
+		{
+			var points = model.GetEdges(image).ToList();
+			if (points.Count == anchorsController.AllAnchors.Count)
+			{
+				for (int i = 0; i < points.Count; i++)
+				{
+					anchorsController.AllAnchors[i] = points[i];
+				}
+			}
+		}
+		
 		#endregion
 	}
 }

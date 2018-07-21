@@ -1,8 +1,8 @@
 import Globals
 import Visualizer
-import RubikLoss
 from Shared.DataGenerator import DataGenerator
 from Shared.ModelCreator import ModelCreator
+import Shared.RubikLoss
 
 import keras
 import time
@@ -19,12 +19,12 @@ data_generator = DataGenerator(train_data_dir, train_labels_dir,
                                batch_size=batch_size,
                                target_width=img_width, target_height=img_height,
                                label_flip_pairs=[(2, 6), (3, 5)],
-                               label_extra_normalization=RubikLoss.correct_label_orientation)
+                               label_extra_normalization=Shared.RubikLoss.correct_label_orientation)
 
 steps_per_epoch = len(data_generator) * 4
 
 model_creator = ModelCreator(image_width=img_width, image_height=img_height, nb_labels=nb_labels)
-model = model_creator.get_model(ModelCreator.VGG16, loss_function=RubikLoss.cube_loss2)
+model = model_creator.get_model(ModelCreator.VGG16, loss_function=Shared.RubikLoss.cube_loss2)
 """
 for li in range(len(model.layers)):
     print(str(li) + " : " + model.layers[li].name)
@@ -38,7 +38,7 @@ time_stamp = time.strftime("%y%m%d%H%M") + \
 
 
 def fit_model(override_epochs=-1):
-    tensor_board = keras.callbacks.TensorBoard(log_dir="./Logs/" + time_stamp, histogram_freq=0, write_graph=False)
+    tensor_board = keras.callbacks.TensorBoard(log_dir="./Logs/" + time_stamp, histogram_freq=0, write_graph=True)
     reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor="loss", factor=0.5, patience=10, cooldown=0, verbose=1)
     callbacks = [tensor_board, reduce_lr]
 

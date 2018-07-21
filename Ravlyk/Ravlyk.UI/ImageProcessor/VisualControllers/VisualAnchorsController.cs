@@ -18,7 +18,7 @@ namespace Ravlyk.UI.ImageProcessor
 		readonly List<Point> anchors = new List<Point>();
 		readonly List<(int a, int b)> edges = new List<(int, int)>();
 
-		public IEnumerable<Point> GetAllAnchors => anchors;
+		public IList<Point> AllAnchors => anchors;
 
 		public int AddAnchor(Point newAnchor)
 		{

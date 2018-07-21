@@ -125,11 +125,18 @@
             <e p="Settings.Designer.cs" t="Include" />
             <e p="Settings.settings" t="Include" />
           </e>
+          <e p="Utils" t="Include">
+            <e p="ModelInferrence.cs" t="Include" />
+          </e>
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
         </e>
       </e>
-      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="TensorFlowSharp.1.8.0-pre1/runtimes/linux/native/libtensorflow.so" t="Include" />
+        <e p="TensorFlowSharp.1.8.0-pre1/runtimes/linux/native/libtensorflow_framework.so" t="Include" />
+      </e>
     </e>
   </component>
 </project>
