@@ -120,7 +120,7 @@ namespace ImageConverter.Pages
 					
 					random = new Random();
 					
-					model = new ModelInferrence("/home/mykola/RiderProjects/Repuzzler/Learners/L1Rubik/Models/1807201713-VGG16-SGD.h5.pb", new Size(299, 299));
+					model = new ModelInferrence("/mnt/DA92812D92810F67/Rubik/Models/L1Rubik/1807221237-VGG16-SGD.pb", new Size(299, 299));
 				}
 			}
 		}
@@ -162,6 +162,7 @@ namespace ImageConverter.Pages
 
 			currentFileName = files[nextIndex];
 			files.RemoveAt(nextIndex);
+			FindForm().Text = System.IO.Path.GetFileName(currentFileName);
 
 			var image = IndexedImageExtensions.FromBitmapFile(currentFileName);
 			PredictBoundsFromImage(image);
@@ -226,7 +227,15 @@ namespace ImageConverter.Pages
 
 		void PredictBoundsFromImage(IndexedImage image)
 		{
+			if (model == null)
+			{
+				return;
+			}
+
+			//var t = Environment.TickCount;
 			var points = model.GetEdges(image).ToList();
+			//Console.WriteLine(Environment.TickCount - t);
+			
 			if (points.Count == anchorsController.AllAnchors.Count)
 			{
 				for (int i = 0; i < points.Count; i++)
@@ -236,6 +245,21 @@ namespace ImageConverter.Pages
 			}
 		}
 		
+		#endregion
+
+		#region Dispose
+
+		protected override void Dispose(bool disposing)
+		{
+			if (model != null)
+			{
+				model.Dispose();
+				model = null;
+			}
+			
+			base.Dispose(disposing);
+		}
+
 		#endregion
 	}
 }

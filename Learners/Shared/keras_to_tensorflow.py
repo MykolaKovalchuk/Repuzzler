@@ -70,7 +70,7 @@ parser.add_argument('-num_outputs', action="store",
 parser.add_argument('-graph_def', action="store",
                     dest='graph_def', type=bool, default=False)
 parser.add_argument('-output_node_prefix', action="store",
-                    dest='output_node_prefix', type=str, default='output_node')
+                    dest='output_node_prefix', type=str, default='output_')
 parser.add_argument('-quantize', action="store",
                     dest='quantize', type=bool, default=False)
 parser.add_argument('-theano_backend', action="store",
@@ -104,9 +104,7 @@ weight_file_path = str(Path(args.input_fld) / args.input_model_file)
 
 # Add custom losses
 import RubikLoss
-from keras.utils.generic_utils import get_custom_objects
-get_custom_objects().update({"cube_loss": RubikLoss.cube_loss})
-get_custom_objects().update({"cube_loss2": RubikLoss.cube_loss2})
+RubikLoss.register_losses()
 
 
 # In[ ]:
@@ -133,7 +131,7 @@ num_output = args.num_outputs
 pred = [None]*num_output
 pred_node_names = [None]*num_output
 for i in range(num_output):
-    pred_node_names[i] = args.output_node_prefix+str(i)
+    pred_node_names[i] = args.output_node_prefix+str(i + 1)
     pred[i] = tf.identity(net_model.outputs[i], name=pred_node_names[i])
 print('output nodes names are: ', pred_node_names)
 

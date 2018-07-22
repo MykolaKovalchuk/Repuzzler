@@ -1,56 +1,52 @@
 from keras import backend as K
+from keras.utils.generic_utils import get_custom_objects
 
 
 class CubePoints(object):
     def __init__(self, y):
-        self.x0 = y[:, 0]
-        self.y0 = y[:, 1]
-        self.x1 = y[:, 2]
-        self.y1 = y[:, 3]
-        self.x2 = y[:, 4]
-        self.y2 = y[:, 5]
-        self.x3 = y[:, 6]
-        self.y3 = y[:, 7]
-        self.x4 = y[:, 8]
-        self.y4 = y[:, 9]
-        self.x5 = y[:, 10]
-        self.y5 = y[:, 11]
-        self.x6 = y[:, 12]
-        self.y6 = y[:, 13]
+        self.points = []
+        self.points.append((y[:, 0], y[:, 1]))
+        self.points.append((y[:, 2], y[:, 3]))
+        self.points.append((y[:, 4], y[:, 5]))
+        self.points.append((y[:, 6], y[:, 7]))
+        self.points.append((y[:, 8], y[:, 9]))
+        self.points.append((y[:, 10], y[:, 11]))
+        self.points.append((y[:, 12], y[:, 13]))
 
-        self.w0 = K.sqrt(K.square(self.x0 - self.x1) + K.square(self.y0 - self.y1))
-        self.w1 = K.sqrt(K.square(self.x0 - self.x3) + K.square(self.y0 - self.y3))
-        self.w2 = K.sqrt(K.square(self.x0 - self.x5) + K.square(self.y0 - self.y5))
-        self.w3 = K.sqrt(K.square(self.x1 - self.x2) + K.square(self.y1 - self.y2))
-        self.w4 = K.sqrt(K.square(self.x2 - self.x3) + K.square(self.y2 - self.y3))
-        self.w5 = K.sqrt(K.square(self.x3 - self.x4) + K.square(self.y3 - self.y4))
-        self.w6 = K.sqrt(K.square(self.x4 - self.x5) + K.square(self.y4 - self.y5))
-        self.w7 = K.sqrt(K.square(self.x5 - self.x6) + K.square(self.y5 - self.y6))
-        self.w8 = K.sqrt(K.square(self.x6 - self.x1) + K.square(self.y6 - self.y1))
+        self.edges = []
+        self.edges.append(self.calc_len(0, 1))
+        self.edges.append(self.calc_len(0, 3))
+        self.edges.append(self.calc_len(0, 5))
+        self.edges.append(self.calc_len(1, 2))
+        self.edges.append(self.calc_len(2, 3))
+        self.edges.append(self.calc_len(3, 4))
+        self.edges.append(self.calc_len(4, 5))
+        self.edges.append(self.calc_len(5, 6))
+        self.edges.append(self.calc_len(6, 1))
+
+    def calc_len(self, point1, point2):
+        x1, y1 = self.points[point1]
+        x2, y2 = self.points[point2]
+        return K.sqrt(K.square(x1 - x2) + K.square(y1 - y2))
 
 
 def cube_loss(y_true, y_pred):
     cube_true = CubePoints(y_true)
     cube_pred = CubePoints(y_pred)
 
-    l1 = K.square(cube_true.x0 - cube_pred.x0) + K.square(cube_true.y0 - cube_pred.y0) + \
-         K.square(cube_true.x1 - cube_pred.x1) + K.square(cube_true.y1 - cube_pred.y1) + \
-         K.square(cube_true.x2 - cube_pred.x2) + K.square(cube_true.y2 - cube_pred.y2) + \
-         K.square(cube_true.x3 - cube_pred.x3) + K.square(cube_true.y3 - cube_pred.y3) + \
-         K.square(cube_true.x4 - cube_pred.x4) + K.square(cube_true.y4 - cube_pred.y4) + \
-         K.square(cube_true.x5 - cube_pred.x5) + K.square(cube_true.y5 - cube_pred.y5) + \
-         K.square(cube_true.x6 - cube_pred.x6) + K.square(cube_true.y6 - cube_pred.y6)
+    def calc_diff_square(point1, point2):
+        x1, y1 = point1
+        x2, y2 = point2
+        return K.square(x1 - x2) + K.square(y1 - y2)
+
+    l1 = calc_diff_square(cube_true.points[0], cube_pred.points[0])
+    for i in range(1, len(cube_true.points)):
+        l1 = l1 + calc_diff_square(cube_true.points[i], cube_pred.points[i])
     l1 = K.sqrt(l1)
 
-    l2 = K.square(K.sqrt(cube_true.w0) - K.sqrt(cube_pred.w0)) + \
-         K.square(K.sqrt(cube_true.w1) - K.sqrt(cube_pred.w1)) + \
-         K.square(K.sqrt(cube_true.w2) - K.sqrt(cube_pred.w2)) + \
-         K.square(K.sqrt(cube_true.w3) - K.sqrt(cube_pred.w3)) + \
-         K.square(K.sqrt(cube_true.w4) - K.sqrt(cube_pred.w4)) + \
-         K.square(K.sqrt(cube_true.w5) - K.sqrt(cube_pred.w5)) + \
-         K.square(K.sqrt(cube_true.w6) - K.sqrt(cube_pred.w6)) + \
-         K.square(K.sqrt(cube_true.w7) - K.sqrt(cube_pred.w7)) + \
-         K.square(K.sqrt(cube_true.w8) - K.sqrt(cube_pred.w8))
+    l2 = K.square(K.sqrt(cube_true.edges[0]) - K.sqrt(cube_pred.edges[0]))
+    for i in range(1, len(cube_true.edges)):
+        l2 = l2 + K.square(K.sqrt(cube_true.edges[i]) - K.sqrt(cube_pred.edges[i]))
     l2 = K.sqrt(l2)
 
     l = l1 + l2
@@ -63,30 +59,40 @@ def cube_loss2(y_true, y_pred):
     cube_true = CubePoints(y_true)
     cube_pred = CubePoints(y_pred)
 
-    l1 = (K.abs(cube_true.x0 - cube_pred.x0) + K.abs(cube_true.y0 - cube_pred.y0)) * 3 / (cube_true.w0 + cube_true.w1 + cube_true.w2) + \
-         (K.abs(cube_true.x1 - cube_pred.x1) + K.abs(cube_true.y1 - cube_pred.y1)) * 3 / (cube_true.w0 + cube_true.w3 + cube_true.w8) + \
-         (K.abs(cube_true.x2 - cube_pred.x2) + K.abs(cube_true.y2 - cube_pred.y2)) * 2 / (cube_true.w3 + cube_true.w4) + \
-         (K.abs(cube_true.x3 - cube_pred.x3) + K.abs(cube_true.y3 - cube_pred.y3)) * 3 / (cube_true.w1 + cube_true.w4 + cube_true.w5) + \
-         (K.abs(cube_true.x4 - cube_pred.x4) + K.abs(cube_true.y4 - cube_pred.y4)) * 2 / (cube_true.w5 + cube_true.w6) + \
-         (K.abs(cube_true.x5 - cube_pred.x5) + K.abs(cube_true.y5 - cube_pred.y5)) * 3 / (cube_true.w2 + cube_true.w6 + cube_true.w7) + \
-         (K.abs(cube_true.x6 - cube_pred.x6) + K.abs(cube_true.y6 - cube_pred.y6)) * 2 / (cube_true.w7 + cube_true.w8)
-    # l1 = K.sqrt(l1)
+    def calc_diff_relative(point_index, edge_indexes):
+        total_edge = cube_true.edges[edge_indexes[0]]
+        for ei in range(1, len(edge_indexes)):
+            total_edge = total_edge + cube_true.edges[edge_indexes[ei]]
 
-    l2 = K.abs(cube_true.w0 - cube_pred.w0) / cube_true.w0 + \
-         K.abs(cube_true.w1 - cube_pred.w1) / cube_true.w1 + \
-         K.abs(cube_true.w2 - cube_pred.w2) / cube_true.w2 + \
-         K.abs(cube_true.w3 - cube_pred.w3) / cube_true.w3 + \
-         K.abs(cube_true.w4 - cube_pred.w4) / cube_true.w4 + \
-         K.abs(cube_true.w5 - cube_pred.w5) / cube_true.w5 + \
-         K.abs(cube_true.w6 - cube_pred.w6) / cube_true.w6 + \
-         K.abs(cube_true.w7 - cube_pred.w7) / cube_true.w7 + \
-         K.abs(cube_true.w8 - cube_pred.w8) / cube_true.w8
-    # l2 = K.sqrt(l2)
+        x1, y1 = cube_true.points[point_index]
+        x2, y2 = cube_pred.points[point_index]
+        point_diff = K.abs(x1 - x2) + K.abs(y1 - y2)
+
+        return point_diff * len(edge_indexes) / total_edge
+
+    l1 = calc_diff_relative(0, [0, 1, 2]) + \
+         calc_diff_relative(1, [0, 3, 8]) + \
+         calc_diff_relative(2, [3, 4]) + \
+         calc_diff_relative(3, [1, 4, 5]) + \
+         calc_diff_relative(4, [5, 6]) + \
+         calc_diff_relative(5, [2, 6, 7]) + \
+         calc_diff_relative(6, [7, 8])
+    l1 = K.sqrt(l1)
+
+    l2 = K.abs(cube_true.edges[0] - cube_pred.edges[0]) / cube_true.edges[0]
+    for i in range(1, len(cube_true.edges)):
+        l2 = l2 + K.abs(cube_true.edges[i] - cube_pred.edges[i]) / cube_true.edges[i]
+    l2 = K.sqrt(l2)
 
     l = l1 + l2
     l = K.reshape(l, (-1, 1))
 
     return l
+
+
+def register_losses():
+    get_custom_objects().update({"cube_loss": cube_loss})
+    get_custom_objects().update({"cube_loss2": cube_loss2})
 
 
 def correct_label_orientation(label):

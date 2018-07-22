@@ -8,7 +8,7 @@ using TensorFlow;
 
 namespace ImageConverter.Utils
 {
-	public class ModelInferrence
+	public class ModelInferrence : IDisposable
 	{
 		public ModelInferrence(string modelFile, Size inputSize)
 		{
@@ -19,27 +19,35 @@ namespace ImageConverter.Utils
 			InputSize = inputSize;
 		}
 		
-		TFGraph Graph { get; }
-		
 		Size InputSize { get; }
 
+		TFGraph Graph { get; set; }
+		TFSession Session { get; set; }
+		
 		public IEnumerable<Point> GetEdges(IndexedImage image)
 		{
-			image = CropAndResize(image, out var shift, out var scale);
-			var tensor = ImageToTensor(image);
-			
-			using (var session = new TFSession(Graph))
+			if (Graph == null)
 			{
-				var runner = session.GetRunner();
-				runner.AddInput(Graph["input_1"][0], tensor).Fetch(Graph["output_node0"][0]);
-				var output = runner.Run();
-				var flatPoints = (float[,])output[0].GetValue(jagged: false);
-				for (int ix = 0, iy = 1; iy < flatPoints.GetLength(1); ix += 2, iy += 2)
-				{
-					yield return new Point(
-						shift.X + (int)(flatPoints[0, ix] * InputSize.Width / scale + 0.5f),
-						shift.Y + (int)(flatPoints[0, iy] * InputSize.Height / scale + 0.5f));
-				}
+				yield break;
+			}
+			
+			image = CropAndResize(image, out var shift, out var scaleX, out var scaleY);
+			var tensor = ImageToTensor(image);
+
+			if (Session == null)
+			{
+				Session = new TFSession(Graph);
+			}
+			
+			var runner = Session.GetRunner();
+			runner.AddInput(Graph["input_1"][0], tensor).Fetch(Graph["output_1"][0]);
+			var output = runner.Run();
+			var flatPoints = (float[,])output[0].GetValue();
+			for (int ix = 0, iy = 1; iy < flatPoints.GetLength(1); ix += 2, iy += 2)
+			{
+				yield return new Point(
+					shift.X + (int)(flatPoints[0, ix] * InputSize.Width / scaleX + 0.5f),
+					shift.Y + (int)(flatPoints[0, iy] * InputSize.Height / scaleY + 0.5f));
 			}
 		}
 
@@ -65,19 +73,38 @@ namespace ImageConverter.Utils
 			return tensor;
 		}
 		
-		IndexedImage CropAndResize(IndexedImage sourceImage, out Point shift, out float scale)
+		IndexedImage CropAndResize(IndexedImage sourceImage, out Point shift, out float scaleX, out float scaleY)
 		{
 			var sx = (float)InputSize.Width / (float)sourceImage.Size.Width;
 			var sy = (float)InputSize.Height / (float)sourceImage.Size.Height;
-			scale = Math.Max(sx, sy);
+			var scale = Math.Max(sx, sy);
 
-			var newSize = new Size((int)(InputSize.Width / scale), (int)(InputSize.Height / scale));
+			var newSize = new Size(
+				Math.Min((int)(InputSize.Width / scale + 0.5f), sourceImage.Size.Width),
+				Math.Min((int)(InputSize.Height / scale + 0.5f), sourceImage.Size.Height));
+			
 			shift = new Point((sourceImage.Size.Width - newSize.Width) / 2, (sourceImage.Size.Height - newSize.Height) / 2);
+			scaleX = (float)InputSize.Width / (float)newSize.Width;
+			scaleY = (float)InputSize.Height / (float)newSize.Height;
 
 			var croppedImage = ImageCropper.Crop(sourceImage, new Rectangle(shift.X, shift.Y, newSize.Width, newSize.Height));
 			var scaledImage = new ImageResampler().Resample(croppedImage, InputSize, ImageResampler.FilterType.Lanczos3);
 
 			return scaledImage;
+		}
+
+		public void Dispose()
+		{
+			if (Session != null)
+			{
+				Session.Dispose();
+				Session = null;
+			}
+			if (Graph != null)
+			{
+				Graph.Dispose();
+				Graph = null;
+			}
 		}
 	}
 }
