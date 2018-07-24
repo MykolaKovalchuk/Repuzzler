@@ -24,15 +24,15 @@ namespace ImageConverter.Pages
 
 		public string ImagesFolder { get; set; }
 		public string BoundsFolder { get; set; }
-		
+
 		#region Design
-		
+
 		void InitializeComponents()
 		{
 			SuspendLayout();
-			
+
 			Dock = DockStyle.Fill;
-			
+
 			visualControl = new VisualControl
 			{
 				Dock = DockStyle.Fill
@@ -45,30 +45,30 @@ namespace ImageConverter.Pages
 				Dock = DockStyle.Top
 			};
 			Controls.Add(panelButtons);
-			
+
+			var buttonSource = new Button
+			{
+				Text = "Load Images",
+				Width = 100,
+				Location = new Point(8, 8)
+			};
+			buttonSource.Click += ButtonSourceOnClick;
+			panelButtons.Controls.Add(buttonSource);
+
 			var buttonNext = new Button
 			{
 				Text = "Save and Next",
-				Width = 120,
-				Location = new Point(8, 8)
+				Width = 100,
+				Location = new Point(buttonSource.Right + 16, 8)
 			};
 			buttonNext.Click += ButtonNextOnClick;
 			panelButtons.Controls.Add(buttonNext);
 
-			var buttonSource = new Button
-			{
-				Text = "Images Folder",
-				Width = 100,
-				Location = new Point(buttonNext.Right + 16, 8)
-			};
-			buttonSource.Click += ButtonSourceOnClick;
-			panelButtons.Controls.Add(buttonSource);
-			
 			labelImages = new Label
 			{
 				Text = "",
 				AutoSize = true,
-				Location = new Point(buttonSource.Right + 16, 4)
+				Location = new Point(buttonNext.Right + 16, 4)
 			};
 			panelButtons.Controls.Add(labelImages);
 
@@ -81,7 +81,7 @@ namespace ImageConverter.Pages
 			};
 			buttonSkip.Click += ButtonSkipOnClick;
 			panelButtons.Controls.Add(buttonSkip);
-			
+
 			ResumeLayout();
 		}
 
@@ -92,8 +92,19 @@ namespace ImageConverter.Pages
 
 		#region Operations
 
+		ModelInferrence Model
+		{
+			get
+			{
+				if (model == null && !string.IsNullOrEmpty(Settings.BoundsModel))
+				{
+					model = new ModelInferrence(Settings.BoundsModel, new Size(299, 299));
+				}
+				return model;
+			}
+		}
 		ModelInferrence model;
-		
+
 		List<string> files;
 		Random random;
 		string currentFileName;
@@ -103,33 +114,32 @@ namespace ImageConverter.Pages
 
 		void ButtonSourceOnClick(object sender, EventArgs e)
 		{
-			using (var foldersDialog = new FolderBrowserDialog { ShowNewFolderButton = true })
-			{
-				if (foldersDialog.ShowDialog() == DialogResult.OK)
-				{
-					ImagesFolder = foldersDialog.SelectedPath;
-					BoundsFolder = Path.Combine(ImagesFolder, "Bounds");
-					
-					labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}";
+			ImagesFolder = Settings.ImagesFolder;
+			BoundsFolder = Path.Combine(ImagesFolder, Settings.BoundsSubfolder);
 
-					files = new DirectoryInfo(ImagesFolder)
-						.GetFiles("*.png")
-						.Select(fi => fi.FullName)
-						.Where(fileName => !File.Exists(GetBoundsFileName(fileName)))
-						.ToList();
-					
-					random = new Random();
-					
-					model = new ModelInferrence("/mnt/DA92812D92810F67/Rubik/Models/L1Rubik/1807221237-VGG16-SGD.pb", new Size(299, 299));
-				}
-			}
+			files = new DirectoryInfo(ImagesFolder)
+				.GetFiles("*.png")
+				.Select(fi => fi.FullName)
+				.Where(fileName => !File.Exists(GetBoundsFileName(fileName)))
+				.ToList();
+
+			UpdateLabel();
+
+			random = new Random();
+
+			DisposeModel();
+		}
+
+		void UpdateLabel()
+		{
+			labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}{Environment.NewLine}Files: {files.Count}";
 		}
 
 		void ButtonNextOnClick(object sender, EventArgs e)
 		{
 			Next(true);
 		}
-		
+
 		void ButtonSkipOnClick(object sender, EventArgs e)
 		{
 			Next(false);
@@ -163,6 +173,7 @@ namespace ImageConverter.Pages
 			currentFileName = files[nextIndex];
 			files.RemoveAt(nextIndex);
 			FindForm().Text = System.IO.Path.GetFileName(currentFileName);
+			UpdateLabel();
 
 			var image = IndexedImageExtensions.FromBitmapFile(currentFileName);
 			PredictBoundsFromImage(image);
@@ -204,12 +215,12 @@ namespace ImageConverter.Pages
 			{
 				return;
 			}
-			
+
 			if (!Directory.Exists(BoundsFolder))
 			{
 				Directory.CreateDirectory(BoundsFolder);
 			}
-			
+
 			var data = new StringBuilder();
 			foreach (var anchor in anchorsController.AllAnchors)
 			{
@@ -227,15 +238,15 @@ namespace ImageConverter.Pages
 
 		void PredictBoundsFromImage(IndexedImage image)
 		{
-			if (model == null)
+			if (Model == null)
 			{
 				return;
 			}
 
 			//var t = Environment.TickCount;
-			var points = model.GetEdges(image).ToList();
+			var points = Model.GetEdges(image).ToList();
 			//Console.WriteLine(Environment.TickCount - t);
-			
+
 			if (points.Count == anchorsController.AllAnchors.Count)
 			{
 				for (int i = 0; i < points.Count; i++)
@@ -244,20 +255,25 @@ namespace ImageConverter.Pages
 				}
 			}
 		}
-		
+
 		#endregion
 
 		#region Dispose
 
 		protected override void Dispose(bool disposing)
 		{
+			DisposeModel();
+
+			base.Dispose(disposing);
+		}
+
+		void DisposeModel()
+		{
 			if (model != null)
 			{
 				model.Dispose();
 				model = null;
 			}
-			
-			base.Dispose(disposing);
 		}
 
 		#endregion

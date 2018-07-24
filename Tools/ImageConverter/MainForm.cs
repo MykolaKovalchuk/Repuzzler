@@ -27,20 +27,35 @@ namespace ImageConverter
 			tabControl.SuspendLayout();
 			Controls.Add(tabControl);
 			
-			var tabBounds = new TabPage
-			{
-				Text = "Bounds"
-			};
+			var tabBounds = new TabPage { Text = "Bounds" };
 			tabBounds.SuspendLayout();
-			tabControl.TabPages.Add(tabBounds);
-
-			var boundsPage = new BoundsPage();
+			boundsPage = new BoundsPage();
 			tabBounds.Controls.Add(boundsPage);
 
+			var tabBlueScreen = new TabPage { Text = "Blue Screen" };
+			tabBlueScreen.SuspendLayout();
+			blueScreePage = new BlueScreePage();
+			tabBlueScreen.Controls.Add(blueScreePage);
+
+			var tabSettngs = new TabPage { Text = "Settings" };
+			tabSettngs.SuspendLayout();
+			settingsPage = new SettingsPage();
+			tabSettngs.Controls.Add(settingsPage);
+
+			tabControl.TabPages.Add(tabSettngs);
+			tabControl.TabPages.Add(tabBounds);
+			tabControl.TabPages.Add(tabBlueScreen);
+
 			tabBounds.ResumeLayout();
+			tabBlueScreen.ResumeLayout();
+			tabSettngs.ResumeLayout();
 			tabControl.ResumeLayout();
 			ResumeLayout();
 		}
+
+		BoundsPage boundsPage;
+		BlueScreePage blueScreePage;
+		SettingsPage settingsPage;
 
 		#endregion
 	}

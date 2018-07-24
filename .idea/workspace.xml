@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/ModelCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/keras_to_tensorflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/keras_to_tensorflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" afterDir="false" />
-    </list>
+    <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="" />
     <ignored path="Learners/L1Rubik/Logs/" />
     <ignored path="Learners/L1Rubik/Models/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +35,8 @@
       <file leaf-file-name="TestLearner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+            <state relative-caret-position="748">
+              <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -361,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532139070678</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Cleaned code">
+      <created>1532249482980</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1532249482980</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -375,12 +373,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50082916" side_tool="true" weight="0.4094105" />
       <window_info anchor="right" x="0" y="0" width="876" height="1925" id="Documentation" order="5" sideWeight="0.5024338" side_tool="true" weight="0.3297402" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4991708" visible="true" weight="0.32936722" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4991708" weight="0.32936722" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32990807" />
       <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4994472" weight="0.4094105" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32990807" />
@@ -419,7 +418,8 @@
     <MESSAGE value="Optimized rotation augmentation, and some code cleaning" />
     <MESSAGE value="Alternative loss function" />
     <MESSAGE value="Convert saved model from Keras to TF. Infer TF model from .NET with TensorFlowSharp." />
-    <option name="LAST_COMMIT_MESSAGE" value="Convert saved model from Keras to TF. Infer TF model from .NET with TensorFlowSharp." />
+    <MESSAGE value="Cleaned code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        <state relative-caret-position="748">
+          <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

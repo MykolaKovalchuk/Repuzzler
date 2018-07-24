@@ -40,7 +40,7 @@ namespace Descreener
 
 			var color = new Color((byte)r, (byte)g, (byte)b);
 
-			var result = ColorRemover.RemoveColor(image, color);
+			var result = new ColorRemover().RemoveColor(image, color);
 			result.ToBitmapFile(targetFile);
 		}
 	}

@@ -101,21 +101,14 @@
       <e p="Repuzzler.sln" t="IncludeFlat" />
       <e p="Solution Items" t="Include" />
       <e p="Tools" t="Include">
-        <e p="Descreener" t="IncludeRecursive">
-          <e p="Descreener.csproj" t="IncludeRecursive" />
-          <e p="Program.cs" t="Include" />
-          <e p="Properties" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-          </e>
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
-        </e>
         <e p="ImageConverter" t="IncludeRecursive">
           <e p="App.config" t="Include" />
           <e p="ImageConverter.csproj" t="IncludeRecursive" />
           <e p="MainForm.cs" t="Include" />
           <e p="Pages" t="Include">
+            <e p="BlueScreePage.cs" t="Include" />
             <e p="BoundsPage.cs" t="Include" />
+            <e p="SettingsPage.cs" t="Include" />
           </e>
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
@@ -125,6 +118,7 @@
             <e p="Settings.Designer.cs" t="Include" />
             <e p="Settings.settings" t="Include" />
           </e>
+          <e p="Settings.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="ModelInferrence.cs" t="Include" />
           </e>

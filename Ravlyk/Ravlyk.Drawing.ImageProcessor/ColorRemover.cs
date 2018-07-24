@@ -4,21 +4,22 @@ using Ravlyk.Drawing.ImageProcessor.Utilities;
 
 namespace Ravlyk.Drawing.ImageProcessor
 {
-	public static class ColorRemover
+	public class ColorRemover
 	{
-		const double HueTolerance = 0.2 * 0.5; // [0,1] Hue Tolerance
-		const double HueToleranceStrict = 0.04 * 0.5;
-		const double SaturationTolerance = 0.4; // [0,1] Saturation Tolerance
-		const double ValueTolerance = 0.4; // [0,1] Value Tolerance
-		const double DarkValueLimiter = 0.35;
-		const double RGBTolerance = 0.4; // [0,1] RGB Tolerance
-		const double RGBToleranceScaled = (int)(3.0 * 255.0 * 255.0 * RGBTolerance * RGBTolerance + 0.5);
-		const double GrayUpperLimit = 0.15; // [0,1] Gray Upper Limit (S*V)
-		const double SourcePreservPortion = 0.0; // [0,1] Portion of Non-Erased Color to Preserve
-		const bool GrayMatchesAll = false; // [0,1] Gray Matches All Hues
+		public double HueTolerance { get; set; } = 0.1; // [0,1] Hue Tolerance
+		public double HueToleranceStrict { get; set; } = 0.01;
+		public double SaturationTolerance { get; set; } = 0.1; // [0,1] Saturation Tolerance
+		public double ValueTolerance { get; set; } = 0.35; // [0,1] Value Tolerance
+		public double DarkValueLimiter { get; set; } = 0.25;
+		public double RGBTolerance { get; set; } = 0.25; // [0,1] RGB Tolerance
+		public double GrayUpperLimit { get; set; } = 0.15; // [0,1] Gray Upper Limit (S*V)
+		public double SourcePreservPortion { get; set; } = 0.0; // [0,1] Portion of Non-Erased Color to Preserve
+		public bool GrayMatchesAll { get; set; } = false; // [0,1] Gray Matches All Hues
 
-		public static IndexedImage RemoveColor(IndexedImage source, Color matchColor, IndexedImage result = null)
+		public IndexedImage RemoveColor(IndexedImage source, Color matchColor, IndexedImage result = null)
 		{
+			double RGBToleranceScaled = (int)(3.0 * 255.0 * 255.0 * RGBTolerance * RGBTolerance + 0.5);
+
 			if (result == null)
 			{
 				result = new IndexedImage { Size = source.Size };
@@ -78,9 +79,9 @@ namespace Ravlyk.Drawing.ImageProcessor
 								alpha = (distH - HueToleranceStrict) / (HueTolerance - HueToleranceStrict) * 255.0 + 0.5;
 							}
 
-							if (DarkValueLimiter > 0.0 && pixel.Value < DarkValueLimiter)
+							if (alpha > 0.0 && DarkValueLimiter > 0.0 && pixel.Value < DarkValueLimiter)
 							{
-								alpha = Math.Max(alpha, (DarkValueLimiter - pixel.Value) / DarkValueLimiter * 255.0 + 0.5);
+								alpha = Math.Min(alpha, (DarkValueLimiter - pixel.Value) / DarkValueLimiter * 255.0 + 0.5);
 							}
 
 							pixel = new Color((byte)alpha, pixel.R, pixel.G, pixel.B);
@@ -96,7 +97,7 @@ namespace Ravlyk.Drawing.ImageProcessor
 
 		// Get the color with the minimum alpha such that the source color can be
 		// produced by alpha blending with the subtracted color.
-		static Color RemoveColor(Color srcColor, Color matchColor)
+		Color RemoveColor(Color srcColor, Color matchColor)
 		{
 			double srcR = srcColor.R, srcG = srcColor.G, srcB = srcColor.B;
 			double matchR = matchColor.R, matchG = matchColor.G, matchB = matchColor.B;
