@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Ravlyk.Common;
 using Ravlyk.Drawing.ImageProcessor.Utilities;
 
 namespace Ravlyk.Drawing.ImageProcessor
@@ -16,7 +17,7 @@ namespace Ravlyk.Drawing.ImageProcessor
 		public double SourcePreservPortion { get; set; } = 0.0; // [0,1] Portion of Non-Erased Color to Preserve
 		public bool GrayMatchesAll { get; set; } = false; // [0,1] Gray Matches All Hues
 
-		public IndexedImage RemoveColor(IndexedImage source, Color matchColor, IndexedImage result = null)
+		public IndexedImage RemoveColor(IndexedImage source, Color matchColor, IndexedImage result = null, Rectangle limits = default)
 		{
 			double RGBToleranceScaled = (int)(3.0 * 255.0 * 255.0 * RGBTolerance * RGBTolerance + 0.5);
 
@@ -25,12 +26,18 @@ namespace Ravlyk.Drawing.ImageProcessor
 				result = new IndexedImage { Size = source.Size };
 			}
 
+			if (limits.Width == 0 || limits.Height == 0)
+			{
+				limits = new Rectangle(0, 0, source.Size.Width, source.Size.Height);
+			}
+			limits = Region.CorrectRect(source, limits);
+
 			bool matchIsGray = (matchColor.Value * matchColor.Saturation <= GrayUpperLimit);
 			bool preservePortion = (SourcePreservPortion > 0.0);
 
-			Parallel.For(0, result.Size.Height, y =>
+			Parallel.For(limits.Top, limits.BottomExclusive, y =>
 			{
-				for (int x = 0, index = y * result.Size.Width; x < result.Size.Width; x++, index++)
+				for (int x = limits.Left, index = y * result.Size.Width + x; x < limits.RightExclusive; x++, index++)
 				{
 					Color pixel = new Color(source.Pixels[index]);
 

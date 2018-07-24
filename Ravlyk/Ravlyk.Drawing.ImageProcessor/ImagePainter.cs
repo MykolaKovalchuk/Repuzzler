@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 using Ravlyk.Common;
+using Ravlyk.Drawing.ImageProcessor.Utilities;
 
 namespace Ravlyk.Drawing.ImageProcessor
 {
@@ -11,7 +12,7 @@ namespace Ravlyk.Drawing.ImageProcessor
 	{
 		public static void FillRect(IndexedImage image, Rectangle rect, int argb)
 		{
-			rect = CorrectRect(image, rect);
+			rect = Region.CorrectRect(image, rect);
 
 			if (rect.Width <= 0 || rect.Height <= 0)
 			{
@@ -30,7 +31,7 @@ namespace Ravlyk.Drawing.ImageProcessor
 
 		public static void FillRect(IndexedImage image, Rectangle rect, Color toColor)
 		{
-			rect = CorrectRect(image, rect);
+			rect = Region.CorrectRect(image, rect);
 
 			if (rect.Width <= 0 || rect.Height <= 0)
 			{
@@ -44,34 +45,6 @@ namespace Ravlyk.Drawing.ImageProcessor
 					image[x, y] = toColor;
 				}
 			}
-		}
-
-		static Rectangle CorrectRect(IndexedImage image, Rectangle rect)
-		{
-			if (rect.Left < 0)
-			{
-				rect.Width += rect.Left;
-				rect.Left = 0;
-			}
-			if (rect.Top < 0)
-			{
-				rect.Height += rect.Top;
-				rect.Top = 0;
-			}
-
-			var maxWidth = image.Size.Width - rect.Left;
-			if (rect.Width > maxWidth)
-			{
-				rect.Width = maxWidth;
-			}
-
-			var maxHeight = image.Size.Height - rect.Top;
-			if (rect.Height > maxHeight)
-			{
-				rect.Height = maxHeight;
-			}
-
-			return rect;
 		}
 
 		public static void DrawHorizontalLine(IndexedImage image, int x, int y, int length, int argb, int width = 1)
@@ -152,7 +125,7 @@ namespace Ravlyk.Drawing.ImageProcessor
 			DrawAnyLine(image, new Point(a.X + 1, a.Y), new Point(b.X + 1, b.Y), colorGetter);
 			DrawAnyLine(image, new Point(a.X, a.Y + 1), new Point(b.X, b.Y + 1), colorGetter);
 		}
-		
+
 		public static void DrawAnyLine(IndexedImage image, Point a, Point b, Func<int, int> colorGetter)
 		{
 			if (Math.Abs(b.Y - a.Y) < Math.Abs(b.X - a.X))

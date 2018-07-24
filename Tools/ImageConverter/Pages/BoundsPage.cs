@@ -22,9 +22,6 @@ namespace ImageConverter.Pages
 			InitializeComponents();
 		}
 
-		public string ImagesFolder { get; set; }
-		public string BoundsFolder { get; set; }
-
 		#region Design
 
 		void InitializeComponents()
@@ -46,41 +43,13 @@ namespace ImageConverter.Pages
 			};
 			Controls.Add(panelButtons);
 
-			var buttonSource = new Button
-			{
-				Text = "Load Images",
-				Width = 100,
-				Location = new Point(8, 8)
-			};
-			buttonSource.Click += ButtonSourceOnClick;
-			panelButtons.Controls.Add(buttonSource);
+			var buttonSource = panelButtons.Controls.AddButton(new Point(8, 8), "Load Images", 100, ButtonSourceOnClick);
+			var buttonNext = panelButtons.Controls.AddButton(new Point(buttonSource.Right + 16, 8), "Save and Next", 100, ButtonNextOnClick);
 
-			var buttonNext = new Button
-			{
-				Text = "Save and Next",
-				Width = 100,
-				Location = new Point(buttonSource.Right + 16, 8)
-			};
-			buttonNext.Click += ButtonNextOnClick;
-			panelButtons.Controls.Add(buttonNext);
+			labelImages = panelButtons.Controls.AddLabel(new Point(buttonNext.Right + 16, 4), "");
 
-			labelImages = new Label
-			{
-				Text = "",
-				AutoSize = true,
-				Location = new Point(buttonNext.Right + 16, 4)
-			};
-			panelButtons.Controls.Add(labelImages);
-
-			var buttonSkip = new Button
-			{
-				Text = "Skip",
-				Width = 80,
-				Anchor = AnchorStyles.Right | AnchorStyles.Top,
-				Location = new Point(panelButtons.Width - 80 - 8, 8)
-			};
-			buttonSkip.Click += ButtonSkipOnClick;
-			panelButtons.Controls.Add(buttonSkip);
+			panelButtons.Controls.AddButton(new Point(panelButtons.Width - 80 - 8, 8), "Save and Next", 80, ButtonSkipOnClick,
+				AnchorStyles.Right | AnchorStyles.Top);
 
 			ResumeLayout();
 		}
@@ -114,13 +83,10 @@ namespace ImageConverter.Pages
 
 		void ButtonSourceOnClick(object sender, EventArgs e)
 		{
-			ImagesFolder = Settings.ImagesFolder;
-			BoundsFolder = Path.Combine(ImagesFolder, Settings.BoundsSubfolder);
-
-			files = new DirectoryInfo(ImagesFolder)
+			files = new DirectoryInfo(Settings.ImagesFolder)
 				.GetFiles("*.png")
 				.Select(fi => fi.FullName)
-				.Where(fileName => !File.Exists(GetBoundsFileName(fileName)))
+				.Where(fileName => !File.Exists(Settings.GetBoundsFileName(fileName)))
 				.ToList();
 
 			UpdateLabel();
@@ -132,7 +98,7 @@ namespace ImageConverter.Pages
 
 		void UpdateLabel()
 		{
-			labelImages.Text = $"Images: {ImagesFolder}{Environment.NewLine}Bounds: {BoundsFolder}{Environment.NewLine}Files: {files.Count}";
+			labelImages.Text = $"Images: {Settings.ImagesFolder}{Environment.NewLine}Bounds: {Settings.BoundsFolder}{Environment.NewLine}Files: {files.Count}";
 		}
 
 		void ButtonNextOnClick(object sender, EventArgs e)
@@ -147,7 +113,7 @@ namespace ImageConverter.Pages
 
 		void Next(bool save)
 		{
-			if (string.IsNullOrEmpty(ImagesFolder))
+			if (string.IsNullOrEmpty(Settings.ImagesFolder))
 			{
 				return;
 			}
@@ -216,9 +182,9 @@ namespace ImageConverter.Pages
 				return;
 			}
 
-			if (!Directory.Exists(BoundsFolder))
+			if (!Directory.Exists(Settings.BoundsFolder))
 			{
-				Directory.CreateDirectory(BoundsFolder);
+				Directory.CreateDirectory(Settings.BoundsFolder);
 			}
 
 			var data = new StringBuilder();
@@ -227,13 +193,8 @@ namespace ImageConverter.Pages
 				data.Append(anchor.X).Append(',').Append(anchor.Y).AppendLine();
 			}
 
-			var boundsFileName = GetBoundsFileName(currentFileName);
+			var boundsFileName = Settings.GetBoundsFileName(currentFileName);
 			File.WriteAllText(boundsFileName, data.ToString());
-		}
-
-		string GetBoundsFileName(string imageFileName)
-		{
-			return Path.Combine(BoundsFolder, Path.ChangeExtension(Path.GetFileName(imageFileName), "bounds"));
 		}
 
 		void PredictBoundsFromImage(IndexedImage image)

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ImageConverter.Utils;
+using Ravlyk.Common;
 using Ravlyk.UI;
 using Ravlyk.UI.ImageProcessor;
 using Ravlyk.UI.WinForms;
@@ -18,9 +21,6 @@ namespace ImageConverter.Pages
 		{
 			InitializeComponents();
 		}
-
-		public string ImagesFolder { get; set; }
-		public string ProcessedFolder { get; set; }
 
 		#region Design
 
@@ -43,117 +43,16 @@ namespace ImageConverter.Pages
 			};
 			Controls.Add(panelButtons);
 
-			var buttonSample = new Button
-			{
-				Text = "Load Sample",
-				Width = 100,
-				Location = new Point(8, 8)
-			};
-			buttonSample.Click += ButtonSampleOnClick;
-			panelButtons.Controls.Add(buttonSample);
+			var buttonSample = panelButtons.Controls.AddButton(new Point(8, 8), "Load Sample", 100, ButtonSampleOnClick);
+			var buttonDescreen = panelButtons.Controls.AddButton(new Point(buttonSample.Right + 8, 8), "Descreen", 100, ButtonDescreenOnClick);
+			var buttonReset = panelButtons.Controls.AddButton(new Point(buttonDescreen.Right + 8, 8), "Reset", 80, ButtonResetOnClick);
 
-			var buttonDescreen = new Button
-			{
-				Text = "Descreen",
-				Width = 100,
-				Location = new Point(buttonSample.Right + 16, 8)
-			};
-			buttonDescreen.Click += ButtonDescreenOnClick;
-			panelButtons.Controls.Add(buttonDescreen);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "Hue",
-				AutoSize = true,
-				Location = new Point(buttonDescreen.Right + 16, 2)
-			});
-			textBoxHue = new TextBox
-			{
-				Text = "0.1",
-				Width = 80,
-				Location = new Point(buttonDescreen.Right + 16, 16)
-			};
-			panelButtons.Controls.Add(textBoxHue);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "Hue Strict",
-				AutoSize = true,
-				Location = new Point(textBoxHue.Right + 4, 2)
-			});
-			textBoxHueStrict = new TextBox
-			{
-				Text = "0.01",
-				Width = 80,
-				Location = new Point(textBoxHue.Right + 4, 16)
-			};
-			panelButtons.Controls.Add(textBoxHueStrict);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "Saturation",
-				AutoSize = true,
-				Location = new Point(textBoxHueStrict.Right + 4, 2)
-			});
-			textBoxSaturation = new TextBox
-			{
-				Text = "0.1",
-				Width = 80,
-				Location = new Point(textBoxHueStrict.Right + 4, 16)
-			};
-			panelButtons.Controls.Add(textBoxSaturation);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "Value",
-				AutoSize = true,
-				Location = new Point(textBoxSaturation.Right + 4, 2)
-			});
-			textBoxValue = new TextBox
-			{
-				Text = "0.35",
-				Width = 80,
-				Location = new Point(textBoxSaturation.Right + 4, 16)
-			};
-			panelButtons.Controls.Add(textBoxValue);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "RGB",
-				AutoSize = true,
-				Location = new Point(textBoxValue.Right + 4, 2)
-			});
-			textBoxRGB = new TextBox
-			{
-				Text = "0.25",
-				Width = 80,
-				Location = new Point(textBoxValue.Right + 4, 16)
-			};
-			panelButtons.Controls.Add(textBoxRGB);
-
-			panelButtons.Controls.Add(new Label
-			{
-				Text = "Dark Limit",
-				AutoSize = true,
-				Location = new Point(textBoxRGB.Right + 4, 2)
-			});
-			textBoxDarkLimit = new TextBox
-			{
-				Text = "0.25",
-				Width = 80,
-				Location = new Point(textBoxRGB.Right + 4, 16)
-			};
-			panelButtons.Controls.Add(textBoxDarkLimit);
-
-			var buttonReset = new Button
-			{
-				Text = "Reset",
-				Width = 80,
-				Anchor = AnchorStyles.Right | AnchorStyles.Top,
-				Location = new Point(panelButtons.Width - 80 - 8, 8)
-			};
-			buttonReset.Click += ButtonResetOnClick;
-			panelButtons.Controls.Add(buttonReset);
+			textBoxHue = panelButtons.Controls.AddTextBoxWithLabel(new Point(buttonReset.Right + 16, 2), "Hue", "0.05", 60);
+			textBoxHueStrict = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxHue.Right + 4, 2), "Hue Strict", "0.01", 60);
+			textBoxSaturation = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxHueStrict.Right + 4, 2), "Saturation", "0.1", 60);
+			textBoxValue = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxSaturation.Right + 4, 2), "Value", "0.1", 60);
+			textBoxRGB = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxValue.Right + 4, 2), "RGB", "0.1", 60);
+			textBoxDarkLimit = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxRGB.Right + 4, 2), "Dark Limit", "0.25", 60);
 
 			ResumeLayout();
 		}
@@ -174,28 +73,29 @@ namespace ImageConverter.Pages
 		ImageProvider imageProvider;
 		VisualAnchorsController visualController;
 		IndexedImage sourceImage;
+		string sourceImageFileName;
 
 		void ButtonSampleOnClick(object sender, EventArgs e)
 		{
-			ImagesFolder = Settings.ImagesFolder;
-			ProcessedFolder = Path.Combine(ImagesFolder, Settings.DescreenedSubfolder);
-
 			if (visualControl.Controller == null)
 			{
 				InitializeController();
 			}
 
-			var files = new DirectoryInfo(ImagesFolder)
+			var files = new DirectoryInfo(Settings.ImagesFolder)
 				.GetFiles("*.png")
 				.Select(fi => fi.FullName)
+				.Where(fileName => File.Exists(Settings.GetBoundsFileName(fileName))) // Use sample with available bounds
 				.ToList();
+
 			var randomIndex = files.Count > 1 ? new Random().Next(files.Count) : files.Count - 1;
 			if (randomIndex < 0)
 			{
 				return;
 			}
+			sourceImageFileName = files[randomIndex];
 
-			sourceImage = IndexedImageExtensions.FromBitmapFile(files[randomIndex]);
+			sourceImage = IndexedImageExtensions.FromBitmapFile(sourceImageFileName);
 			imageProvider.SetImage(sourceImage);
 		}
 
@@ -216,7 +116,7 @@ namespace ImageConverter.Pages
 
 		void ButtonDescreenOnClick(object sender, EventArgs e)
 		{
-			var result = ColorRemover.RemoveColor(sourceImage, GetScreenColor(sourceImage));
+			var result = DescreenImage(sourceImage, sourceImageFileName);
 			PaintCheckerBoard(result);
 			imageProvider.SetImage(result);
 		}
@@ -229,19 +129,140 @@ namespace ImageConverter.Pages
 			}
 		}
 
+		#endregion
+
+		#region Remove Color
+
+		ColorRemover ColorRemover
+		{
+			get
+			{
+				var colorRemover = new ColorRemover();
+
+				colorRemover.HueTolerance = double.Parse(textBoxHue.Text);
+				colorRemover.HueToleranceStrict = double.Parse(textBoxHueStrict.Text);
+				colorRemover.SaturationTolerance = double.Parse(textBoxSaturation.Text);
+				colorRemover.ValueTolerance = double.Parse(textBoxValue.Text);
+				colorRemover.RGBTolerance = double.Parse(textBoxRGB.Text);
+				colorRemover.DarkValueLimiter = double.Parse(textBoxDarkLimit.Text);
+
+				return colorRemover;
+			}
+		}
+
+		IndexedImage DescreenImage(IndexedImage image, string imageFileName)
+		{
+			IndexedImage result;
+
+			var boundsFileName = Settings.GetBoundsFileName(imageFileName);
+			if (File.Exists(boundsFileName))
+			{
+				result = image.Clone(false);
+
+				int minX = int.MaxValue, minY = int.MaxValue, maxX = int.MinValue, maxY = int.MinValue;
+				foreach (var line in File.ReadLines(boundsFileName))
+				{
+					if (!string.IsNullOrWhiteSpace(line))
+					{
+						var coordinates = line.Split(',');
+						var x = int.Parse(coordinates[0]);
+						var y = int.Parse(coordinates[1]);
+
+						if (x < minX)
+						{
+							minX = x;
+						}
+						if (x > maxX)
+						{
+							maxX = x;
+						}
+						if (y < minY)
+						{
+							minY = y;
+						}
+						if (y > maxY)
+						{
+							maxY = y;
+						}
+					}
+				}
+
+				var bottomX = Math.Max(0, minX);
+				var bottomY = Math.Max(0, minY);
+				var topX = Math.Min(image.Size.Width - 1, maxX);
+				var topY = Math.Min(image.Size.Height - 1, maxY);
+
+				const int Distance = 5;
+				const int DobeleDistanceExclusive = Distance * 2 + 1;
+				const int Dots = 10;
+
+				var limits = new Rectangle(minX - Distance, minY - Distance, maxX - minX + Distance, maxY - minY + Distance);
+				limits = Ravlyk.Drawing.ImageProcessor.Utilities.Region.CorrectRect(result, limits);
+
+				for (int y = bottomY; y <= topY - Dots; y += Dots)
+				{
+					if (minX >= Distance)
+					{
+						result = ColorRemover.RemoveColor(result, GetScreenColor(image, minX - Distance, y, minX - Distance, y + Dots), result, limits);
+					}
+					if (maxX < image.Size.Width - Distance)
+					{
+						result = ColorRemover.RemoveColor(result, GetScreenColor(image, maxX + Distance, y, maxX + Distance, y + Dots), result, limits);
+					}
+				}
+
+				for (int x = bottomX; x <= topX - Dots; x += Dots)
+				{
+					if (minY > Distance)
+					{
+						result = ColorRemover.RemoveColor(result, GetScreenColor(image, x, minY - Distance, x + Dots, minY - Distance), result, limits);
+					}
+					if (maxY < image.Size.Height - Distance)
+					{
+						result = ColorRemover.RemoveColor(result, GetScreenColor(image, x, maxY + Distance, x + Dots, maxY + Distance), result, limits);
+					}
+				}
+
+				using (result.LockPixels(out var pixels))
+				{
+					Parallel.For(0, result.Size.Height, y =>
+					{
+						for (int x = 0, index = y * result.Size.Width; x < result.Size.Width; x++, index++)
+						{
+							if (!limits.ContainsPoint(new Ravlyk.Common.Point(x, y)))
+							{
+								pixels[index] = 0;
+							}
+						}
+					});
+				}
+			}
+			else
+			{
+				result = ColorRemover.RemoveColor(image, GetScreenColor(sourceImage));
+			}
+
+			return result;
+		}
+
 		Color GetScreenColor(IndexedImage image)
 		{
-			var minx = Math.Min(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
-			var miny = Math.Min(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
-			var maxx = Math.Max(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
-			var maxy = Math.Max(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
+			var minX = Math.Min(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
+			var minY = Math.Min(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
+			var maxX = Math.Max(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
+			var maxY = Math.Max(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
 
+			return GetScreenColor(image, minX, minY, maxX, maxY);
+		}
+
+		static Color GetScreenColor(IndexedImage image, int minX, int minY, int maxX, int maxY)
+		{
 			int r = 0, g = 0, b = 0, count = 0;
 			using (image.LockPixels(out var pixels))
 			{
-				for (int y = miny; y < maxy; y++)
+				for (int y = minY; y <= maxY; y++)
 				{
-					for (int x = minx, index = y * image.Size.Width + x; x < maxx; x++, index++, count++)
+					for (int x = minX, index = y * image.Size.Width + x; x <= maxX; x++, index++, count++)
 					{
 						var c = pixels[index];
 						r += c.Red();
@@ -281,27 +302,6 @@ namespace ImageConverter.Pages
 						}
 					}
 				}
-			}
-		}
-
-		#endregion
-
-		#region Remove Color
-
-		ColorRemover ColorRemover
-		{
-			get
-			{
-				var colorRemover = new ColorRemover();
-
-				colorRemover.HueTolerance = double.Parse(textBoxHue.Text);
-				colorRemover.HueToleranceStrict = double.Parse(textBoxHueStrict.Text);
-				colorRemover.SaturationTolerance = double.Parse(textBoxSaturation.Text);
-				colorRemover.ValueTolerance = double.Parse(textBoxValue.Text);
-				colorRemover.RGBTolerance = double.Parse(textBoxRGB.Text);
-				colorRemover.DarkValueLimiter = double.Parse(textBoxDarkLimit.Text);
-
-				return colorRemover;
 			}
 		}
 

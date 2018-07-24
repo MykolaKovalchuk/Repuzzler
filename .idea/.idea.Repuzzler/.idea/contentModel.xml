@@ -58,6 +58,7 @@
             <e p="ColorDistance.cs" t="Include" />
             <e p="PaletteOrderExtensions.cs" t="Include" />
             <e p="PaletteQuickColorSearcher.cs" t="Include" />
+            <e p="Region.cs" t="Include" />
           </e>
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive" />
@@ -121,6 +122,7 @@
           <e p="Settings.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="ModelInferrence.cs" t="Include" />
+            <e p="UIHelper.cs" t="Include" />
           </e>
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive" />
