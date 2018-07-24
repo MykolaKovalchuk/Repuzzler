@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Utilities/Region.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ColorRemover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ColorRemover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Ravlyk.Drawing.ImageProcessor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Ravlyk.Drawing.ImageProcessor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreePage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreePage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Settings.cs" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
     <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
@@ -529,7 +520,7 @@
       <workItem from="1532220658607" duration="3989000" />
       <workItem from="1532249521708" duration="74000" />
       <workItem from="1532389357944" duration="13461000" />
-      <workItem from="1532413382431" duration="9209000" />
+      <workItem from="1532413382431" duration="9357000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -566,11 +557,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532403383607</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Multi-dot samples during screen color removal">
+      <created>1532423171588</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532423171588</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70438000" />
+    <option name="totallyTimeSpent" value="70586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,21 +581,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.0655058" side_tool="true" weight="0.3996755" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.11636263" side_tool="true" weight="0.3996755" />
       <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997236" weight="0.32936722" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32449973" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.88363737" weight="0.32936722" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32449973" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.55964774" visible="true" weight="0.2570481" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56030285" visible="true" weight="0.2570481" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info id="Structure" order="1" sideWeight="0.4403523" side_tool="true" visible="true" weight="0.2570481" />
+      <window_info id="Structure" order="1" sideWeight="0.43969715" side_tool="true" visible="true" weight="0.2570481" />
       <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9344942" weight="0.3996755" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -650,7 +649,8 @@
     <MESSAGE value="Bounding Rubik images" />
     <MESSAGE value="Tab caption" />
     <MESSAGE value="Blue screen remover" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blue screen remover" />
+    <MESSAGE value="Multi-dot samples during screen color removal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multi-dot samples during screen color removal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

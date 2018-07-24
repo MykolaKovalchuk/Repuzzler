@@ -48,7 +48,7 @@ namespace ImageConverter.Pages
 
 			labelImages = panelButtons.Controls.AddLabel(new Point(buttonNext.Right + 16, 4), "");
 
-			panelButtons.Controls.AddButton(new Point(panelButtons.Width - 80 - 8, 8), "Save and Next", 80, ButtonSkipOnClick,
+			panelButtons.Controls.AddButton(new Point(panelButtons.Width - 80 - 8, 8), "Skip", 80, ButtonSkipOnClick,
 				AnchorStyles.Right | AnchorStyles.Top);
 
 			ResumeLayout();
