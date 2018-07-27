@@ -157,7 +157,7 @@ class DataGenerator(Sequence):
         if min_x < 0 or min_y < 0 or max_x >= image_width or max_y >= image_height:
             return image, label
 
-        angle = random.uniform(-60.0, 60.0)
+        angle = random.uniform(-90.0, 90.0)
         if abs(angle) < .1:
             return image, label
 

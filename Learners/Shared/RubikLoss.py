@@ -90,9 +90,16 @@ def cube_loss2(y_true, y_pred):
     return l
 
 
+def cube_loss3(y_true, y_pred):
+    l1 = cube_loss(y_true, y_pred)
+    l2 = cube_loss2(y_true, y_pred)
+    return l1 * 25.0 + l2
+
+
 def register_losses():
     get_custom_objects().update({"cube_loss": cube_loss})
     get_custom_objects().update({"cube_loss2": cube_loss2})
+    get_custom_objects().update({"cube_loss3": cube_loss3})
 
 
 def correct_label_orientation(label):

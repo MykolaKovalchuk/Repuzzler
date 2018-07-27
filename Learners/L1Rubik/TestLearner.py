@@ -12,10 +12,10 @@ train_labels_dir = Shared.Globals.get_subdir("Rubik/Only Rubik/Bounds")
 models_dir = Shared.Globals.get_subdir("Rubik/Models/L1Rubik")
 img_width, img_height = 299, 299
 nb_labels = 14
-batch_size = 4
+batch_size = 32
 epochs = 500
 
-weights_file_name = path.join(models_dir, "1807261904-ResNet50-SGD.h5")
+weights_file_name = path.join(models_dir, "1807271415-VGG16-SGD.h5")
 load_full_model = False
 
 data_generator = DataGenerator(train_data_dir, train_labels_dir,
@@ -32,9 +32,9 @@ model_creator = ModelCreator(image_width=img_width, image_height=img_height, nb_
 if load_full_model:
     model = model_creator.load(weights_file_name)
 else:
-    model = model_creator.get_model(ModelCreator.ResNet50,
+    model = model_creator.get_model(ModelCreator.VGG16,
                                     weights_file_name=weights_file_name,
-                                    loss_function=Shared.RubikLoss.cube_loss2)
+                                    loss_function=Shared.RubikLoss.cube_loss3)
 
 time_stamp = time.strftime("%y%m%d%H%M") + \
              "-" + model_creator.base_model_name + \
@@ -61,10 +61,12 @@ if not load_full_model:
     model_creator.unfreeze_top(model, from_level=0, new_lr=0.0001)
 fit_model()
 
+
 # """ Save model
 ModelCreator.save(model, path.join(models_dir, time_stamp + ".h5"))
 ModelCreator.save_tf(model, models_dir, time_stamp + ".pb")
 # """
+
 
 # """ Visualize predictions
 import Visualizer
