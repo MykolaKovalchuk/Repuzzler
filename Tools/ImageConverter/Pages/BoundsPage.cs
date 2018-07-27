@@ -204,9 +204,9 @@ namespace ImageConverter.Pages
 				return;
 			}
 
-			//var t = Environment.TickCount;
+			var t = Environment.TickCount;
 			var points = Model.GetEdges(image).ToList();
-			//Console.WriteLine(Environment.TickCount - t);
+			Console.WriteLine(Environment.TickCount - t);
 
 			if (points.Count == anchorsController.AllAnchors.Count)
 			{

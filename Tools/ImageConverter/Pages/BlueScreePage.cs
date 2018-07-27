@@ -85,7 +85,7 @@ namespace ImageConverter.Pages
 			var files = new DirectoryInfo(Settings.ImagesFolder)
 				.GetFiles("*.png")
 				.Select(fi => fi.FullName)
-				.Where(fileName => File.Exists(Settings.GetBoundsFileName(fileName))) // Use sample with available bounds
+				//.Where(fileName => File.Exists(Settings.GetBoundsFileName(fileName))) // Use sample with available bounds
 				.ToList();
 
 			var randomIndex = files.Count > 1 ? new Random().Next(files.Count) : files.Count - 1;
