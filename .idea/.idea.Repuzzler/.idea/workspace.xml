@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
@@ -478,6 +476,7 @@
       <workItem from="1532482231364" duration="1159000" />
       <workItem from="1532652562430" duration="5107000" />
       <workItem from="1532664834420" duration="8000" />
+      <workItem from="1532696357236" duration="220000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -539,7 +538,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78168000" />
+    <option name="totallyTimeSpent" value="78388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,9 +562,10 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32449973" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.55868036" visible="true" weight="0.26616916" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.55813956" visible="true" weight="0.2692095" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
-      <window_info id="Structure" order="1" sideWeight="0.44131964" side_tool="true" visible="true" weight="0.26616916" />
+      <window_info id="Structure" order="1" sideWeight="0.44186047" side_tool="true" visible="true" weight="0.2692095" />
       <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9344942" weight="0.3996755" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -576,7 +576,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>

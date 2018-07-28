@@ -93,7 +93,7 @@ def cube_loss2(y_true, y_pred):
 def cube_loss3(y_true, y_pred):
     l1 = cube_loss(y_true, y_pred)
     l2 = cube_loss2(y_true, y_pred)
-    return l1 * 25.0 + l2
+    return l1 + l2 / 40
 
 
 def register_losses():

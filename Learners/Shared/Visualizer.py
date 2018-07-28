@@ -18,7 +18,7 @@ def show_image(img, lbl, title=None):
         y = int(lbl[index * 2 + 1] * img_height)
         return x, y
 
-    color = (0, 0, 255)
+    color = (0.0, 0.0, 1.0)
 
     cv2.line(img, get_point(0), get_point(1), color, thickness=2)
     cv2.line(img, get_point(0), get_point(3), color, thickness=2)
@@ -30,7 +30,8 @@ def show_image(img, lbl, title=None):
     cv2.line(img, get_point(5), get_point(6), color, thickness=2)
     cv2.line(img, get_point(6), get_point(1), color, thickness=2)
 
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = img[..., ::-1]
+
     plt.imshow(img)
     if title:
         plt.title(title)
