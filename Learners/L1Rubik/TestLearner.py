@@ -15,10 +15,10 @@ checkpoints_dir = path.join(models_dir, "Checkpoints")
 img_width, img_height = 299, 299
 nb_labels = 14
 batch_size = 32
-epochs = 500
+epochs = 300
 samples_multiplier = 2
 
-weights_file_name = path.join(models_dir, "1807271415-VGG16-SGD.h5")
+weights_file_name = path.join(models_dir, "1807281802-VGG16-SGD.h5")
 load_full_model = False
 
 data_generator = DataGenerator.init_from_folder(train_data_dir, train_labels_dir, batch_size=batch_size,
@@ -26,6 +26,7 @@ data_generator = DataGenerator.init_from_folder(train_data_dir, train_labels_dir
                                                 label_flip_pairs=[(2, 6), (3, 5)],
                                                 label_extra_normalization=Shared.RubikLoss.correct_label_orientation)
 validation_data = data_generator.get_validation_data()
+validation_data.cache_data()
 
 steps_per_epoch = len(data_generator) * samples_multiplier
 steps_per_epoch_validation = len(validation_data)
@@ -60,13 +61,14 @@ def fit_model(override_epochs=-1):
                         callbacks=callbacks)
 
 
-if not load_full_model:
-    # fit_model(override_epochs=2)
-
-    # model_creator.unfreeze_top(model)
-    # fit_model(override_epochs=10)
+if not load_full_model or weights_file_name is None:
+    if weights_file_name is None:
+        fit_model(override_epochs=2)
+        model_creator.unfreeze_top(model)
+        fit_model(override_epochs=10)
 
     model_creator.unfreeze_top(model, from_level=0, new_lr=0.0001)
+
 fit_model()
 
 

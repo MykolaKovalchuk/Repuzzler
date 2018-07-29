@@ -5,9 +5,7 @@ import gc
 import math
 import numpy as np
 import random
-
-
-# import Visualizer
+#import Visualizer
 
 
 class DataGenerator(Sequence):
@@ -25,6 +23,9 @@ class DataGenerator(Sequence):
 
         self.label_flip_pairs = label_flip_pairs
         self.label_extra_normalization = label_extra_normalization
+
+        self.is_cached = False
+        self.cache = []
 
         random.seed()
         random.shuffle(self.images_files)
@@ -54,6 +55,13 @@ class DataGenerator(Sequence):
                              label_flip_pairs=self.label_flip_pairs,
                              label_extra_normalization=self.label_extra_normalization)
 
+    def cache_data(self):
+        self.is_cached = False
+        self.cache = []
+        for i in range(self.__len__()):
+            self.cache.append(self.__getitem__(i))
+        self.is_cached = True
+
     def __len__(self):
         return int(np.ceil(self.images_count / float(self.batch_size)))
 
@@ -61,6 +69,9 @@ class DataGenerator(Sequence):
         random.shuffle(self.images_files)
 
     def __getitem__(self, idx):
+        if self.is_cached and idx < len(self.cache):
+            return self.cache[idx]
+
         gc.collect()
 
         start_index = idx * self.batch_size % self.images_count
