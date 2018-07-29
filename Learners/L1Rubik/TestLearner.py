@@ -10,6 +10,8 @@ from os import path
 train_data_dir = Shared.Globals.get_subdir("Rubik/Only Rubik")
 train_labels_dir = Shared.Globals.get_subdir("Rubik/Only Rubik/Bounds")
 models_dir = Shared.Globals.get_subdir("Rubik/Models/L1Rubik")
+checkpoints_dir = path.join(models_dir, "Checkpoints")
+
 img_width, img_height = 299, 299
 nb_labels = 14
 batch_size = 32
@@ -42,7 +44,7 @@ time_stamp = time.strftime("%y%m%d%H%M") + \
              "-" + model_creator.base_model_name + \
              "-" + model.optimizer.__class__.__name__
 
-checkpoint_file = path.join(path.join(models_dir, "Checkpoints"), time_stamp + ".h5")
+checkpoint_file = path.join(checkpoints_dir, time_stamp + ".h5")
 
 
 def fit_model(override_epochs=-1):
@@ -69,9 +71,11 @@ fit_model()
 
 
 # """ Save model
-model.load_weights(checkpoint_file)  # restore weights for best validation checkpoint
 ModelCreator.save(model, path.join(models_dir, time_stamp + ".h5"))
 ModelCreator.save_tf(model, models_dir, time_stamp + ".pb")
+
+model.load_weights(checkpoint_file)  # restore weights for best validation checkpoint
+ModelCreator.save_tf(model, checkpoints_dir, time_stamp + ".pb")
 # """
 
 

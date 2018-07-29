@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
     <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
@@ -342,6 +341,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -355,7 +355,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,6 +476,7 @@
       <workItem from="1532652562430" duration="5107000" />
       <workItem from="1532664834420" duration="8000" />
       <workItem from="1532696357236" duration="220000" />
+      <workItem from="1532755886306" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -538,7 +538,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78388000" />
+    <option name="totallyTimeSpent" value="79003000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,23 +551,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3297402" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.11636263" side_tool="true" weight="0.3996755" />
       <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.88363737" weight="0.32936722" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32449973" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.88363737" visible="true" weight="0.32936722" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32990807" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32990807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.55813956" visible="true" weight="0.2692095" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.55725807" visible="true" weight="0.27224985" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32990807" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297402" />
-      <window_info id="Structure" order="1" sideWeight="0.44186047" side_tool="true" visible="true" weight="0.2692095" />
-      <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
+      <window_info id="Structure" order="1" sideWeight="0.44274193" side_tool="true" visible="true" weight="0.27224985" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9344942" weight="0.3996755" />
+      <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
