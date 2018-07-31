@@ -66,7 +66,8 @@ class DataGenerator(Sequence):
         return int(np.ceil(self.images_count / float(self.batch_size)))
 
     def on_epoch_end(self):
-        random.shuffle(self.images_files)
+        if not self.is_cached:
+            random.shuffle(self.images_files)
 
     def __getitem__(self, idx):
         if self.is_cached and idx < len(self.cache):

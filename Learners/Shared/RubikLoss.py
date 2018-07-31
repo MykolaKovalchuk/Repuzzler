@@ -125,3 +125,13 @@ def rotate_label(label, groups):
             label[group[i]] = label[group[i + 1]]
         label[group[-1]] = (ta, tb)
     return label
+
+
+def get_horizontal_flip_pairs():
+    # Points to switch on horizontal flip:
+    #     4
+    #  3=====5
+    #     0
+    #  2=====6
+    #     1
+    return [(2, 6), (3, 5)]

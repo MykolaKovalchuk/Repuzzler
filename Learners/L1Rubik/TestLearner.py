@@ -1,5 +1,6 @@
 import Shared.Globals
 import Shared.RubikLoss
+import Shared.Visualizer
 from Shared.DataGenerator import DataGenerator
 from Shared.ModelCreator import ModelCreator
 
@@ -18,12 +19,16 @@ batch_size = 32
 epochs = 300
 samples_multiplier = 2
 
+model_definition = ModelCreator.VGG16
 weights_file_name = path.join(models_dir, "1807281802-VGG16-SGD.h5")
 load_full_model = False
 
+save_model = True
+visualize_model = True
+
 data_generator = DataGenerator.init_from_folder(train_data_dir, train_labels_dir, batch_size=batch_size,
                                                 target_width=img_width, target_height=img_height,
-                                                label_flip_pairs=[(2, 6), (3, 5)],
+                                                label_flip_pairs=Shared.RubikLoss.get_horizontal_flip_pairs(),
                                                 label_extra_normalization=Shared.RubikLoss.correct_label_orientation)
 validation_data = data_generator.get_validation_data()
 validation_data.cache_data()
@@ -37,7 +42,7 @@ model_creator = ModelCreator(image_width=img_width, image_height=img_height, nb_
 if load_full_model:
     model = model_creator.load(weights_file_name)
 else:
-    model = model_creator.get_model(ModelCreator.VGG16,
+    model = model_creator.get_model(model_definition,
                                     weights_file_name=weights_file_name,
                                     loss_function=Shared.RubikLoss.cube_loss3)
 
@@ -66,23 +71,18 @@ if not load_full_model or weights_file_name is None:
         fit_model(override_epochs=2)
         model_creator.unfreeze_top(model)
         fit_model(override_epochs=10)
-
     model_creator.unfreeze_top(model, from_level=0, new_lr=0.0001)
-
 fit_model()
 
 
-# """ Save model
-ModelCreator.save(model, path.join(models_dir, time_stamp + ".h5"))
-ModelCreator.save_tf(model, models_dir, time_stamp + ".pb")
+if save_model:
+    ModelCreator.save(model, path.join(models_dir, time_stamp + ".h5"))
+    ModelCreator.save_tf(model, models_dir, time_stamp + ".pb")
 
-model.load_weights(checkpoint_file)  # restore weights for best validation checkpoint
-ModelCreator.save_tf(model, checkpoints_dir, time_stamp + ".pb")
-# """
+    model.load_weights(checkpoint_file)  # restore weights for best validation checkpoint
+    ModelCreator.save_tf(model, checkpoints_dir, time_stamp + ".pb")
 
 
-# """ Visualize predictions
-import Visualizer
-images, labels = validation_data.__getitem__(0)
-Visualizer.show_predictions(images, model.predict(images))
-# """
+if visualize_model:
+    images, labels = validation_data.__getitem__(0)
+    Shared.Visualizer.show_predictions(images, model.predict(images))
