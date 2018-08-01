@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learners/L1Rubik/CopyProcessed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" afterDir="false" />
     </list>
     <ignored path="Learners/L1Rubik/Logs/" />
     <ignored path="Learners/L1Rubik/Models/" />
@@ -18,6 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Repuzzler$DataLoader.coverage" NAME="DataLoader Coverage Results" MODIFIED="1531118969778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/Shared" />
+    <SUITE FILE_PATH="coverage/Repuzzler$CopyProcessed.coverage" NAME="CopyProcessed Coverage Results" MODIFIED="1533081812113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
     <SUITE FILE_PATH="coverage/Repuzzler$Testing.coverage" NAME="Testing Coverage Results" MODIFIED="1531104067633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
     <SUITE FILE_PATH="coverage/Repuzzler$TestLearner.coverage" NAME="TestLearner Coverage Results" MODIFIED="1533010266194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
   </component>
@@ -39,33 +37,33 @@
     <session id="-1485716752">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.4" value="10" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.4" value="11" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="129" />
           <entry key="dummy" value="6" />
-          <entry key="py" value="2048" />
-          <entry key="txt" value="157" />
+          <entry key="py" value="2265" />
+          <entry key="txt" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="163" />
-          <entry key="Python" value="2177" />
+          <entry key="PLAIN_TEXT" value="176" />
+          <entry key="Python" value="2394" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="9" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="9" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
     </session>
@@ -75,8 +73,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state>
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -100,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
+            <state relative-caret-position="1903">
               <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
@@ -161,6 +158,7 @@
         <option value="$PROJECT_DIR$/Learners/Shared/RubikLoss.py" />
         <option value="$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py" />
         <option value="$PROJECT_DIR$/Learners/Shared/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/Learners/L1Rubik/CopyProcessed.py" />
       </list>
     </option>
   </component>
@@ -184,7 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,6 +217,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +255,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.TestLearner">
+    <configuration name="CopyProcessed" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Repuzzler" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Learners/L1Rubik" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Learners/L1Rubik/CopyProcessed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="DataLoader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Repuzzler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -327,9 +347,11 @@
       <item itemvalue="Python.Testing" />
       <item itemvalue="Python.TestLearner" />
       <item itemvalue="Python.DataLoader" />
+      <item itemvalue="Python.CopyProcessed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CopyProcessed" />
         <item itemvalue="Python.TestLearner" />
         <item itemvalue="Python.DataLoader" />
         <item itemvalue="Python.Testing" />
@@ -438,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532841793678</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Code cleaning">
+      <created>1533033618539</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1533033618539</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -453,7 +482,7 @@
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.290492" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29380873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -465,7 +494,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501382" side_tool="true" weight="0.3290253" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" visible="true" weight="0.3290253" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" weight="0.3290253" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3430264" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32990807" />
@@ -502,7 +531,8 @@
     <MESSAGE value="Split data to training and validation sets" />
     <MESSAGE value="Saving both best checkpoint and final weights models" />
     <MESSAGE value="Cache validation data in memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cache validation data in memory" />
+    <MESSAGE value="Code cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Learners/Shared/DataLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/RubikLoss.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4624">
@@ -675,9 +698,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/Shared/DataLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
+        <state relative-caret-position="1903">
           <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
@@ -687,10 +720,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/CopyProcessed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state>
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
