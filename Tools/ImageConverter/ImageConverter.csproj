@@ -62,7 +62,7 @@
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\BlueScreePage.cs" />
+    <Compile Include="Pages\BlueScreenPage.cs" />
     <Compile Include="Pages\BoundsPage.cs" />
     <Compile Include="Pages\SettingsPage.cs" />
     <Compile Include="Program.cs" />

@@ -15,9 +15,9 @@ using Point = System.Drawing.Point;
 
 namespace ImageConverter.Pages
 {
-	public class BlueScreePage : UserControl
+	public class BlueScreenPage : UserControl
 	{
-		public BlueScreePage()
+		public BlueScreenPage()
 		{
 			InitializeComponents();
 		}
@@ -193,7 +193,6 @@ namespace ImageConverter.Pages
 				var topY = Math.Min(image.Size.Height - 1, maxY);
 
 				const int Distance = 5;
-				const int DobeleDistanceExclusive = Distance * 2 + 1;
 				const int Dots = 10;
 
 				var limits = new Rectangle(minX - Distance, minY - Distance, maxX - minX + Distance, maxY - minY + Distance);

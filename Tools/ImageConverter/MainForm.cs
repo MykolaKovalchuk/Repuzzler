@@ -34,8 +34,8 @@ namespace ImageConverter
 
 			var tabBlueScreen = new TabPage { Text = "Blue Screen" };
 			tabBlueScreen.SuspendLayout();
-			blueScreePage = new BlueScreePage();
-			tabBlueScreen.Controls.Add(blueScreePage);
+			blueScreenPage = new BlueScreenPage();
+			tabBlueScreen.Controls.Add(blueScreenPage);
 
 			var tabSettngs = new TabPage { Text = "Settings" };
 			tabSettngs.SuspendLayout();
@@ -54,7 +54,7 @@ namespace ImageConverter
 		}
 
 		BoundsPage boundsPage;
-		BlueScreePage blueScreePage;
+		BlueScreenPage blueScreenPage;
 		SettingsPage settingsPage;
 
 		#endregion

@@ -1,7 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
-imageBGR = cv2.imread('/mnt/DA92812D92810F67/Rubik/Only Rubik/a-00001.png')
+imageBGR = cv2.imread('d:/Rubik/Hands/Left/i-02003.png')
 print(type(imageBGR))
 print(imageBGR.shape)
 
