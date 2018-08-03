@@ -16,5 +16,10 @@ namespace ImageConverter
 		{
 			return Path.Combine(BoundsFolder, Path.ChangeExtension(Path.GetFileName(imageFileName), "bounds"));
 		}
+
+		public static string GetDescreenedFileName(string imageFileName)
+		{
+			return Path.Combine(DescreenedFolder, Path.GetFileName(imageFileName));
+		}
 	}
 }

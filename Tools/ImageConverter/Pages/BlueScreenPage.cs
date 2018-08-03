@@ -54,6 +54,9 @@ namespace ImageConverter.Pages
 			textBoxRGB = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxValue.Right + 4, 2), "RGB", "0.1", 60);
 			textBoxDarkLimit = panelButtons.Controls.AddTextBoxWithLabel(new Point(textBoxRGB.Right + 4, 2), "Dark Limit", "0.25", 60);
 
+			buttonProcessAll = panelButtons.Controls.AddButton(new Point(panelButtons.Width - 100 - 8, 8), "Process All", 100, ProcessAllOnClick,
+				AnchorStyles.Right | AnchorStyles.Top);
+
 			ResumeLayout();
 		}
 
@@ -65,6 +68,8 @@ namespace ImageConverter.Pages
 		TextBox textBoxValue;
 		TextBox textBoxRGB;
 		TextBox textBoxDarkLimit;
+
+		Button buttonProcessAll;
 
 		#endregion
 
@@ -127,6 +132,41 @@ namespace ImageConverter.Pages
 			{
 				imageProvider.SetImage(sourceImage);
 			}
+		}
+
+		void ProcessAllOnClick(object sender, EventArgs e)
+		{
+			var files = new DirectoryInfo(Settings.ImagesFolder)
+				.GetFiles("*.png")
+				.Select(fi => fi.FullName)
+				//.Where(fileName => File.Exists(Settings.GetBoundsFileName(fileName))) // Use sample with available bounds
+				.ToList();
+
+			if (!Directory.Exists(Settings.DescreenedFolder))
+			{
+				Directory.CreateDirectory(Settings.DescreenedFolder);
+			}
+
+			for (int i = 0; i < files.Count; i++)
+			{
+				var fileName = files[i];
+
+				buttonProcessAll.Text = $"{i} of {files.Count}";
+				buttonProcessAll.Invalidate();
+				buttonProcessAll.Update();
+
+				var descreenedFileName = Settings.GetDescreenedFileName(fileName);
+				if (File.Exists(descreenedFileName))
+				{
+					continue;
+				}
+
+				var image = IndexedImageExtensions.FromBitmapFile(fileName);
+				var result = DescreenImage(image, fileName);
+				result.ToBitmapFile(descreenedFileName);
+			}
+
+			buttonProcessAll.Text = "Process All";
 		}
 
 		#endregion
@@ -192,7 +232,7 @@ namespace ImageConverter.Pages
 				var topX = Math.Min(image.Size.Width - 1, maxX);
 				var topY = Math.Min(image.Size.Height - 1, maxY);
 
-				const int Distance = 5;
+				const int Distance = 10;
 				const int Dots = 10;
 
 				var limits = new Rectangle(minX - Distance, minY - Distance, maxX - minX + Distance, maxY - minY + Distance);
