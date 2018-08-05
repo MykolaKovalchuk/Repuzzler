@@ -46,7 +46,10 @@ namespace ImageConverter.Pages
 			var buttonSource = panelButtons.Controls.AddButton(new Point(8, 8), "Load Images", 100, ButtonSourceOnClick);
 			var buttonNext = panelButtons.Controls.AddButton(new Point(buttonSource.Right + 16, 8), "Save and Next", 100, ButtonNextOnClick);
 
-			labelImages = panelButtons.Controls.AddLabel(new Point(buttonNext.Right + 16, 4), "");
+			comboBoxLabelsKind = panelButtons.Controls.AddComboBox(new Point(buttonNext.Right + 16, 8), 80, LabelsKindChanged,
+				LabelsKindCube, LabelsKindPoint);
+
+			labelImages = panelButtons.Controls.AddLabel(new Point(comboBoxLabelsKind.Right + 16, 2), "");
 
 			panelButtons.Controls.AddButton(new Point(panelButtons.Width - 80 - 8, 8), "Skip", 80, ButtonSkipOnClick,
 				AnchorStyles.Right | AnchorStyles.Top);
@@ -56,16 +59,20 @@ namespace ImageConverter.Pages
 
 		VisualControl visualControl;
 		Label labelImages;
+		ComboBox comboBoxLabelsKind;
 
 		#endregion
 
 		#region Operations
 
+		const string LabelsKindCube = "Cube";
+		const string LabelsKindPoint = "Point";
+
 		ModelInferrence Model
 		{
 			get
 			{
-				if (model == null && !string.IsNullOrEmpty(Settings.BoundsModel))
+				if (model == null && !string.IsNullOrEmpty(Settings.BoundsModel) && File.Exists(Settings.BoundsModel))
 				{
 					model = new ModelInferrence(Settings.BoundsModel, new Size(299, 299));
 				}
@@ -99,6 +106,20 @@ namespace ImageConverter.Pages
 		void UpdateLabel()
 		{
 			labelImages.Text = $"Images: {Settings.ImagesFolder}{Environment.NewLine}Bounds: {Settings.BoundsFolder}{Environment.NewLine}Files: {files.Count}";
+		}
+
+		void LabelsKindChanged(object sender, EventArgs e)
+		{
+			if (anchorsController == null)
+			{
+				return;
+			}
+
+			using (anchorsController.SuspendUpdateVisualImage())
+			{
+				anchorsController.ClearAllAnchors();
+				SetupAnchors(comboBoxLabelsKind.Text);
+			}
 		}
 
 		void ButtonNextOnClick(object sender, EventArgs e)
@@ -154,25 +175,37 @@ namespace ImageConverter.Pages
 				ZoomPercent = 100
 			};
 
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 300));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 250));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 150));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 100));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 150));
-			anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 250));
-
-			anchorsController.AddEdge(0, 1);
-			anchorsController.AddEdge(0, 3);
-			anchorsController.AddEdge(0, 5);
-			anchorsController.AddEdge(1, 2);
-			anchorsController.AddEdge(2, 3);
-			anchorsController.AddEdge(3, 4);
-			anchorsController.AddEdge(4, 5);
-			anchorsController.AddEdge(5, 6);
-			anchorsController.AddEdge(6, 1);
-
+			SetupAnchors(comboBoxLabelsKind.Text);
 			visualControl.Controller = anchorsController;
+		}
+
+		void SetupAnchors(string kind)
+		{
+			switch (kind)
+			{
+				case LabelsKindCube:
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 300));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 250));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 150));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 100));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 150));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 250));
+
+					anchorsController.AddEdge(0, 1);
+					anchorsController.AddEdge(0, 3);
+					anchorsController.AddEdge(0, 5);
+					anchorsController.AddEdge(1, 2);
+					anchorsController.AddEdge(2, 3);
+					anchorsController.AddEdge(3, 4);
+					anchorsController.AddEdge(4, 5);
+					anchorsController.AddEdge(5, 6);
+					anchorsController.AddEdge(6, 1);
+					break;
+				case LabelsKindPoint:
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200));
+					break;
+			}
 		}
 
 		void SaveBounds()
@@ -199,6 +232,11 @@ namespace ImageConverter.Pages
 
 		void PredictBoundsFromImage(IndexedImage image)
 		{
+			if (comboBoxLabelsKind.Text == LabelsKindPoint)
+			{
+				return;
+			}
+
 			if (Model == null)
 			{
 				return;

@@ -52,5 +52,24 @@ namespace ImageConverter.Utils
 
 			return textBox;
 		}
+
+		public static ComboBox AddComboBox(this Control.ControlCollection controls, Point location, int width, EventHandler handler, params string[] opiton)
+		{
+			var comboBox = new ComboBox
+			{
+				Width = width,
+				Location = location,
+				DropDownStyle = ComboBoxStyle.DropDownList
+			};
+			comboBox.Items.AddRange(opiton);
+			comboBox.SelectedIndex = 0;
+			if (handler != null)
+			{
+				comboBox.SelectedIndexChanged += handler;
+			}
+			controls.Add(comboBox);
+
+			return comboBox;
+		}
 	}
 }

@@ -29,7 +29,7 @@ namespace Ravlyk.UI.ImageProcessor
 
 			anchors.Add(newAnchor);
 
-			quickUpdate = true;
+			quickUpdate = false;
 			UpdateVisualImage();
 
 			return anchors.Count - 1;
@@ -57,6 +57,15 @@ namespace Ravlyk.UI.ImageProcessor
 			edges.Add((firstAnchorIndex, secondAnchorIndex));
 
 			quickUpdate = true;
+			UpdateVisualImage();
+		}
+
+		public void ClearAllAnchors()
+		{
+			DrawAnchorsCore(true);
+			anchors.Clear();
+			edges.Clear();
+			quickUpdate = false;
 			UpdateVisualImage();
 		}
 
