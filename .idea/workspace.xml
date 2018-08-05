@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Repuzzler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="Learners/L1Rubik/Logs/" />
     <ignored path="Learners/L1Rubik/Models/" />
+    <ignored path="venv/" />
+    <ignored mask="*.DotSettings" />
+    <ignored path="C:\Users\mykol\RiderProjects\Repuzzler\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,10 +18,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Repuzzler$DataLoader.coverage" NAME="DataLoader Coverage Results" MODIFIED="1531118969778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/Shared" />
     <SUITE FILE_PATH="coverage/Repuzzler$CopyProcessed.coverage" NAME="CopyProcessed Coverage Results" MODIFIED="1533081812113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
-    <SUITE FILE_PATH="coverage/Repuzzler$Testing.coverage" NAME="Testing Coverage Results" MODIFIED="1531104067633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
     <SUITE FILE_PATH="coverage/Repuzzler$TestLearner.coverage" NAME="TestLearner Coverage Results" MODIFIED="1533010266194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
+    <SUITE FILE_PATH="coverage/Repuzzler$Testing.coverage" NAME="Testing Coverage Results" MODIFIED="1531104067633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/L1Rubik" />
+    <SUITE FILE_PATH="coverage/Repuzzler$DataLoader.coverage" NAME="DataLoader Coverage Results" MODIFIED="1531118969778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Learners/Shared" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -66,16 +71,32 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-702240073">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -83,11 +104,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/RubikLoss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4624">
+            <state relative-caret-position="2312">
               <caret line="137" selection-start-line="137" selection-end-line="137" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
-                <marker date="1533009487149" expanded="true" signature="4125:4239" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,12 +116,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2142">
+            <state relative-caret-position="1071">
               <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <marker date="1533010929551" expanded="true" signature="393:926" ph="..." />
-                <marker date="1533010929551" expanded="true" signature="393:943" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,11 +128,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
+            <state relative-caret-position="1190">
               <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1532755802568" expanded="true" signature="3207:3211" ph="..." />
               </folding>
             </state>
           </provider>
@@ -168,16 +185,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="692" />
-    <option name="y" value="111" />
-    <option name="width" value="2533" />
-    <option name="height" value="1928" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1163" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <showMembers ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -198,13 +216,6 @@
               <item name="Repuzzler" type="462c0819:PsiDirectoryNode" />
               <item name="Learners" type="462c0819:PsiDirectoryNode" />
               <item name="L1Rubik" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Repuzzler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repuzzler" type="462c0819:PsiDirectoryNode" />
-              <item name="Learners" type="462c0819:PsiDirectoryNode" />
-              <item name="L1Rubik" type="462c0819:PsiDirectoryNode" />
-              <item name="Logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Repuzzler" type="b2602c69:ProjectViewProjectNode" />
@@ -486,10 +497,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30071864" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2680162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -501,7 +511,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501382" side_tool="true" weight="0.3290253" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" weight="0.3290253" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" visible="true" weight="0.42211837" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3430264" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32990807" />
@@ -517,6 +527,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -621,20 +657,8 @@
     <entry file="file://$PROJECT_DIR$/Learners/Shared/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/keras/utils/data_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="366" lean-forward="true" selection-start-line="366" selection-end-line="366" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/keras/applications/inception_v3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/keras/utils/data_utils.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/keras/applications/inception_v3.py" />
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/Testing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -642,20 +666,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1837408926/cv2/cv2/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="10859" column="77" lean-forward="true" selection-start-line="10859" selection-start-column="77" selection-end-line="10859" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/graph_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1837408926/cv2/cv2/__init__.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/graph_io.py" />
     <entry file="file://$PROJECT_DIR$/Learners/Shared/keras_to_tensorflow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -698,46 +710,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/RubikLoss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4624">
+        <state relative-caret-position="2312">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-            <marker date="1533009487149" expanded="true" signature="4125:4239" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
+        <state relative-caret-position="1071">
           <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <marker date="1533010929551" expanded="true" signature="393:926" ph="..." />
-            <marker date="1533010929551" expanded="true" signature="393:943" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/Shared/ModelCreator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
+        <state relative-caret-position="1190">
           <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1532755802568" expanded="true" signature="3207:3211" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/Repuzzler.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
