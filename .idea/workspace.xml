@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf999e55-7477-4772-9d7a-d96f0e1d7034" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Repuzzler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repuzzler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="Learners/L1Rubik/Logs/" />
@@ -74,6 +72,7 @@
     <session id="-702240073">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -88,6 +87,16 @@
           <entry key="IDEA_MODULE" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="16" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -95,8 +104,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="127">
+              <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -484,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533083073517</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Workspace">
+      <created>1533442867264</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533442867264</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -499,7 +518,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2680162" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2680162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -509,9 +528,9 @@
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39956918" />
       <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4994472" weight="0.40926224" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32990807" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501382" side_tool="true" weight="0.3290253" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501382" side_tool="true" weight="0.32866043" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" visible="true" weight="0.42211837" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.498618" weight="0.42211837" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3430264" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32990807" />
@@ -576,7 +595,8 @@
     <MESSAGE value="Cache validation data in memory" />
     <MESSAGE value="Code cleaning" />
     <MESSAGE value="Copy labeled data to a subfolder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Copy labeled data to a subfolder" />
+    <MESSAGE value="Workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -745,8 +765,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Learners/L1Rubik/TestLearner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="127">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

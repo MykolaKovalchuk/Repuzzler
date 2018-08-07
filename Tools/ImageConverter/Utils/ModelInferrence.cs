@@ -24,11 +24,43 @@ namespace ImageConverter.Utils
 		TFGraph Graph { get; set; }
 		TFSession Session { get; set; }
 
-		public IEnumerable<Point> GetEdges(IndexedImage image1)
+		// TODO: Calcurate variants diviation
+		// TODO: Ignore most diffirent variant, and average amongst remaining
+
+		public IEnumerable<Point> GetEdges(IndexedImage image)
 		{
 			if (Graph == null)
 			{
 				yield break;
+			}
+
+			var pointsVariants = GetEdgesVariants(image);
+			if (pointsVariants.Count == 0)
+			{
+				yield break;
+			}
+
+			for (var i = 0; i < pointsVariants[0].Count; i++)
+			{
+				int x = 0, y = 0;
+				var imagesCount = pointsVariants.Count;
+				for (var imageIndex = 0; imageIndex < imagesCount; imageIndex++)
+				{
+					x += pointsVariants[imageIndex][i].X;
+					y += pointsVariants[imageIndex][i].Y;
+				}
+				x /= imagesCount;
+				y /= imagesCount;
+
+				yield return new Point(x, y);
+			}
+		}
+
+		public IList<IList<Point>> GetEdgesVariants(IndexedImage image1)
+		{
+			if (Graph == null)
+			{
+				return new List<IList<Point>>();
 			}
 
 			image1 = CropAndResize(image1, out var shift, out var scaleX, out var scaleY);
@@ -47,28 +79,32 @@ namespace ImageConverter.Utils
 			var output = runner.Run();
 
 			var flatPoints = (float[,])output[0].GetValue();
-			FlipPointsHorizontally(flatPoints, 1, (2, 6), (3, 5));
+			FlipPointsHorizontally(flatPoints, 1, RubikHelper.HorizontalFlipPairs);
 			RotatePointsCoordinatesCW(flatPoints, 2);
 			RotatePointsCoordinatesCW(flatPoints, 3);
-			FlipPointsHorizontally(flatPoints, 3, (2, 6), (3, 5));
+			FlipPointsHorizontally(flatPoints, 3, RubikHelper.HorizontalFlipPairs);
 			NormalizePointsOrientation(flatPoints);
 
-			for (int ix = 0, iy = 1; iy < flatPoints.GetLength(1); ix += 2, iy += 2)
-			{
-				float x = 0.0f, y = 0.0f;
-				var imagesCount = flatPoints.GetLength(0);
-				for (var imageIndex = 0; imageIndex < imagesCount; imageIndex++)
-				{
-					x += flatPoints[imageIndex, ix];
-					y += flatPoints[imageIndex, iy];
-				}
-				x /= imagesCount;
-				y /= imagesCount;
+			var resurt = new List<IList<Point>>();
 
-				yield return new Point(
-					shift.X + (int)(x * InputSize.Width / scaleX + 0.5f),
-					shift.Y + (int)(y * InputSize.Height / scaleY + 0.5f));
+			var imagesCount = flatPoints.GetLength(0);
+			for (var imageIndex = 0; imageIndex < imagesCount; imageIndex++)
+			{
+				var points = new List<Point>();
+				resurt.Add(points);
+
+				for (int ix = 0, iy = 1; iy < flatPoints.GetLength(1); ix += 2, iy += 2)
+				{
+					var x = flatPoints[imageIndex, ix];
+					var y = flatPoints[imageIndex, iy];
+
+					points.Add(new Point(
+						shift.X + (int)(x * InputSize.Width / scaleX + 0.5f),
+						shift.Y + (int)(y * InputSize.Height / scaleY + 0.5f)));
+				}
 			}
+
+			return resurt;
 		}
 
 		#region Prepare tensor
@@ -123,7 +159,7 @@ namespace ImageConverter.Utils
 
 		#region Normalize points
 
-		void FlipPointsHorizontally(float[,] points, int imageIndex, params (int a, int b)[] pairs)
+		void FlipPointsHorizontally(float[,] points, int imageIndex, IEnumerable<(int a, int b)> pairs)
 		{
 			for (int ix = 0; ix < points.GetLength(1); ix += 2)
 			{

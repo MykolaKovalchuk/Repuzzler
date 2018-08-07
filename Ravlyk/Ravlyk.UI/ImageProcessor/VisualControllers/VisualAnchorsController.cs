@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Ravlyk.Common;
-using Ravlyk.Drawing;
 using Ravlyk.Drawing.ImageProcessor;
 
 namespace Ravlyk.UI.ImageProcessor
@@ -15,46 +13,76 @@ namespace Ravlyk.UI.ImageProcessor
 
 		#region Anchors
 
-		readonly List<Point> anchors = new List<Point>();
-		readonly List<(int a, int b)> edges = new List<(int, int)>();
-
-		public IList<Point> AllAnchors => anchors;
-
-		public int AddAnchor(Point newAnchor)
+		public class Anchor
 		{
-			if (anchors.Any(anchor => anchor == newAnchor))
-			{
-				throw new ArgumentException($"Similar anchor is already added to list: {newAnchor}");
-			}
+			public Point Location { get; set; }
+			public int Color { get; set; }
+		}
 
+		public class Edge
+		{
+			public Point StartXYAnchorIndexes { get; set; }
+			public Size StartShift { get; set; }
+			public Point EndXYAnchorIndexes { get; set; }
+			public Size EndShift { get; set; }
+			public int Color { get; set; }
+		}
+
+		readonly List<Anchor> anchors = new List<Anchor>();
+		readonly List<Edge> edges = new List<Edge>();
+
+		public IList<Anchor> AllAnchors => anchors;
+
+		public void AddAnchor(Point location, int color)
+		{
+			AddAnchor(new Anchor { Location = location, Color = color });
+		}
+
+		void AddAnchor(Anchor newAnchor)
+		{
 			anchors.Add(newAnchor);
 
 			quickUpdate = false;
 			UpdateVisualImage();
-
-			return anchors.Count - 1;
 		}
 
-		public void AddEdge(int firstAnchorIndex, int secondAnchorIndex)
+		public void AddEdge(int firstAnchorIndex, int secondAnchorIndex, int color)
 		{
-			if (firstAnchorIndex == secondAnchorIndex)
+			AddEdge(new Point(firstAnchorIndex, firstAnchorIndex), new Point(secondAnchorIndex, secondAnchorIndex), color);
+		}
+
+		public void AddEdge(Point startIndexes, Point endIndexes, int color)
+		{
+			AddEdge(startIndexes, endIndexes, default(Size), default(Size), color);
+		}
+
+		public void AddEdge(Point startIndexes, Point endIndexes, Size startShift, Size endShift, int color)
+		{
+			if (startIndexes.X < 0 || startIndexes.X >= anchors.Count)
 			{
-				throw new ArgumentException($"1st and 2nd anchor indexes are same: {firstAnchorIndex}");
+				throw new ArgumentNullException($"1st anchor X index is out of bounds: {startIndexes.X}");
 			}
-			if (firstAnchorIndex < 0 || firstAnchorIndex >= anchors.Count)
+			if (startIndexes.Y < 0 || startIndexes.Y >= anchors.Count)
 			{
-				throw new ArgumentNullException($"1st anchor index is out of bounds: {firstAnchorIndex}");
+				throw new ArgumentNullException($"1st anchor Y index is out of bounds: {startIndexes.Y}");
 			}
-			if (secondAnchorIndex < 0 || secondAnchorIndex >= anchors.Count)
+			if (endIndexes.X < 0 || endIndexes.X >= anchors.Count)
 			{
-				throw new ArgumentNullException($"2nd anchor index is out of bounds: {secondAnchorIndex}");
+				throw new ArgumentNullException($"2nd anchor X index is out of bounds: {endIndexes.X}");
 			}
-			if (edges.Any(edge => edge.a == firstAnchorIndex && edge.b == secondAnchorIndex || edge.b == firstAnchorIndex && edge.a == secondAnchorIndex))
+			if (endIndexes.Y < 0 || endIndexes.Y >= anchors.Count)
 			{
-				throw new ArgumentException($"Similar edge is already added to list: ({firstAnchorIndex}, {secondAnchorIndex})");
+				throw new ArgumentNullException($"2nd anchor Y index is out of bounds: {endIndexes.Y}");
 			}
 
-			edges.Add((firstAnchorIndex, secondAnchorIndex));
+			edges.Add(new Edge
+			{
+				StartXYAnchorIndexes = startIndexes,
+				StartShift = startShift,
+				EndXYAnchorIndexes = endIndexes,
+				EndShift = endShift,
+				Color = color
+			});
 
 			quickUpdate = true;
 			UpdateVisualImage();
@@ -77,8 +105,6 @@ namespace Ravlyk.UI.ImageProcessor
 		int[] originalVisualImagePixels;
 
 		const int AnchorRadius = 8;
-		readonly int anchorColor = ColorBytes.ToArgb(255, 255, 127, 0);
-		readonly int edgeColor = ColorBytes.ToArgb(255, 255, 0, 0);
 
 		protected override void UpdateParameters()
 		{
@@ -112,32 +138,42 @@ namespace Ravlyk.UI.ImageProcessor
 
 			foreach (var anchor in anchors)
 			{
-				DrawAnchor(ZoomedShiftedPoint(anchor), clear);
+				DrawAnchor(anchor, clear);
 			}
 		}
 
-		void DrawAnchor(Point anchor, bool clear)
+		void DrawAnchor(Anchor anchor, bool clear)
 		{
-			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => edgeColor;
+			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => anchor.Color;
+			var point = ZoomedShiftedPoint(anchor.Location);
 
 			ImagePainter.DrawAnyLineFat(VisualImage,
-				new Point(anchor.X - AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y - AnchorRadius),
+				new Point(point.X - AnchorRadius, point.Y - AnchorRadius), new Point(point.X + AnchorRadius, point.Y - AnchorRadius),
 				colorDecider);
 			ImagePainter.DrawAnyLineFat(VisualImage,
-				new Point(anchor.X - AnchorRadius, anchor.Y + AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y + AnchorRadius),
+				new Point(point.X - AnchorRadius, point.Y + AnchorRadius), new Point(point.X + AnchorRadius, point.Y + AnchorRadius),
 				colorDecider);
 			ImagePainter.DrawAnyLineFat(VisualImage,
-				new Point(anchor.X - AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X - AnchorRadius, anchor.Y + AnchorRadius),
+				new Point(point.X - AnchorRadius, point.Y - AnchorRadius), new Point(point.X - AnchorRadius, point.Y + AnchorRadius),
 				colorDecider);
 			ImagePainter.DrawAnyLineFat(VisualImage,
-				new Point(anchor.X + AnchorRadius, anchor.Y - AnchorRadius), new Point(anchor.X + AnchorRadius, anchor.Y + AnchorRadius),
+				new Point(point.X + AnchorRadius, point.Y - AnchorRadius), new Point(point.X + AnchorRadius, point.Y + AnchorRadius),
 				colorDecider);
 		}
 
-		void DrawEdge((int a, int b) edge, bool clear)
+		void DrawEdge(Edge edge, bool clear)
 		{
-			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => edgeColor;
-			ImagePainter.DrawAnyLineFat(VisualImage, ZoomedShiftedPoint(anchors[edge.a]), ZoomedShiftedPoint(anchors[edge.b]), colorDecider);
+			var colorDecider = clear ? (Func<int, int>)(i => originalVisualImagePixels[i]) : i => edge.Color;
+			ImagePainter.DrawAnyLineFat(VisualImage,
+				ZoomedShiftedPoint(
+					new Point(
+						anchors[edge.StartXYAnchorIndexes.X].Location.X + edge.StartShift.Width,
+						anchors[edge.StartXYAnchorIndexes.Y].Location.Y + edge.StartShift.Height)),
+				ZoomedShiftedPoint(
+					new Point(
+						anchors[edge.EndXYAnchorIndexes.X].Location.X + edge.EndShift.Width,
+						anchors[edge.EndXYAnchorIndexes.Y].Location.Y + edge.EndShift.Height)),
+				colorDecider);
 		}
 
 		#endregion
@@ -153,7 +189,7 @@ namespace Ravlyk.UI.ImageProcessor
 
 			foreach (var anchor in anchors)
 			{
-				if (IsOverAnchor(imagePoint, ZoomedPoint(anchor)))
+				if (IsOverAnchor(imagePoint, ZoomedPoint(anchor.Location)))
 				{
 					return TouchPointerStyle.Cross;
 				}
@@ -172,10 +208,10 @@ namespace Ravlyk.UI.ImageProcessor
 			originalAnchorPointIndex = -1;
 			for (int i = 0; i < anchors.Count; i++)
 			{
-				if (IsOverAnchor(imagePoint, ZoomedPoint(anchors[i])))
+				if (IsOverAnchor(imagePoint, ZoomedPoint(anchors[i].Location)))
 				{
 					originalAnchorPointIndex = i;
-					originalZoomedAnchorPoint = ZoomedPoint(anchors[i]);
+					originalZoomedAnchorPoint = ZoomedPoint(anchors[i].Location);
 					break;
 				}
 			}
@@ -198,7 +234,7 @@ namespace Ravlyk.UI.ImageProcessor
 				DrawAnchorsCore(true);
 				var newZoomedAnchorPoint = new Point(originalZoomedAnchorPoint.X + shiftSize.Width, originalZoomedAnchorPoint.Y + shiftSize.Height);
 				originalZoomedAnchorPoint = newZoomedAnchorPoint;
-				anchors[originalAnchorPointIndex] = UnZoomedPoint(newZoomedAnchorPoint);
+				anchors[originalAnchorPointIndex].Location = UnZoomedPoint(newZoomedAnchorPoint);
 
 				quickUpdate = true;
 				UpdateVisualImage();

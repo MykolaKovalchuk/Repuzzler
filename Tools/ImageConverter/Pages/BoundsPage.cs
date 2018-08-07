@@ -44,12 +44,14 @@ namespace ImageConverter.Pages
 			Controls.Add(panelButtons);
 
 			var buttonSource = panelButtons.Controls.AddButton(new Point(8, 8), "Load Images", 100, ButtonSourceOnClick);
-			var buttonNext = panelButtons.Controls.AddButton(new Point(buttonSource.Right + 16, 8), "Save and Next", 100, ButtonNextOnClick);
+			buttonNext = panelButtons.Controls.AddButton(new Point(buttonSource.Right + 8, 8), "Save and Next", 100, ButtonNextOnClick);
 
-			comboBoxLabelsKind = panelButtons.Controls.AddComboBox(new Point(buttonNext.Right + 16, 8), 80, LabelsKindChanged,
+			comboBoxLabelsKind = panelButtons.Controls.AddComboBox(new Point(buttonNext.Right + 8, 8), 80, LabelsKindChanged,
 				LabelsKindCube, LabelsKindPoint);
 
-			labelImages = panelButtons.Controls.AddLabel(new Point(comboBoxLabelsKind.Right + 16, 2), "");
+			checkBoxVisualize = panelButtons.Controls.AddCheckBox(new Point(comboBoxLabelsKind.Right + 8, 8), "Visualize", CheckBoxVisualizeChanged);
+
+			labelImages = panelButtons.Controls.AddLabel(new Point(checkBoxVisualize.Right + 8, 2), "");
 
 			panelButtons.Controls.AddButton(new Point(panelButtons.Width - 80 - 8, 8), "Skip", 80, ButtonSkipOnClick,
 				AnchorStyles.Right | AnchorStyles.Top);
@@ -58,8 +60,10 @@ namespace ImageConverter.Pages
 		}
 
 		VisualControl visualControl;
+		Button buttonNext;
 		Label labelImages;
 		ComboBox comboBoxLabelsKind;
+		CheckBox checkBoxVisualize;
 
 		#endregion
 
@@ -122,6 +126,11 @@ namespace ImageConverter.Pages
 			}
 		}
 
+		void CheckBoxVisualizeChanged(object sender, EventArgs e)
+		{
+			buttonNext.Enabled = !checkBoxVisualize.Checked;
+		}
+
 		void ButtonNextOnClick(object sender, EventArgs e)
 		{
 			Next(true);
@@ -181,29 +190,26 @@ namespace ImageConverter.Pages
 
 		void SetupAnchors(string kind)
 		{
+			var edgeColor = ColorBytes.ToArgb(255, 255, 0, 0);
+
 			switch (kind)
 			{
 				case LabelsKindCube:
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 300));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 250));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 150));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 100));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 150));
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 250));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 300), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 250), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(120, 150), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 100), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 150), edgeColor);
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(280, 250), edgeColor);
 
-					anchorsController.AddEdge(0, 1);
-					anchorsController.AddEdge(0, 3);
-					anchorsController.AddEdge(0, 5);
-					anchorsController.AddEdge(1, 2);
-					anchorsController.AddEdge(2, 3);
-					anchorsController.AddEdge(3, 4);
-					anchorsController.AddEdge(4, 5);
-					anchorsController.AddEdge(5, 6);
-					anchorsController.AddEdge(6, 1);
+					foreach (var edgePair in RubikHelper.RubikEdges)
+					{
+						anchorsController.AddEdge(edgePair.a, edgePair.b, edgeColor);
+					}
 					break;
 				case LabelsKindPoint:
-					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200));
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(200, 200), edgeColor);
 					break;
 			}
 		}
@@ -223,7 +229,7 @@ namespace ImageConverter.Pages
 			var data = new StringBuilder();
 			foreach (var anchor in anchorsController.AllAnchors)
 			{
-				data.Append(anchor.X).Append(',').Append(anchor.Y).AppendLine();
+				data.Append(anchor.Location.X).Append(',').Append(anchor.Location.Y).AppendLine();
 			}
 
 			var boundsFileName = Settings.GetBoundsFileName(currentFileName);
@@ -242,15 +248,48 @@ namespace ImageConverter.Pages
 				return;
 			}
 
-			var t = Environment.TickCount;
-			var points = Model.GetEdges(image).ToList();
-			Console.WriteLine(Environment.TickCount - t);
-
-			if (points.Count == anchorsController.AllAnchors.Count)
+			if (!checkBoxVisualize.Checked)
 			{
-				for (int i = 0; i < points.Count; i++)
+				var t = Environment.TickCount;
+				var points = Model.GetEdges(image).ToList();
+				Console.WriteLine(Environment.TickCount - t);
+
+				if (points.Count == anchorsController.AllAnchors.Count)
 				{
-					anchorsController.AllAnchors[i] = points[i];
+					for (int i = 0; i < points.Count; i++)
+					{
+						anchorsController.AllAnchors[i].Location = points[i];
+					}
+				}
+			}
+			else
+			{
+				using (anchorsController.SuspendUpdateVisualImage())
+				{
+					anchorsController.ClearAllAnchors();
+					anchorsController.AddAnchor(new Ravlyk.Common.Point(0, 0), 0);
+
+					var colorsList = new int[]
+					{
+						ColorBytes.ToArgb(255, 255, 0, 0),
+						ColorBytes.ToArgb(255, 255, 255, 0),
+						ColorBytes.ToArgb(255, 255, 0, 255),
+						ColorBytes.ToArgb(255, 0, 255, 255),
+					};
+
+					var pointsVariants = Model.GetEdgesVariants(image);
+					for (var i = 0; i < pointsVariants.Count; i++)
+					{
+						var edgeColor = colorsList[i % colorsList.Length];
+						foreach (var edgePair in RubikHelper.RubikEdges)
+						{
+							anchorsController.AddEdge(
+								new Ravlyk.Common.Point(0, 0), new Ravlyk.Common.Point(0, 0),
+								new Size(pointsVariants[i][edgePair.a].X, pointsVariants[i][edgePair.a].Y),
+								new Size(pointsVariants[i][edgePair.b].X, pointsVariants[i][edgePair.b].Y),
+								edgeColor);
+						}
+					}
 				}
 			}
 		}

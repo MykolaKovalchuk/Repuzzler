@@ -106,15 +106,21 @@ namespace ImageConverter.Pages
 
 		void InitializeController()
 		{
+			var edgeColor = ColorBytes.ToArgb(255, 255, 0, 0);
+
 			imageProvider = new ImageProvider(new IndexedImage { Size = new Ravlyk.Common.Size(10, 10) });
 
 			visualController = new VisualAnchorsController(imageProvider, new Ravlyk.Common.Size(visualControl.Width, visualControl.Height))
 			{
 				ZoomPercent = 100
 			};
-			visualController.AddAnchor(new Ravlyk.Common.Point(100, 100));
-			visualController.AddAnchor(new Ravlyk.Common.Point(200, 200));
-			visualController.AddEdge(0, 1);
+			visualController.AddAnchor(new Ravlyk.Common.Point(100, 100), edgeColor);
+			visualController.AddAnchor(new Ravlyk.Common.Point(200, 200), edgeColor);
+
+			visualController.AddEdge(new Ravlyk.Common.Point(0, 0), new Ravlyk.Common.Point(0, 1), edgeColor);
+			visualController.AddEdge(new Ravlyk.Common.Point(0, 1), new Ravlyk.Common.Point(1, 1), edgeColor);
+			visualController.AddEdge(new Ravlyk.Common.Point(1, 1), new Ravlyk.Common.Point(1, 0), edgeColor);
+			visualController.AddEdge(new Ravlyk.Common.Point(1, 0), new Ravlyk.Common.Point(0, 0), edgeColor);
 
 			visualControl.Controller = visualController;
 		}
@@ -286,10 +292,10 @@ namespace ImageConverter.Pages
 
 		Color GetScreenColor(IndexedImage image)
 		{
-			var minX = Math.Min(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
-			var minY = Math.Min(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
-			var maxX = Math.Max(visualController.AllAnchors[0].X, visualController.AllAnchors[1].X);
-			var maxY = Math.Max(visualController.AllAnchors[0].Y, visualController.AllAnchors[1].Y);
+			var minX = Math.Min(visualController.AllAnchors[0].Location.X, visualController.AllAnchors[1].Location.X);
+			var minY = Math.Min(visualController.AllAnchors[0].Location.Y, visualController.AllAnchors[1].Location.Y);
+			var maxX = Math.Max(visualController.AllAnchors[0].Location.X, visualController.AllAnchors[1].Location.X);
+			var maxY = Math.Max(visualController.AllAnchors[0].Location.Y, visualController.AllAnchors[1].Location.Y);
 
 			return GetScreenColor(image, minX, minY, maxX, maxY);
 		}

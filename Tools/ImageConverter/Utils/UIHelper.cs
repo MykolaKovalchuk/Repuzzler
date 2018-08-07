@@ -71,5 +71,22 @@ namespace ImageConverter.Utils
 
 			return comboBox;
 		}
+
+		public static CheckBox AddCheckBox(this Control.ControlCollection controls, Point location, string caption, EventHandler handler = null)
+		{
+			var checkBox = new CheckBox
+			{
+				Text = caption,
+				Location = location,
+				AutoSize = true
+			};
+			if (handler != null)
+			{
+				checkBox.CheckedChanged += handler;
+			}
+			controls.Add(checkBox);
+
+			return checkBox;
+		}
 	}
 }

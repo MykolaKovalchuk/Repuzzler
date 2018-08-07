@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Repuzzler.-1522282487.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\Users\mykol\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Repuzzler.-1678573089.00" t="ExcludeRecursive" />
+    <e p="C:\Users\mykol\RiderProjects\Repuzzler" t="IncludeFlat">
       <e p="LICENSE" t="Include" />
-      <e p="README.md" t="Include" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="TensorFlowSharp.1.8.0-pre1\runtimes\win7-x64\native\libtensorflow.dll" t="Include" />
+      </e>
       <e p="Ravlyk" t="Include">
         <e p="Ravlyk.Common" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
           <e p="DisposableAction.cs" t="Include" />
           <e p="DisposableLock.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Points" t="Include">
             <e p="Point.cs" t="Include" />
             <e p="Rectangle.cs" t="Include" />
@@ -24,22 +28,21 @@
             <e p="UndoRedoProvider.cs" t="Include" />
             <e p="UndoRedoStep.cs" t="Include" />
           </e>
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
         <e p="Ravlyk.Drawing" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
           <e p="Color.cs" t="Include" />
           <e p="ColorBytes.cs" t="Include" />
           <e p="IndexedImage.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Palette.cs" t="Include" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
           <e p="Ravlyk.Drawing.csproj" t="IncludeRecursive" />
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
         <e p="Ravlyk.Drawing.ImageProcessor" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
           <e p="ColorRemover.cs" t="Include" />
           <e p="ImageCopier.cs" t="Include" />
           <e p="ImageCropper.cs" t="Include" />
@@ -48,6 +51,7 @@
           <e p="ImageRotator.cs" t="Include" />
           <e p="ImageShifter.cs" t="Include" />
           <e p="NeuQuant.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
             <e p="Resources.Designer.cs" t="Include" />
@@ -60,19 +64,18 @@
             <e p="PaletteQuickColorSearcher.cs" t="Include" />
             <e p="Region.cs" t="Include" />
           </e>
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
         <e p="Ravlyk.Drawing.SD" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
           <e p="IndexedImageExtensions.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
           <e p="Ravlyk.Drawing.SD.csproj" t="IncludeRecursive" />
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
         <e p="Ravlyk.UI" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
           <e p="IImageProvider.cs" t="Include" />
           <e p="ImageProcessor" t="Include">
             <e p="VisualControllers" t="Include">
@@ -82,30 +85,33 @@
               <e p="VisualZoomController.cs" t="Include" />
             </e>
           </e>
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
           <e p="Ravlyk.UI.csproj" t="IncludeRecursive" />
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
         <e p="Ravlyk.UI.WinForms" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
           <e p="Ravlyk.UI.WinForms.csproj" t="IncludeRecursive" />
           <e p="VisualControl.cs" t="Include" />
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
         </e>
       </e>
+      <e p="README.md" t="Include" />
       <e p="Repuzzler.sln" t="IncludeFlat" />
       <e p="Solution Items" t="Include" />
       <e p="Tools" t="Include">
         <e p="ImageConverter" t="IncludeRecursive">
           <e p="App.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
           <e p="ImageConverter.csproj" t="IncludeRecursive" />
           <e p="MainForm.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
           <e p="Pages" t="Include">
             <e p="BlueScreenPage.cs" t="Include" />
             <e p="BoundsPage.cs" t="Include" />
@@ -122,16 +128,10 @@
           <e p="Settings.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="ModelInferrence.cs" t="Include" />
+            <e p="RubikHelper.cs" t="Include" />
             <e p="UIHelper.cs" t="Include" />
           </e>
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="obj" t="ExcludeRecursive" />
-          <e p="packages.config" t="Include" />
         </e>
-      </e>
-      <e p="packages" t="ExcludeRecursive">
-        <e p="TensorFlowSharp.1.8.0-pre1/runtimes/linux/native/libtensorflow.so" t="Include" />
-        <e p="TensorFlowSharp.1.8.0-pre1/runtimes/linux/native/libtensorflow_framework.so" t="Include" />
       </e>
     </e>
   </component>

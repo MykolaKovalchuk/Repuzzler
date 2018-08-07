@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad025b1-9f7e-45da-bb64-399646f05faa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Tools/ImageConverter/Utils/RubikHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Ravlyk.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/Ravlyk.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" afterDir="false" />
     </list>
     <ignored path=".idea/.idea.Repuzzler/.idea/codeStyles/codeStyleConfig.xml" />
     <ignored path=".idea/.idea.Repuzzler/.idea/contentModel.xml" />
@@ -15,6 +24,7 @@
     <ignored path="Learners/L1Rubik/Logs/" />
     <ignored path="venv/" />
     <ignored mask="*.DotSettings" />
+    <ignored path=".idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,59 +51,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="MainForm.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="BoundsPage.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="675">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
               <folding>
-                <marker date="1533441907817" expanded="false" signature="6:337" ph="..." />
-                <marker date="1533441907817" expanded="true" signature="369:6395" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="410:6393" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="435:470" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="474:1573" ph="Design" />
-                <marker date="1533441907817" expanded="true" signature="519:1475" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="612:644" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="714:762" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="1577:6148" ph="Operations" />
-                <marker date="1533441907817" expanded="true" signature="1703:1941" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="1714:1937" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="1826:1914" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2165:2435" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2457:2616" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2670:2885" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2708:2730" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2787:2881" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="2939:2962" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3016:3040" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3064:3709" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3120:3142" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3184:3222" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3230:3285" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3249:3280" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3389:3411" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3740:4104" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="3979:4007" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="4138:5143" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="4159:5139" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5164:5650" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5214:5236" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5286:5350" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5442:5521" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5701:6134" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5756:5778" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="5801:5823" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="6015:6130" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="6063:6125" ph="{...}" />
-                <marker date="1533441907817" expanded="false" signature="6152:6390" ph="Dispose" />
-                <marker date="1533441907817" expanded="true" signature="6218:6274" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="6297:6376" ph="{...}" />
-                <marker date="1533441907817" expanded="true" signature="6323:6372" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6:337" ph="..." />
+                <marker date="1533620885487" expanded="true" signature="369:7679" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="410:7677" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="435:470" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="474:1758" ph="Design" />
+                <marker date="1533620885487" expanded="true" signature="519:1609" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="612:644" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="714:762" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="1762:7432" ph="Operations" />
+                <marker date="1533620885487" expanded="true" signature="1888:2126" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="1899:2122" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2011:2099" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2350:2620" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2642:2801" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2855:3070" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2893:2915" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="2972:3066" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3131:3191" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3245:3268" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3322:3346" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3370:4015" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3426:3448" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3490:3528" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3536:3591" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3555:3586" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="3695:3717" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="4046:4410" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="4285:4313" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="4444:5386" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="4520:5382" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5165:5247" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5407:5911" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5457:5479" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5529:5593" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5685:5782" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="5962:7418" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6017:6039" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6062:6084" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6120:6455" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6320:6450" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6370:6444" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6463:7414" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6525:7409" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6680:6858" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="6969:7403" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="7088:7396" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="7436:7674" ph="Dispose" />
+                <marker date="1533620885487" expanded="true" signature="7502:7558" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="7581:7660" ph="{...}" />
+                <marker date="1533620885487" expanded="true" signature="7607:7656" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RubikHelper.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/RubikHelper.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1533619964869" expanded="true" signature="65:455" ph="{...}" />
+                <marker date="1533619964869" expanded="true" signature="100:453" ph="{...}" />
+                <marker date="1533619964869" expanded="true" signature="202:316" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,38 +129,51 @@
       <file leaf-file-name="ModelInferrence.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="103">
+              <caret line="163" column="63" selection-start-line="163" selection-start-column="63" selection-end-line="163" selection-end-column="63" />
               <folding>
-                <marker date="1533097987645" expanded="false" signature="6:162" ph="..." />
-                <marker date="1533097987645" expanded="true" signature="194:5808" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="240:5806" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="302:446" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="597:2044" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="623:650" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="1033:1079" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="1603:2040" ph="{...}" />
-                <marker date="1533097987645" expanded="true" signature="1754:1842" ph="{...}" />
-                <marker date="1533097987645" expanded="false" signature="2048:3758" ph="Prepare tensor" />
-                <marker date="1533097987645" expanded="false" signature="3762:5589" ph="Normalize points" />
-                <marker date="1533097987645" expanded="false" signature="5593:5803" ph="Dispose" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlueScreenPage.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2880">
-              <caret line="349" selection-start-line="349" selection-end-line="349" />
-              <folding>
-                <marker date="1533287750774" expanded="false" signature="6:351" ph="..." />
-                <marker date="1533287750774" expanded="true" signature="383:9962" ph="{...}" />
-                <marker date="1533287750774" expanded="true" signature="428:9960" ph="{...}" />
-                <marker date="1533287750774" expanded="true" signature="457:492" ph="{...}" />
-                <marker date="1533287750774" expanded="false" signature="496:1940" ph="Design" />
-                <marker date="1533287750774" expanded="false" signature="6640:9957" ph="Remove Color" />
+                <marker date="1533619723642" expanded="true" signature="6:162" ph="..." />
+                <marker date="1533619723642" expanded="true" signature="194:6646" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="240:6644" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="302:446" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="542:651" ph="/* TODO: Calcurate variants diviation ... */" />
+                <marker date="1533619723642" expanded="true" signature="709:1253" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="735:762" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="846:873" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="927:1249" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="1067:1165" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="1321:2878" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="1347:1394" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="1777:1823" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="2462:2855" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="2605:2850" ph="{...}" />
+                <marker date="1533619723642" expanded="false" signature="2882:4592" ph="Prepare tensor" />
+                <marker date="1533619723642" expanded="true" signature="2961:3612" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="3099:3560" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="3176:3555" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="3234:3549" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="3333:3542" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="3721:4578" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="4596:6427" ph="Normalize points" />
+                <marker date="1533619723642" expanded="true" signature="4719:5107" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="4778:4845" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="4877:5103" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="4914:5098" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5174:5404" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5250:5400" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5456:5974" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5536:5970" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5677:5965" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5755:5852" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="5862:5959" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6056:6413" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6093:6409" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6130:6404" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6235:6336" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6431:6641" ph="Dispose" />
+                <marker date="1533619723642" expanded="true" signature="6471:6627" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6499:6552" ph="{...}" />
+                <marker date="1533619723642" expanded="true" signature="6574:6623" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -180,17 +220,18 @@
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImageCopier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/RubikHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImageRotator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Descreener/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/SettingsPage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/App.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/packages.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/ImageConverter/Properties/Resources.Designer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -220,23 +261,25 @@
         <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.SD/Properties/AssemblyInfo.cs" />
         <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/Properties/AssemblyInfo.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Properties/AssemblyInfo.cs" />
-        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/SettingsPage.cs" />
         <option value="$PROJECT_DIR$/Tools/Descreener/Program.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Settings.cs" />
-        <option value="$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" />
         <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/Utilities/Region.cs" />
         <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImagePainter.cs" />
         <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ColorRemover.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreePage.cs" />
-        <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs" />
+        <option value="$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Utils/Rubik.cn.cs" />
         <option value="$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Utils/RubikHelper.cs" />
+        <option value="$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="132" />
     <option name="y" value="6" />
     <option name="width" value="1392" />
@@ -258,6 +301,31 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Repuzzler (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ImageConverter" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ImageConverter" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Pages" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Repuzzler (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ImageConverter" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Utils" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -271,119 +339,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Tools/ImageConverter/ImageConverter.csproj" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/.idea.Repuzzler/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -507,6 +462,7 @@
       <workItem from="1533287634788" duration="2662000" />
       <workItem from="1533441454593" duration="55000" />
       <workItem from="1533441805584" duration="341000" />
+      <workItem from="1533582622494" duration="10802000" />
     </task>
     <task id="LOCAL-00001" summary="Initial image ui controller set up">
       <created>1529225216505</created>
@@ -575,7 +531,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85864000" />
+    <option name="totallyTimeSpent" value="96666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,23 +543,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.37402192" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.37292817" />
       <window_info anchor="bottom" id="Errors In Solution" order="10" weight="0.3286385" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.11844197" side_tool="true" weight="0.40375587" />
       <window_info anchor="bottom" id="Unit Tests" order="9" weight="0.3286385" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.881558" weight="0.40375587" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8084261" weight="0.35367763" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8084261" weight="0.35359117" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.881558" weight="0.40331492" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3286385" />
       <window_info anchor="bottom" id="NuGet" order="12" weight="0.3286385" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5539906" visible="true" weight="0.22575517" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5539906" visible="true" weight="0.22593476" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="8" weight="0.3865415" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.3853591" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" sideWeight="0.4460094" side_tool="true" weight="0.2834008" />
-      <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9344942" weight="0.39906102" />
+      <window_info id="Favorites" order="2" sideWeight="0.5002704" side_tool="true" weight="0.17634052" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -613,7 +570,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="16" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
@@ -713,7 +669,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualZoomCropController.cs" />
     <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI.WinForms/VisualControl.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2697">
@@ -876,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1247">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/MainForm.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -937,13 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1257">
-          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.Drawing.ImageProcessor/ImageRotator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -953,87 +894,260 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BlueScreenPage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
+        <state relative-caret-position="176">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
-            <marker date="1533287750774" expanded="false" signature="6:351" ph="..." />
-            <marker date="1533287750774" expanded="true" signature="383:9962" ph="{...}" />
-            <marker date="1533287750774" expanded="true" signature="428:9960" ph="{...}" />
-            <marker date="1533287750774" expanded="true" signature="457:492" ph="{...}" />
-            <marker date="1533287750774" expanded="false" signature="496:1940" ph="Design" />
-            <marker date="1533287750774" expanded="false" signature="6640:9957" ph="Remove Color" />
+            <marker date="1533585270041" expanded="false" signature="6:351" ph="..." />
+            <marker date="1533585270041" expanded="true" signature="383:10485" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="428:10483" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="457:492" ph="{...}" />
+            <marker date="1533585270041" expanded="false" signature="496:2369" ph="Design" />
+            <marker date="1533585270041" expanded="true" signature="541:2141" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="634:666" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="736:784" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="2373:5517" ph="Operations" />
+            <marker date="1533585270041" expanded="true" signature="2581:3205" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="2626:2664" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="3016:3038" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="3236:4175" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="3530:3558" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4233:4371" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4426:4538" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4483:4534" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4592:5503" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4887:4955" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="4997:5456" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="5264:5291" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="5521:10480" ph="Remove Color" />
+            <marker date="1533585270041" expanded="true" signature="5570:6083" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="5581:6079" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6155:8655" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6287:8539" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6475:6880" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6524:6874" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6675:6708" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6728:6761" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6781:6814" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="6834:6867" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="7377:7759" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="7410:7559" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="7604:7753" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="7815:8197" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="7847:7996" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8042:8191" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8244:8534" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8296:8526" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8393:8519" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8466:8511" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8547:8632" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="8699:9205" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9296:9740" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9383:9642" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9427:9637" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9525:9631" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9793:10466" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9841:10462" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9894:10457" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="9987:10451" ph="{...}" />
+            <marker date="1533585270041" expanded="true" signature="10075:10444" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/UIHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding>
+            <marker date="1533587207363" expanded="false" signature="6:63" ph="..." />
+            <marker date="1533587207363" expanded="true" signature="95:2057" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="127:2055" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="329:563" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="364:451" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="476:515" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="668:819" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="701:772" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="961:1187" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1040:1136" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1339:1675" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1378:1475" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1567:1623" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1815:2052" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1854:1925" ph="{...}" />
+            <marker date="1533587207363" expanded="true" signature="1950:2000" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ravlyk/Ravlyk.UI/ImageProcessor/VisualControllers/VisualAnchorsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <marker date="1533617989673" expanded="false" signature="6:105" ph="..." />
+            <marker date="1533617989673" expanded="true" signature="141:7065" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="204:7063" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="341:349" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="353:2633" ph="Anchors" />
+            <marker date="1533617989673" expanded="true" signature="391:472" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="493:713" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="915:988" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1024:1108" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1187:1310" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1382:1465" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1569:2466" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1635:1740" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1802:1907" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="1965:2068" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="2126:2229" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="2256:2412" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="2499:2619" ph="{...}" />
+            <marker date="1533617989673" expanded="false" signature="2637:5031" ph="Update visual image" />
+            <marker date="1533617989673" expanded="true" signature="2797:2870" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="2921:3272" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="2983:3215" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="3079:3210" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="3308:3461" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="3343:3380" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="3416:3457" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="3507:4411" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="4451:5017" ph="{...}" />
+            <marker date="1533617989673" expanded="false" signature="5035:7060" ph="Touch actions" />
+            <marker date="1533617989673" expanded="true" signature="5139:5427" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5162:5210" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5246:5369" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5315:5364" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5533:5928" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5720:5924" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="5793:5919" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6056:6191" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6264:6751" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6320:6684" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6692:6747" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6816:6926" ph="{...}" />
+            <marker date="1533617989673" expanded="true" signature="6999:7046" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/ModelInferrence.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="103">
+          <caret line="163" column="63" selection-start-line="163" selection-start-column="63" selection-end-line="163" selection-end-column="63" />
           <folding>
-            <marker date="1533097987645" expanded="false" signature="6:162" ph="..." />
-            <marker date="1533097987645" expanded="true" signature="194:5808" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="240:5806" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="302:446" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="597:2044" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="623:650" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="1033:1079" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="1603:2040" ph="{...}" />
-            <marker date="1533097987645" expanded="true" signature="1754:1842" ph="{...}" />
-            <marker date="1533097987645" expanded="false" signature="2048:3758" ph="Prepare tensor" />
-            <marker date="1533097987645" expanded="false" signature="3762:5589" ph="Normalize points" />
-            <marker date="1533097987645" expanded="false" signature="5593:5803" ph="Dispose" />
+            <marker date="1533619723642" expanded="true" signature="6:162" ph="..." />
+            <marker date="1533619723642" expanded="true" signature="194:6646" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="240:6644" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="302:446" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="542:651" ph="/* TODO: Calcurate variants diviation ... */" />
+            <marker date="1533619723642" expanded="true" signature="709:1253" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="735:762" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="846:873" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="927:1249" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="1067:1165" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="1321:2878" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="1347:1394" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="1777:1823" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="2462:2855" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="2605:2850" ph="{...}" />
+            <marker date="1533619723642" expanded="false" signature="2882:4592" ph="Prepare tensor" />
+            <marker date="1533619723642" expanded="true" signature="2961:3612" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="3099:3560" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="3176:3555" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="3234:3549" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="3333:3542" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="3721:4578" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="4596:6427" ph="Normalize points" />
+            <marker date="1533619723642" expanded="true" signature="4719:5107" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="4778:4845" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="4877:5103" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="4914:5098" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5174:5404" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5250:5400" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5456:5974" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5536:5970" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5677:5965" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5755:5852" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="5862:5959" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6056:6413" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6093:6409" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6130:6404" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6235:6336" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6431:6641" ph="Dispose" />
+            <marker date="1533619723642" expanded="true" signature="6471:6627" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6499:6552" ph="{...}" />
+            <marker date="1533619723642" expanded="true" signature="6574:6623" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Utils/RubikHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1533619964869" expanded="true" signature="65:455" ph="{...}" />
+            <marker date="1533619964869" expanded="true" signature="100:453" ph="{...}" />
+            <marker date="1533619964869" expanded="true" signature="202:316" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/ImageConverter/Pages/BoundsPage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="675">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
           <folding>
-            <marker date="1533441907817" expanded="false" signature="6:337" ph="..." />
-            <marker date="1533441907817" expanded="true" signature="369:6395" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="410:6393" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="435:470" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="474:1573" ph="Design" />
-            <marker date="1533441907817" expanded="true" signature="519:1475" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="612:644" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="714:762" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="1577:6148" ph="Operations" />
-            <marker date="1533441907817" expanded="true" signature="1703:1941" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="1714:1937" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="1826:1914" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2165:2435" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2457:2616" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2670:2885" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2708:2730" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2787:2881" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="2939:2962" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3016:3040" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3064:3709" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3120:3142" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3184:3222" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3230:3285" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3249:3280" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3389:3411" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3740:4104" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="3979:4007" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="4138:5143" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="4159:5139" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5164:5650" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5214:5236" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5286:5350" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5442:5521" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5701:6134" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5756:5778" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="5801:5823" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="6015:6130" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="6063:6125" ph="{...}" />
-            <marker date="1533441907817" expanded="false" signature="6152:6390" ph="Dispose" />
-            <marker date="1533441907817" expanded="true" signature="6218:6274" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="6297:6376" ph="{...}" />
-            <marker date="1533441907817" expanded="true" signature="6323:6372" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6:337" ph="..." />
+            <marker date="1533620885487" expanded="true" signature="369:7679" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="410:7677" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="435:470" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="474:1758" ph="Design" />
+            <marker date="1533620885487" expanded="true" signature="519:1609" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="612:644" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="714:762" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="1762:7432" ph="Operations" />
+            <marker date="1533620885487" expanded="true" signature="1888:2126" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="1899:2122" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2011:2099" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2350:2620" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2642:2801" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2855:3070" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2893:2915" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="2972:3066" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3131:3191" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3245:3268" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3322:3346" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3370:4015" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3426:3448" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3490:3528" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3536:3591" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3555:3586" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="3695:3717" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="4046:4410" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="4285:4313" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="4444:5386" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="4520:5382" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5165:5247" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5407:5911" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5457:5479" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5529:5593" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5685:5782" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="5962:7418" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6017:6039" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6062:6084" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6120:6455" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6320:6450" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6370:6444" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6463:7414" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6525:7409" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6680:6858" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="6969:7403" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="7088:7396" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="7436:7674" ph="Dispose" />
+            <marker date="1533620885487" expanded="true" signature="7502:7558" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="7581:7660" ph="{...}" />
+            <marker date="1533620885487" expanded="true" signature="7607:7656" ph="{...}" />
           </folding>
         </state>
       </provider>
